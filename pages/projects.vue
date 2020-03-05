@@ -12,6 +12,7 @@
       imageside="left"
       caseStudy="true"
       v-bind:projectTags="['p5.js','design']"
+      projectLink="/experimental-projects/2019-review"
       />
 
     <project-highlight

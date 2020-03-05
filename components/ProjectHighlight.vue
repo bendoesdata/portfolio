@@ -7,8 +7,8 @@
             <div class="project-summary mx-auto">
               <h2>{{ title }}</h2>
               <p>{{ summary }}</p>
-              <b-button variant="outline-info" size="md">Explore</b-button>
-              <b-button v-if="caseStudy" variant="outline-info" class="case-study-btn" size="md">Case study</b-button>
+              <b-button :href="projectLink" variant="outline-info" size="md">Explore</b-button>
+              <b-button :to="caseStudyLink" v-if="caseStudy" variant="outline-info" class="case-study-btn" size="md">Case study</b-button>
               <div class="tag-holder">
                 <b-badge
                 v-for="tag in projectTags"
@@ -67,6 +67,14 @@ export default {
     projectTags: {
       type: Array,
       required: false
+    },
+    caseStudyLink: {
+      type: String,
+      requred: false
+    },
+    projectLink: {
+      type: String,
+      requred: true
     }
   },
   data: function() {
