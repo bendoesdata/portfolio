@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-container class="markdown-holder">
+    <b-container fluid class="markdown-holder">
       <h1 class="blog-title">{{ title }}</h1>
       <h4 class="blog-subtitle">{{ subtitle }}</h4>
       <div class="tag-holder blog-tag-holder">
@@ -12,8 +12,8 @@
           {{ tag }}
         </b-badge>
       </div>
-      <b-container>
-      <b-img fluid :src="bannerimg" class="blog-banner-image" alt=""/>
+      <b-container fluid>
+        <b-img fluid :src="bannerimg" class="blog-banner-image" alt=""/>
       </b-container>
       <component :is="singlePostComponent" />
     </b-container>
@@ -58,7 +58,6 @@ export default {
   }
 
   .blog-banner-image {
-    max-width: 700px;
     margin-bottom: 40px
   }
 
