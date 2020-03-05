@@ -37,9 +37,11 @@
       </b-row>
       <b-row no-gutters>
         <b-col md order-md="1" class="dark-tile tile">
-          <b-container class="project-summary mx-auto">
-              <h2 class="square-text">About</h2>
-          </b-container>
+          <nuxt-link to="/about">
+            <b-container class="project-summary mx-auto">
+                <h2 class="square-text">About</h2>
+            </b-container>
+          </nuxt-link>
         </b-col>
         <b-col md class="light-tile tile">
           <nuxt-link to="/experiments">
@@ -115,6 +117,10 @@ import "~/assets/globalstyles.css"
 
   .dark-tile h2 {
     color: white;
+  }
+
+  .tile a {
+    text-decoration: none
   }
 
   .tile {
