@@ -47,6 +47,10 @@ export default {
     margin: auto
   }
 
+  .frontmatter-markdown p img {
+    width: 300px
+  }
+
   .blog-title {
     font-size: 56px;
     margin-top: 100px
@@ -62,7 +66,12 @@ export default {
   }
 
   .blog-tag-holder {
-    margin-top: -20px
+    margin-top: -20px;
+    margin-bottom: 30px;
+  }
+
+  .blog-tag-holder span.badge {
+    margin-right: 10px
   }
 
   h2 {

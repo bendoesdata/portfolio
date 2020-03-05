@@ -20,6 +20,14 @@ To answer these questions, Spotify used their analytic models to investigate. Bu
 
 In addition, Spotify was interested in using visualization as a way to not only answer questions, but to <strong style="font-weight: 600">ask new questions in the process</strong>.
 
+<br>
 
+# Contribution
 
+To start, I analyzed an anonymized dataset provided by Spotify. This data contained variables like date of song release, number of streams, artist, genre, and source of streaming. From this analysis, I created the visual metaphor of the shape of a song.
 
+<img src="/images/spotify/radars.png" style="width: 100%" />
+
+<!-- ![Hopper The Rabbit](/images/spotify/radars.png) -->
+
+I then exported each song triangle and worked with a team of designers to build different concepts around each. We wanted to paint a picture for Spotify of what their future analytics platform could be. Because Spotify works with music managers, labels, and often the artists themselves, we wanted the methods of visualization to be both informative and exciting in a way that matched Spotify's brand.
