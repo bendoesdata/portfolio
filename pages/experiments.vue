@@ -29,7 +29,7 @@
               </p>
             </b-card-text>
         </b-card>
-        <b-card img-src="/images/gephi-graphic.png" img-alt="Westminster terror network" img-top>
+        <b-card>
           <a href="https://towardsdatascience.com/how-twitter-responded-an-hour-after-the-westminster-attacks-bd2823a31195">
             <b-card-img src="/images/gephi-graphic.png" alt="Codevember2019" class="rounded-1"></b-card-img>
           </a>
@@ -72,7 +72,7 @@ import ProjectHighlight from '~/components/ProjectHighlight.vue'
 <style lang="css" scoped>
 
   .experiment-title {
-    font-weight: 600
+    font-family: "CircBold", sans-serif
   }
 
   .experiment-cards-holder {
