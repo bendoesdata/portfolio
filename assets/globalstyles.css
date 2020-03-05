@@ -28,6 +28,10 @@
     font-size: 18px
   }
 
+  body {
+    font-family: "CircReg", sans-serif;
+  }
+
   h1, h2, h3 {
     font-family: "CircBold", sans-serif;
   }

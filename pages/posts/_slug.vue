@@ -12,9 +12,7 @@
           {{ tag }}
         </b-badge>
       </div>
-      <b-container fluid>
-        <b-img fluid :src="bannerimg" class="blog-banner-image" alt=""/>
-      </b-container>
+      <b-img fluid :src="bannerimg" class="blog-banner-image" alt=""/>
       <component :is="singlePostComponent" />
     </b-container>
   </div>
@@ -62,7 +60,7 @@ export default {
   }
 
   .blog-banner-image {
-    margin-bottom: 40px
+    margin-bottom: 40px;
   }
 
   .blog-tag-holder {
@@ -76,5 +74,9 @@ export default {
 
   h2 {
     margin-bottom: 300px
+  }
+
+  p {
+    font-size: 21px
   }
 </style>

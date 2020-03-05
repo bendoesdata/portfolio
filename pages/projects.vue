@@ -13,6 +13,7 @@
       caseStudy="true"
       v-bind:projectTags="['p5.js','design']"
       projectLink="/experimental-projects/2019-review"
+      caseStudyLink="posts/spotify-case-study"
       />
 
     <project-highlight
