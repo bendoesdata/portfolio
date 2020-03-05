@@ -9,7 +9,11 @@
     <b-row>
       <b-col>
         <b-container>
-          <b-img fluid src="/images/about-pic.jpg"></b-img>
+          <b-img
+          v-on:load="onLoaded"
+          v-show="loaded"
+          fluid
+          src="/images/about-pic.jpg"></b-img>
         </b-container>
       </b-col>
       <b-col>
@@ -30,6 +34,16 @@
     head: {
       title: 'About'
     },
+    data: function() {
+    return {
+      loaded: false
+    }
+  },
+  methods: {
+    onLoaded() {
+      this.loaded = true;
+    }
+  }
   }
 </script>
 
