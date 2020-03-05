@@ -19,7 +19,7 @@
       <b-col>
         <b-container>
           <p>
-            Ben is a multidisciplinary designer and developer of data visualization products. Most of my work leans on a few core skillsets—most notably data visualization, creative coding, and UX design.
+            Ben is a multidisciplinary designer and developer of data visualization products. Most of his work leans on a few core skillsets—most notably data visualization, creative coding, and UX design.
           </p>
         </b-container>
       </b-col>

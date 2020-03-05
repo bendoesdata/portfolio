@@ -16,7 +16,7 @@
 
     <project-highlight
       title="Spotify Conceptual Design"
-      summary="A conceptua data design project for Spotify's insight team."
+      summary="A conceptual data design project for Spotify's insight team."
       image="/images/projects_spotify.png"
       imageside="right"
       />
@@ -46,11 +46,11 @@ import ProjectHighlight from '~/components/ProjectHighlight.vue'
 
 <style lang="css">
   .jumbotron h1 {
-    padding-left: 50px
+    padding-left: 30px
   }
 
   .jumbotron p.lead {
-    padding-left: 50px;
+    padding-left: 30px;
     margin-top: 0px
   }
 

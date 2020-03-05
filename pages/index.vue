@@ -57,7 +57,6 @@
 </template>
 
 <script>
-import ProjectHighlight from '~/components/ProjectHighlight.vue'
 import "~/assets/globalstyles.css"
 
   export default {
@@ -65,7 +64,7 @@ import "~/assets/globalstyles.css"
       title: 'Home'
     },
     components: {
-      ProjectHighlight
+
     },
   }
 </script>
@@ -78,7 +77,7 @@ import "~/assets/globalstyles.css"
   }
 
   .jumbo-header {
-    margin-top: 50px
+    margin-top: 30px
   }
 
   .container-fluid {

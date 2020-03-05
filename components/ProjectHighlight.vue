@@ -10,13 +10,13 @@
               <b-button variant="outline-info" size="md">Explore</b-button>
               <b-button v-if="caseStudy" variant="outline-info" class="case-study-btn" size="md">Case study</b-button>
               <div class="tag-holder">
-              <b-badge
-              v-for="tag in projectTags"
-              :key="tag.tags"
-              variant="dark"
-              >
-                {{ tag }}
-              </b-badge>
+                <b-badge
+                v-for="tag in projectTags"
+                :key="tag.tags"
+                variant="dark"
+                >
+                  {{ tag }}
+                </b-badge>
               </div>
             </div>
           </b-container>
