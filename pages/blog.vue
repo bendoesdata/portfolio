@@ -5,14 +5,17 @@
     <br>
       <div v-for="post in posts" :key="post.attributes.title">
         <b-container fluid>
-          <b-card
-          :title="post.attributes.title"
-          :sub-title="post.attributes.subtitle"
-          :img-src="post.attributes.bannerimg"
-          img-left
-          :to="getPermalink(post)"
-          class="mb-3 blog-preview">
-          <div class="tag-holder">
+          <b-card no-body class="overflow-hidden mb-3 blog-preview">
+            <b-row no-gutters>
+              <b-col md="4">
+                <b-card-img fluid :src="post.attributes.bannerimg" class="rounded-0"></b-card-img>
+              </b-col>
+              <b-col md="8">
+                <b-card-body :title="post.attributes.title">
+                  <h6 class="card-subtitle text-muted">
+                    {{ post.attributes.subtitle }}
+                  </h6>
+                  <div class="tag-holder">
             <b-badge
                 v-for="tag in post.attributes.tags"
                 :key="tag.tags"
@@ -28,7 +31,9 @@
             >
             Read
             </b-button>
-            <!-- <b-link href="#" class="card-link">Another link</b-link> -->
+                </b-card-body>
+              </b-col>
+            </b-row>
           </b-card>
         </b-container>
       </div>
@@ -79,14 +84,13 @@ export default {
 
   .blog-preview img {
     display: block;
-    max-width:230px;
-    width: auto;
+    width: 100%;
     height: auto
   }
 
   h4.card-title {
     font-size: 32px;
-    margin-bottom: 20px
+    margin-bottom: 10px
   }
 
   h6.card-subtitle.text-muted {
