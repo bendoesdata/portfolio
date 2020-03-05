@@ -23,7 +23,15 @@
         </b-col>
         <b-col order-md="1" md>
           <div class="grow-img container">
-          <b-img class="image" :src="image" fluid alt="Responsive image"></b-img>
+            <transition name="fade">
+              <b-img class="image"
+              :src="image"
+              fluid
+              alt="Responsive image"
+              v-on:load="onLoaded"
+              v-show="loaded"></b-img>
+            </transition>
+
           </div>
         </b-col>
       </b-row>
@@ -61,6 +69,11 @@ export default {
       required: false
     }
   },
+  data: function() {
+    return {
+      loaded: false
+    }
+  },
   computed: {
     setOrder() {
       if (this.imageside === "left") {
@@ -68,6 +81,11 @@ export default {
       } else {
         return "2"
       }
+    }
+  },
+  methods: {
+    onLoaded() {
+      this.loaded = true;
     }
   }
 }
@@ -114,5 +132,17 @@ export default {
 .badge {
   padding: 5px;
   margin-right: 10px
+}
+
+.fade-enter-active {
+  transition: opacity 3s ease-in-out;
+}
+
+.fade-enter-to {
+  opacity: 1;
+}
+
+.fade-enter {
+  opacity: 0;
 }
 </style>
