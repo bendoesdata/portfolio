@@ -56,7 +56,8 @@ export default {
 
   .blog-subtitle {
     color: rgb(179, 179, 179);
-    margin-bottom: 50px
+    margin-bottom: 50px;
+    font-family: "CircReg", sans-serif
   }
 
   .blog-banner-image {
@@ -77,6 +78,6 @@ export default {
   }
 
   p {
-    font-size: 21px
+    font-size: 20px
   }
 </style>
