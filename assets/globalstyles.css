@@ -1,0 +1,44 @@
+@font-face {
+  font-family: CircReg;
+  src: url('./fonts/CircularStd-Book.otf');
+}
+
+@font-face {
+  font-family: CircMed;
+  src: url('./fonts/CircularStd-Medium.otf');
+}
+
+@font-face {
+  font-family: CircBold;
+  src: url('./fonts/CircularStd-Bold.otf');
+}
+
+@font-face {
+  font-family: CircBoldItalic;
+  src: url('./fonts/CircularStd-BoldItalic.otf');
+}
+
+@font-face {
+  font-family: CircBlack;
+  src: url('./fonts/CircularStd-Black.otf');
+}
+
+  p, a {
+    font-family: "CircReg", sans-serif;
+    font-size: 18px
+  }
+
+  h1, h2, h3 {
+    font-family: "CircBold", sans-serif;
+  }
+
+  h4, h5, h6 {
+    font-family: "CircMed", sans-serif
+  }
+
+  .navbar-brand {
+    font-size: 24px;
+    font-family: "CircBold", sans-serif
+  }
+
+
