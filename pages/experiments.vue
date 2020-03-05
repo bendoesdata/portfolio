@@ -8,9 +8,9 @@
   <b-container class="experiment-cards-holder">
     <b-card-group columns>
         <b-card>
-          <nuxt-link to="/experimental-projects/asteroids.html">
-          <b-card-img src="/images/asteroids.png" alt="Near Earth Asteroids" class="rounded-2"></b-card-img>
-          </nuxt-link>
+          <a href="/experimental-projects/asteroids.html">
+            <b-card-img src="/images/asteroids.png" alt="Near Earth Asteroids" class="rounded-1"></b-card-img>
+          </a>
             <b-card-text>
               <p>
                 <span class="experiment-title">Near Earth Asteroids</span>.
@@ -18,7 +18,10 @@
               </p>
             </b-card-text>
         </b-card>
-        <b-card img-src="/images/codevember-header.png" img-alt="Codevember" img-top>
+        <b-card>
+          <a href="/experimental-projects/codevember">
+            <b-card-img src="/images/codevember-header.png" alt="Codevember2019" class="rounded-1"></b-card-img>
+          </a>
             <b-card-text>
               <p>
               <span class="experiment-title">Codevember 2019</span>.
@@ -27,6 +30,9 @@
             </b-card-text>
         </b-card>
         <b-card img-src="/images/gephi-graphic.png" img-alt="Westminster terror network" img-top>
+          <a href="https://towardsdatascience.com/how-twitter-responded-an-hour-after-the-westminster-attacks-bd2823a31195">
+            <b-card-img src="/images/gephi-graphic.png" alt="Codevember2019" class="rounded-1"></b-card-img>
+          </a>
             <b-card-text>
               <p>
                 <span class="experiment-title">How Terror Spreads</span>.
@@ -34,7 +40,10 @@
               </p>
             </b-card-text>
         </b-card>
-        <b-card img-src="/images/game-dash.png" img-alt="GAME DASH" img-top>
+        <b-card>
+        <a href="/experimental-projects/codevember/game-dash">
+            <b-card-img src="/images/game-dash.png" alt="Codevember2019" class="rounded-1"></b-card-img>
+          </a>
             <b-card-text>
               <p>
                 <span class="experiment-title">Game Dash</span>.
