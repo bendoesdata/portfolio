@@ -106,7 +106,7 @@ export default {
   }
 
   .project-summary h2 {
-    font-size: 3vmax
+    font-size: 3.5vmax
   }
 
 .image {

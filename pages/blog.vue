@@ -74,7 +74,7 @@ export default {
 
 <style lang="css">
   .post-container {
-    max-width: 700px;
+    max-width: 800px;
     margin-top: 50px
   }
 
@@ -88,6 +88,10 @@ export default {
     height: auto
   }
 
+  .card-title {
+    margin-top:10px
+  }
+
   h4.card-title {
     font-size: 32px;
     margin-bottom: 10px
@@ -96,6 +100,7 @@ export default {
   h6.card-subtitle.text-muted {
     color: rgb(185) !important;
     font-size: 18px;
+    margin-top:15px;
     font-family: "CircReg", sans-serif
   }
 </style>

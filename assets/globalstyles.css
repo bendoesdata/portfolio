@@ -28,6 +28,11 @@
     font-size: 18px
   }
 
+  p a {
+    font-family: "CircReg", sans-serif;
+    font-size: 18px
+  }
+
   body {
     font-family: "CircReg", sans-serif;
   }

@@ -11,9 +11,9 @@
       image="/images/projects_2019.png"
       imageside="left"
       caseStudy="true"
-      v-bind:projectTags="['p5.js','design']"
+      :projectTags="['design','development','p5.js',]"
       projectLink="/experimental-projects/2019-review"
-      caseStudyLink="posts/spotify-case-study"
+      caseStudyLink="posts/2019-year-in-review"
       />
 
     <project-highlight
@@ -21,13 +21,17 @@
       summary="A conceptual data design project for Spotify's insight team."
       image="/images/projects_spotify.png"
       imageside="right"
+      :projectTags="['data analysis','creative direction','data visualization']"
+      projectLink="posts/spotify-case-study"
       />
 
     <project-highlight
-      title="vue title"
-      summary="my project"
+      title="Root to Flower"
+      summary="A data-driven augmented reality experience that visually explains the effects of food waste on our environment."
       image="/images/projects_r2f.png"
       imageside="left"
+      :projectTags="['data analysis','creative direction']"
+      projectLink="posts/root-to-flower"
       />
 
   </div>
@@ -48,11 +52,11 @@ import ProjectHighlight from '~/components/ProjectHighlight.vue'
 
 <style lang="css">
   .jumbotron h1 {
-    padding-left: 30px
+    padding-left: 20px
   }
 
   .jumbotron p.lead {
-    padding-left: 30px;
+    padding-left: 20px;
     margin-top: 0px
   }
 

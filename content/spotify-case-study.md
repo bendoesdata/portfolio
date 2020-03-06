@@ -31,3 +31,5 @@ To start, I analyzed an anonymized dataset provided by Spotify. This data contai
 <br>
 
 I then exported each song triangle and worked with a team of designers to build different concepts around each. We wanted to paint a picture for Spotify of what their future analytics platform could be. Because Spotify works with music managers, labels, and often the artists themselves, we wanted the methods of visualization to be both informative and exciting in a way that matched Spotify's brand.
+
+<img src="/images/spotify/spotify-01.png" style="width: 100%" />

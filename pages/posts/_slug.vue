@@ -40,7 +40,7 @@ export default {
 
 <style lang="css" scoped>
   .markdown-holder {
-    max-width:700px;
+    max-width:750px;
     margin-top: 200px;
     margin: auto
   }
