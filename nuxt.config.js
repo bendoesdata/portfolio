@@ -38,8 +38,11 @@ export default async() => {
           content: "Portfolio for Benjamin Cooley, data visualiztion specialist"
         }
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-    ]
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },],
+      css: [
+        // CSS file in the project
+        '@/assets/globalstyles.css',
+      ]
     },
 
     /*

@@ -22,14 +22,14 @@
       <b-row no-gutters>
         <b-col md class="dark-tile tile">
           <nuxt-link to="/projects">
-          <b-container class="project-summary mx-auto">
+          <b-container class="mx-auto">
               <h2 class="square-text">Projects</h2>
           </b-container>
           </nuxt-link>
         </b-col>
         <b-col md class="light-tile tile">
           <nuxt-link to="/blog">
-            <b-container class="project-summary mx-auto">
+            <b-container class="mx-auto">
                 <h2 class="square-text">Blog</h2>
             </b-container>
           </nuxt-link>
@@ -38,14 +38,14 @@
       <b-row no-gutters>
         <b-col md order-md="1" class="dark-tile tile">
           <nuxt-link to="/about">
-            <b-container class="project-summary mx-auto">
+            <b-container class="mx-auto">
                 <h2 class="square-text">About</h2>
             </b-container>
           </nuxt-link>
         </b-col>
         <b-col md class="light-tile tile">
           <nuxt-link to="/experiments">
-            <b-container class="project-summary mx-auto">
+            <b-container class="mx-auto">
                 <h2 class="square-text">Experiments</h2>
             </b-container>
           </nuxt-link>
@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import "~/assets/globalstyles.css"
+import '~/assets/globalstyles.css'
 
   export default {
     head: {
@@ -69,14 +69,10 @@ import "~/assets/globalstyles.css"
   }
 </script>
 
-<style lang="css">
 
-  .gray-text {
-    color: gray;
-    font-family: "CircReg", sans-serif
-  }
+<style lang="css" scoped>
 
-  .jumbo-header {
+.jumbo-header {
     margin-top: 30px
   }
 
@@ -133,5 +129,7 @@ import "~/assets/globalstyles.css"
     -ms-transform: scale(1.02);
     transform: scale(1.02); */
 }
+
+
 
 </style>

@@ -73,4 +73,18 @@
   margin-top: 20px;
   font-family: "CircReg", sans-serif;
 }
+
+ .jumbotron h1 {
+    padding-left: 20px;
+    font-family: "CircBold", sans-serif
+  }
+
+  .jumbotron p.lead {
+    padding-left: 20px;
+    margin-top: 0px
+  }
+
+  .jumbotron {
+    background-color: white
+  }
 </style>

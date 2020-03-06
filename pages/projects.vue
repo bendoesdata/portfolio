@@ -51,20 +51,10 @@ import ProjectHighlight from '~/components/ProjectHighlight.vue'
 </script>
 
 <style lang="css">
-  .jumbotron h1 {
-    padding-left: 20px
-  }
 
-  .jumbotron p.lead {
-    padding-left: 20px;
-    margin-top: 0px
-  }
-
-  .jumbotron {
-    background-color: white
-  }
 
   .case-study-btn {
     margin-left: 10px
   }
+
 </style>

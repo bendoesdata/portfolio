@@ -100,7 +100,7 @@ export default {
   h6.card-subtitle.text-muted {
     color: rgb(185) !important;
     font-size: 18px;
-    margin-top:15px;
+    margin-top:20px;
     font-family: "CircReg", sans-serif
   }
 </style>
