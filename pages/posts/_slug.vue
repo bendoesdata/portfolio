@@ -18,6 +18,7 @@
               :href="projectLink"
               variant="outline-info"
               size="md"
+              target="_blank"
               style="margin-bottom: 30px; text-align: center"
               >
                 Explore the project
@@ -67,7 +68,7 @@ export default {
   }
 
   .blog-subtitle {
-    color: rgb(179, 179, 179);
+    color: rgb(140, 140, 140);
     margin-bottom: 50px;
     font-family: "CircReg", sans-serif
   }
