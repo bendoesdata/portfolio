@@ -138,6 +138,7 @@ import '~/assets/globalstyles.css'
 
 .gray-text {
   color: rgb(181, 181, 181);
+  font-family: "CircReg", sans-serif
 }
 
 </style>

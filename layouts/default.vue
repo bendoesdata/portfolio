@@ -75,9 +75,12 @@
 }
 
  .jumbotron h1 {
-    padding-left: 20px;
+    /* padding-left: 20px; */
     font-family: "CircBold", sans-serif;
+    margin-left: 10px;
   }
+
+
 
   @media only screen and (max-width: 600px) {
   .jumbotron h1 {

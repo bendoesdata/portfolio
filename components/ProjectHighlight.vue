@@ -120,6 +120,11 @@ export default {
     font-size: 3.5vmax
   }
 
+  .project-summary p {
+    font-size: 21px;
+    margin-top: 10px
+  }
+
 .image {
   opacity: 1;
   display: block;

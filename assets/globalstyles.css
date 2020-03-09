@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap');
+
 @font-face {
   font-family: CircReg;
   src: url('./fonts/CircularStd-Book.otf');
@@ -23,14 +25,8 @@
   src: url('./fonts/CircularStd-Black.otf');
 }
 
-  p, a {
-    font-family: "CircReg", sans-serif;
-    font-size: 21px;
-    line-height: 2.1rem;
-  }
-
   p a {
-    font-family: "CircReg", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 21px
   }
 
@@ -58,6 +54,12 @@
     color: rgb(33, 33, 33);
   }
 
+  /* use open sans for blog posts, better reading experience */
+  .frontmatter-markdown p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+  }
+
   .frontmatter-markdown h4 {
     font-family: "CircReg", sans-serif;
     line-height: 2.0rem;
@@ -68,7 +70,7 @@
 
   .frontmatter-markdown p {
     font-size: 21px;
-    line-height: 2.1rem;
+    line-height: 2.2rem;
     padding-top: 20px;
     padding-bottom: 10px
   }
