@@ -130,6 +130,14 @@ import '~/assets/globalstyles.css'
     transform: scale(1.02); */
 }
 
+@media only screen and (max-width: 600px) {
+  h1.intro-text {
+    font-size: 28px
+  }
+}
 
+.gray-text {
+  color: gray
+}
 
 </style>

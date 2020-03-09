@@ -22,7 +22,7 @@
       image="/images/projects_spotify.png"
       imageside="right"
       :projectTags="['data analysis','creative direction','data visualization']"
-      projectLink="posts/spotify-case-study"
+      caseStudyLink="posts/spotify-case-study"
       />
 
     <project-highlight
@@ -31,7 +31,7 @@
       image="/images/projects_r2f.png"
       imageside="left"
       :projectTags="['data analysis','creative direction']"
-      projectLink="posts/root-to-flower"
+      caseStudyLink="posts/root-to-flower"
       />
 
   </div>
