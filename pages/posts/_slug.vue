@@ -13,6 +13,16 @@
         </b-badge>
       </div>
       <b-img fluid :src="bannerimg" class="blog-banner-image" alt=""/>
+      <div style="margin: auto; text-align: center">
+        <b-button v-if="projectLink"
+              :href="projectLink"
+              variant="outline-info"
+              size="md"
+              style="margin-bottom: 30px; text-align: center"
+              >
+                Explore the project
+      </b-button>
+      </div>
       <component :is="singlePostComponent" />
     </b-container>
   </div>
@@ -28,7 +38,9 @@ export default {
         subtitle: post.attributes.subtitle,
         tags: post.attributes.tags,
         bannerimg: post.attributes.bannerimg,
+        projectLink: post.attributes.projectLink,
         singlePostComponent: post.vue.component
+
       };
     } catch (err) {
       console.debug(err);

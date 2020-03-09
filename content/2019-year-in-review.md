@@ -2,6 +2,7 @@
 title: My 2019 in Data
 subtitle: Exploring my data from 2019 through a series of data visualization posters.
 bannerimg: "/images/projects_2019.png"
+projectLink: "https://bendoesdata.com/experimental-projects/2019-review/"
 tags:
   - case study
   - design
