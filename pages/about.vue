@@ -7,17 +7,18 @@
 
   <b-container>
     <b-row>
-      <b-col>
+      <b-col md>
         <b-container>
           <b-img
           v-on:load="onLoaded"
           v-show="loaded"
           fluid
+          class="about-image"
           src="/images/about-pic.jpg"></b-img>
         </b-container>
       </b-col>
-      <b-col>
-        <b-container>
+      <b-col md>
+        <b-container class="about-text">
           <p>
             Ben is a multidisciplinary designer and developer of data visualization products. Most of his work leans on a few core skillsets—most notably data visualization, creative coding, and UX design.
           </p>
@@ -53,5 +54,13 @@
 <style lang="css" scoped>
   .container {
     margin: auto
+  }
+
+  .about-image {
+    margin-bottom: 30px
+  }
+
+  .about-text {
+    padding: 10px
   }
 </style>
