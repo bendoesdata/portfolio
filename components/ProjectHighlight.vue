@@ -10,6 +10,8 @@
               <b-button v-if="projectLink"
               :href="projectLink"
               variant="outline-info"
+              target="_blank"
+              class="project-explore-button"
               size="md">
                 Explore
               </b-button>
@@ -168,5 +170,9 @@ export default {
 
 .fade-enter {
   opacity: 0;
+}
+
+.project-explore-button {
+  margin-right: 10px
 }
 </style>

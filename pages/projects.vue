@@ -10,9 +10,9 @@
       summary="A visual look back on the data I generated in 2019, and what it says about me."
       image="/images/projects_2019.png"
       imageside="left"
-      caseStudy="true"
       :projectTags="['design','development','p5.js',]"
       caseStudyLink="posts/2019-year-in-review"
+      projectLink="https://bendoesdata.com/experimental-projects/2019-review/"
       />
 
     <project-highlight
