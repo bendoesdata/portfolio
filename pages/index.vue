@@ -137,7 +137,7 @@ import '~/assets/globalstyles.css'
 }
 
 .gray-text {
-  color: gray
+  color: rgb(181, 181, 181);
 }
 
 </style>

@@ -16,7 +16,7 @@
               <b-button v-if="caseStudyLink"
               :to="caseStudyLink"
               variant="outline-info"
-              class="case-study-btn"
+              class=""
               size="md">
                 Case study
               </b-button>
