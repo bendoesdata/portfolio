@@ -52,8 +52,8 @@ import ProjectHighlight from '~/components/ProjectHighlight.vue'
 <style lang="css">
 
 
-  .case-study-btn {
-    margin-left: 10px
+  .container-fluid {
+    padding: 0
   }
 
 </style>

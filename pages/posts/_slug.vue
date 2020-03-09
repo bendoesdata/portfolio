@@ -1,16 +1,18 @@
 <template>
   <div>
     <b-container fluid class="markdown-holder">
-      <h1 class="blog-title">{{ title }}</h1>
-      <h4 class="blog-subtitle">{{ subtitle }}</h4>
-      <div class="tag-holder blog-tag-holder">
-        <b-badge
-        v-for="tag in tags"
-        :key="tag.tags"
-        variant="dark"
-        >
-          {{ tag }}
-        </b-badge>
+      <div class="header-holder">
+        <h1 class="blog-title">{{ title }}</h1>
+        <h4 class="blog-subtitle">{{ subtitle }}</h4>
+        <div class="tag-holder blog-tag-holder">
+          <b-badge
+          v-for="tag in tags"
+          :key="tag.tags"
+          variant="dark"
+          >
+            {{ tag }}
+          </b-badge>
+        </div>
       </div>
       <b-img fluid :src="bannerimg" class="blog-banner-image" alt=""/>
       <div style="margin: auto; text-align: center">
@@ -53,7 +55,7 @@ export default {
 
 <style lang="css" scoped>
   .markdown-holder {
-    max-width:750px;
+    max-width:850px;
     margin-top: 200px;
     margin: auto
   }
@@ -62,15 +64,17 @@ export default {
     width: 300px
   }
 
-  .blog-title {
+  h1.blog-title {
     font-size: 56px;
-    margin-top: 100px
+    margin-top: 100px;
+    max-width: 850px;
+    margin-bottom: 10px
   }
 
   .blog-subtitle {
     color: rgb(140, 140, 140);
     margin-bottom: 50px;
-    font-family: "CircReg", sans-serif
+    font-family: "CircReg", sans-serif;
   }
 
   .blog-banner-image {
@@ -84,6 +88,15 @@ export default {
 
   .blog-tag-holder span.badge {
     margin-right: 10px
+  }
+
+  .header-holder {
+    max-width: 850px;
+    margin: auto;
+  }
+
+  .header-holder h1 {
+    margin-left: -5px
   }
 
   h2 {

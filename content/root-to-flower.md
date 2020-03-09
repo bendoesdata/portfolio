@@ -8,7 +8,7 @@ tags:
   - creative direction
 ---
 
-### A data-driven augmented reality experience that visually explains the effects of food waste on our environment. The custom app also included a set of AR recipe cards showing how to cook each dish at the event.
+#### A data-driven augmented reality experience that visually explains the effects of food waste on our environment. The custom app also included a set of AR recipe cards showing how to cook each dish at the event.
 
 ---
 
@@ -16,9 +16,13 @@ tags:
 
 ## The Project
 
-In collaboration with [Spearhead Interactive](https://www.spearheadinteractive.com/) and [Joe Sarah Photography](http://www.joesarahphotography.com), I led the team at [infogr8](www.infogr8.com) to create a series of custom infographics to view in augmented reality. After downloading the app, guests were invited to discover these infographics by exploring their surroundings and finding specific trigger images to point their phone camera at. Guests could also point their cameras at the large-scale food photography hanging on the walls to view the recipes that would be served that evening.
+In collaboration with [Spearhead Interactive](https://www.spearheadinteractive.com/) and [Joe Sarah Photography](http://www.joesarahphotography.com), I led the team at [infogr8](www.infogr8.com) to create a series of custom infographics to view in augmented reality.
 
-<img src="/images/r2f/r2f-mockup-01.png" style="width: 100%; margin-top: 20px; margin-bottom: 20px" />
+After downloading a mobile app, guests were invited to discover these infographics by exploring their surroundings and finding specific trigger images to point their phone camera at. Guests could also point their cameras at the large-scale food photography hanging on the walls to view the recipes that would be served that evening.
+
+<br>
+
+<img src="/images/r2f/r2f-mockup-01.png" style="width: 100%; margin-top: 20px; margin-bottom: 40px" />
 
 ## Contribution
 
@@ -26,4 +30,6 @@ Before starting the design process, I researched and analyzed data on global foo
 
 For example: did you know that the amount of global food waste is 4x the amount needed to feed all the malnourished people in the world? I then worked with a team of designers to take these facts and produce a series of visualisations that weaved together a narrative around food waste.
 
-<img src="/images/r2f/r2f-mockup-02.png" style="width: 100%; margin-top: 20px; margin-bottom: 20px" />
+<br>
+
+<img src="/images/r2f/r2f-mockup-02.png" style="width: 100%; margin-top: 20px; margin-bottom: 40px" />

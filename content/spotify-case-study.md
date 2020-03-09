@@ -1,6 +1,6 @@
 ---
 title: Finding the Shape of a Song
-subtitle: Case study for a coneptual data design project with Spotify
+subtitle: Case study for a conceptual data design project with Spotify
 bannerimg: "/images/projects_spotify.png"
 tags:
   - case study
@@ -8,7 +8,9 @@ tags:
   - data analysis
 ---
 
-### Music labels and artists want to know the value of Spotify. The insights team at Spotify needed new visual methods to discover, share and communicate findings from streaming data.
+#### Music labels and artists want to know the value of Spotify. The insights team at Spotify needed new visual methods to discover, share and communicate findings from streaming data.
+
+<hr>
 
 <br>
 

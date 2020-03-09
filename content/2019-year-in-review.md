@@ -10,9 +10,9 @@ tags:
   - javascript
 ---
 
-### I spent most of 2019 tracking my personal data. In January of 2020, I spent some time visualizing it using only Javascript and the p5.js library.
+#### I spent most of 2019 tracking my personal data. In January of 2020, I spent some time visualizing it using only Javascript and the p5.js library.
 
----
+<hr>
 
 <br>
 

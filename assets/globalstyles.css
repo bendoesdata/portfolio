@@ -25,12 +25,13 @@
 
   p, a {
     font-family: "CircReg", sans-serif;
-    font-size: 21px
+    font-size: 21px;
+    line-height: 2.1rem;
   }
 
   p a {
     font-family: "CircReg", sans-serif;
-    font-size: 18px
+    font-size: 21px
   }
 
   body {
@@ -48,6 +49,28 @@
   .navbar-brand {
     font-size: 24px;
     font-family: "CircBold", sans-serif
+  }
+
+  /* custom blog post styling below */
+  .frontmatter-markdown p, h1, h2, h3 {
+    max-width: 600px;
+    margin: auto;
+    color: rgb(33, 33, 33);
+  }
+
+  .frontmatter-markdown h4 {
+    font-family: "CircReg", sans-serif;
+    line-height: 2.0rem;
+    max-width: 750px;
+    margin: auto;
+    margin-bottom: 40px
+  }
+
+  .frontmatter-markdown p {
+    font-size: 21px;
+    line-height: 2.1rem;
+    padding-top: 20px;
+    padding-bottom: 10px
   }
 
 
