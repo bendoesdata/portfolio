@@ -57,9 +57,18 @@ export default async() => {
     ],
 
     generate: {
-      routes: await getDynamicPaths({
-        "/posts": "posts/*.md"
-      })
+      routes: function () {
+        return axios.get('https://bendoesdataviz.com/posts')
+        .then((res) => {
+           return res.data.map((post) => {
+               return {
+                  route: '/posts/' + post.id,
+                  payload: post
+               }
+           })
+        })
+       }
+
     },
 
     /*

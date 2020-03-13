@@ -82,7 +82,6 @@ export default {
         bannerimg: post.attributes.bannerimg,
         projectLink: post.attributes.projectLink,
         singlePostComponent: post.vue.component
-
       };
     } catch (err) {
       console.debug(err);
