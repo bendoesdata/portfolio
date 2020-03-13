@@ -18,7 +18,8 @@
     "bulma": "^0.8.0",
     "frontmatter-markdown-loader": "3.1.0",
     "nuxt": "^2.5.1",
-    "reqlim": "^0.0.0"
+    "reqlim": "^0.0.0",
+    "vue-social-sharing": "^2.4.7"
   },
   "keywords": []
 }

@@ -27,11 +27,50 @@
       </b-button>
       </div>
       <component :is="singlePostComponent" />
+      <hr>
+      <b-container style="margin: auto">
+        <h3 style="text-align: center; margin-top: 20px">Share</h3>
+      <!-- can use hashtag array as prop too -->
+      <social-sharing :url="shareUrl"
+                      :title="title"
+                      :description="subtitle"
+                      :quote="subtitle"
+                      twitter-user="bendoesdata"
+                      inline-template
+                      class="sharing-holder">
+        <div>
+          <network network="facebook">
+            <img src="/icons/facebook.svg" width=30px alt="">
+          </network>
+          <network network="linkedin">
+            <img src="/icons/linkedin.svg" width=30px alt="">
+          </network>
+          <network network="twitter">
+            <img src="/icons/twitter.svg" width=30px alt="">
+          </network>
+          <network network="whatsapp">
+            <img src="/icons/whatsapp.svg" width=30px alt="">
+          </network>
+        </div>
+      </social-sharing>
+      </b-container>
     </b-container>
   </div>
 </template>
 <script>
+import SocialSharing from 'vue-social-sharing'
+
 export default {
+  components: {
+      SocialSharing
+    },
+  computed: {
+    shareUrl() {
+      const currentUrl = window.location.pathname;
+
+      return currentUrl
+    }
+  },
   async asyncData({ params }) {
     try {
       console.info(params.slug);
@@ -105,5 +144,16 @@ export default {
 
   p {
     font-size: 20px
+  }
+
+  .sharing-holder {
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .sharing-holder span {
+    margin-left: 30px;
+    padding: 30px
   }
 </style>
