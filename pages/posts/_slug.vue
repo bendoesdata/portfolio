@@ -66,7 +66,7 @@ export default {
     },
   computed: {
     shareUrl() {
-      const currentUrl = 'https://bendoesdataviz.com/blog';
+      const currentUrl = 'https://bendoesdataviz.com';
 
       return currentUrl
     }
