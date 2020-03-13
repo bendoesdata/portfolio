@@ -75,5 +75,15 @@
     padding-bottom: 10px
   }
 
+  .badge {
+    padding: 5px;
+    margin-right: 10px
+  }
+
+  .tag-holder {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
 
 

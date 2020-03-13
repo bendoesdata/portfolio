@@ -36,7 +36,7 @@ export default async() => {
         {
           hid: "description",
           name: "description",
-          content: "Portfolio for Benjamin Cooley, data visualiztion specialist"
+          content: "Portfolio for Benjamin Cooley, data visualization specialist"
         }
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },],
@@ -57,18 +57,9 @@ export default async() => {
     ],
 
     generate: {
-      routes: function () {
-        return axios.get('https://bendoesdataviz.com/posts')
-        .then((res) => {
-           return res.data.map((post) => {
-               return {
-                  route: '/posts/' + post.id,
-                  payload: post
-               }
-           })
-        })
-       }
-
+      routes: await getDynamicPaths({
+        "/posts": "posts/*.md"
+      })
     },
 
     /*
