@@ -1,7 +1,6 @@
 const path = require("path");
 var glob = require('glob');
 var SocialSharing = require('vue-social-sharing');
-Vue.use(SocialSharing);
 import Mode from 'frontmatter-markdown-loader/mode'
 
 
