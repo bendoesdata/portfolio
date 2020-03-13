@@ -28,9 +28,9 @@
           </nuxt-link>
         </b-col>
         <b-col md class="light-tile tile">
-          <nuxt-link to="/blog">
+          <nuxt-link to="/experiments">
             <b-container class="mx-auto">
-                <h2 class="square-text">Blog</h2>
+                <h2 class="square-text">Experiments</h2>
             </b-container>
           </nuxt-link>
         </b-col>
@@ -44,9 +44,9 @@
           </nuxt-link>
         </b-col>
         <b-col md class="light-tile tile">
-          <nuxt-link to="/experiments">
+          <nuxt-link to="/blog">
             <b-container class="mx-auto">
-                <h2 class="square-text">Experiments</h2>
+                <h2 class="square-text">Blog</h2>
             </b-container>
           </nuxt-link>
         </b-col>
