@@ -95,7 +95,12 @@ export default {
   .markdown-holder {
     max-width:850px;
     margin-top: 200px;
-    margin: auto
+    margin: auto;
+    padding: 15px;
+  }
+
+  .markdown-holder img {
+    padding: 0 !important;
   }
 
   .frontmatter-markdown p img {
@@ -106,13 +111,15 @@ export default {
     font-size: 56px;
     margin-top: 100px;
     max-width: 850px;
-    margin-bottom: 10px
+    margin-bottom: 10px;
+    padding: 5px
   }
 
   .blog-subtitle {
     color: rgb(140, 140, 140);
     margin-bottom: 50px;
     font-family: "CircReg", sans-serif;
+    padding-left: 5px
   }
 
   .blog-banner-image {
@@ -122,6 +129,7 @@ export default {
   .blog-tag-holder {
     margin-top: -20px;
     margin-bottom: 30px;
+    padding-left: 20px
   }
 
   .blog-tag-holder span.badge {
@@ -138,11 +146,11 @@ export default {
   }
 
   h2 {
-    margin-bottom: 300px
+    margin-bottom: 300px;
   }
 
   p {
-    font-size: 20px
+    font-size: 20px;
   }
 
   .sharing-holder {
