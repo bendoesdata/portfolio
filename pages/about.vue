@@ -56,6 +56,10 @@
     margin: auto
   }
 
+  .jumbotron h1 {
+      font-family: "CircMed", sans-serif
+    }
+
   .about-image {
     margin-bottom: 30px
   }

@@ -71,6 +71,10 @@ import ProjectHighlight from '~/components/ProjectHighlight.vue'
 
 <style lang="css" scoped>
 
+  .jumbotron h1 {
+      font-family: "CircMed", sans-serif
+    }
+
   .experiment-title {
     font-family: "CircBold", sans-serif
   }
