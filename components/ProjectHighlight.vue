@@ -115,7 +115,10 @@ export default {
 <style lang="css">
   .project-summary {
     max-width: 450px;
-    margin-top: 20%
+    margin-top: 20%;
+    margin-left: 10px;
+    margin-right: 5px;
+    padding: 14px
   }
 
   .project-summary h2 {
