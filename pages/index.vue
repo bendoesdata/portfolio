@@ -46,7 +46,7 @@
         <b-col md class="light-tile tile">
           <nuxt-link to="/blog">
             <b-container class="mx-auto">
-                <h2 class="square-text">Blog</h2>
+                <h2 class="square-text">Writing</h2>
             </b-container>
           </nuxt-link>
         </b-col>

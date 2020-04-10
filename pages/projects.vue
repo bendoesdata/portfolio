@@ -21,7 +21,7 @@
       image="/images/projects_spotify.png"
       imageside="right"
       :projectTags="['data analysis','creative direction','data visualization']"
-      caseStudyLink="posts/spotify-case-study"
+      caseStudyLink="spotify-data-design"
       />
 
     <project-highlight
