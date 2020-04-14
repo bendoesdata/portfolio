@@ -41,7 +41,8 @@
         <b-row no-gutters>
             <b-col md="2"></b-col>
             <b-col md="8">
-                <b-img fluid src="/images/projects_spotify.png"></b-img>
+                <b-img fluid src="/images/spotify/spotify-01.png"></b-img>
+                <p class="caption">The core visual variable used in our concepts stemmed from a question: what is the shape of a song? I visualized the source of streaming revenue for each song as the point of a triangle. We then gave each "shape" a memorable name that suggests how the song will perform based on the types of streaming listens it is receiving.</p>
             </b-col>
             <b-col md="2"></b-col>
         </b-row>
@@ -65,6 +66,34 @@
             </transition>
           </b-col>
           <b-col md="1"></b-col>
+        </b-row>
+    </b-container>
+
+    <b-container fluid>
+        <b-row>
+            <b-col md="1"></b-col>
+            <b-col md="5">
+                <b-img fluid src="/images/spotify/spotify-02.png"></b-img>
+            </b-col>
+            <b-col md="5">
+                <b-img fluid src="/images/spotify/spotify-03.png"></b-img>
+            </b-col>
+            <b-col md="1"></b-col>
+        </b-row>
+        <b-row style="margin-top: 30px">
+            <b-col md="1"></b-col>
+            <b-col md="5">
+                <b-img fluid src="/images/spotify/bubbles.png"></b-img>
+            </b-col>
+            <b-col md="5">
+                <b-img fluid src="/images/spotify/triangle.png"></b-img>
+            </b-col>
+            <b-col md="1"></b-col>
+        </b-row>
+        <b-row>
+          <b-col>
+            <p class="caption">More designs that resulted from the project.</p>
+          </b-col>
         </b-row>
     </b-container>
 
@@ -131,7 +160,7 @@
         text-align: center;
         margin-top: 100px;
         top: 30%;
-        max-width: 700px
+        max-width: 800px
     }
 
     .project-description {
@@ -155,6 +184,14 @@
     /* .slide-fade-leave-active below version 2.1.8 */ {
       transform: translateX(10px);
       opacity: 0;
+    }
+
+    .caption {
+      margin-top: 30px;
+      max-width: 800px;
+      margin-top: 30px;
+      margin-left: auto;
+      margin-right: auto
     }
 
 </style>
