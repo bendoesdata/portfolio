@@ -1,0 +1,16 @@
+[
+    {
+        "title": "My Visual Year in Data",
+        "description": "My description of",
+        "imageLink": "/images/projects_2019.png",
+        "tags": ["a","hello","edt"]   ,
+        "link": "linking"
+    },
+    {
+        "title": "Visual literacy",
+        "description": "new description",
+        "imageLink": "/images/spotify/bubbles.png",
+        "tags": ["a","hello","edt"]   ,
+        "link": "linking"
+    }
+]
