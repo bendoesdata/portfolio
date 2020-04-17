@@ -39,12 +39,12 @@ export default async() => {
           content: "Portfolio for Benjamin Cooley, data visualization specialist"
         }
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },],
-      css: [
-        // CSS file in the project
-        '@/assets/globalstyles.css',
-      ]
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
     },
+    css: [
+      // CSS file in the project
+      '@/assets/globalstyles.css',
+    ],
 
     /*
     ** Nuxt.js modules

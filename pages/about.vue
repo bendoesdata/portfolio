@@ -50,26 +50,3 @@
   }
   }
 </script>
-
-<style lang="css" scoped>
-  .container {
-    margin: auto
-  }
-
-  .jumbotron h1 {
-      font-family: "CircMed", sans-serif
-    }
-
-  .about-image {
-    margin-bottom: 30px
-  }
-
-  .about-text {
-    padding: 10px
-  }
-
-  .about-text p {
-    padding: 10px;
-    font-size: 21px
-  }
-</style>

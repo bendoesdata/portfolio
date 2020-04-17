@@ -48,14 +48,3 @@ import ProjectHighlight from '~/components/ProjectHighlight.vue'
     },
   }
 </script>
-
-<style lang="css">
-    .jumbotron h1 {
-      font-family: "CircMed", sans-serif
-    }
-
-  .container-fluid {
-    padding: 0
-  }
-
-</style>

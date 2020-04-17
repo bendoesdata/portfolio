@@ -68,27 +68,3 @@ import ProjectHighlight from '~/components/ProjectHighlight.vue'
     },
   }
 </script>
-
-<style lang="css" scoped>
-
-  .jumbotron h1 {
-      font-family: "CircMed", sans-serif
-    }
-
-  .experiment-title {
-    font-family: "CircBold", sans-serif
-  }
-
-  .experiment-cards-holder {
-    margin: auto
-  }
-
-  .card-body {
-    padding: 0;
-    border-radius: 0.5
-  }
-
-  .card-text {
-    padding: 1.25rem
-  }
-</style>
