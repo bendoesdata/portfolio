@@ -43,7 +43,7 @@ export default async() => {
     },
     css: [
       // CSS file in the project
-      '@/assets/globalstyles.css',
+      { src: '~assets/globalstyles.css', lang: 'css' }
     ],
 
     /*
@@ -67,6 +67,7 @@ export default async() => {
     ** Doc: https://nuxtjs.org/api/configuration-build
     */
     build: {
+      extractCSS: true,
       extend(config, ctx) {
         // add frontmatter-markdown-loader
         config.module.rules.push({

@@ -7,6 +7,17 @@
             <div class="project-summary mx-auto">
               <h2>{{ title }}</h2>
               <p>{{ summary }}</p>
+              
+              <div class="tag-holder">
+                <b-badge
+                v-for="tag in projectTags"
+                :key="tag.tags"
+                variant="dark"
+                >
+                  {{ tag }}
+                </b-badge>
+              </div>
+
               <b-button v-if="projectLink"
               :href="projectLink"
               variant="outline-info"
@@ -22,15 +33,6 @@
               size="md">
                 Case study
               </b-button>
-              <div class="tag-holder">
-                <b-badge
-                v-for="tag in projectTags"
-                :key="tag.tags"
-                variant="dark"
-                >
-                  {{ tag }}
-                </b-badge>
-              </div>
             </div>
           </b-container>
         </b-col>
