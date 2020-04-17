@@ -1,14 +1,16 @@
 <template>
   <div class="post-container mx-auto">
     <b-container class="">
-    <h1 class="mb-3">My writing</h1>
+    <h1 class="mb-4">Blogs, articles and tutorials</h1>
     <br>
       <div v-for="post in myWriting" :key="post.title">
         <b-container fluid>
-          <b-card no-body class="overflow-hidden mb-3 blog-preview">
+          <b-card no-body class="overflow-hidden mb-4 blog-preview">
             <b-row no-gutters>
               <b-col md="4">
-                <b-card-img fluid :src="post.imageLink" class="rounded-0"></b-card-img>
+                <a :href="post.link" target="_blank">
+                  <b-card-img fluid :src="post.imageLink" class="rounded-0"></b-card-img>
+                </a>
               </b-col>
               <b-col md="8">
                 <b-card-body :title="post.title">
@@ -27,7 +29,8 @@
                     <b-button
                     variant="outline-info"
                     size="md" class="blog-read-link"
-                    :to="post.link"
+                    :href="post.link"
+                    target="_blank"
                     >
                     Read
                     </b-button>
@@ -63,8 +66,8 @@ export default {
 
 <style lang="css">
   .post-container {
-    max-width: 800px;
-    margin-top: 50px
+    max-width: 900px;
+    margin-top: 40px;
   }
 
   .tag-holder {
@@ -88,11 +91,11 @@ export default {
   }
 
   .card-title {
-    margin-top:10px
+    margin-top:5px
   }
 
   h4.card-title {
-    font-size: 32px;
+    font-size: 26px;
     margin-bottom: 10px
   }
 

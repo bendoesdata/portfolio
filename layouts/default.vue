@@ -8,7 +8,7 @@
           <b-nav-item-dropdown text="Menu" right>
             <b-dropdown-item to="/projects" exact>Projects</b-dropdown-item>
             <b-dropdown-item to="/experiments" exact>Experiments</b-dropdown-item>
-            <b-dropdown-item to="/blog" exact>Blog</b-dropdown-item>
+            <b-dropdown-item to="/writing" exact>Writing</b-dropdown-item>
             <b-dropdown-item to="/about" exact>About</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
