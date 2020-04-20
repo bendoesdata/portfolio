@@ -11,7 +11,7 @@
       image="/images/projects_2019.png"
       imageside="left"
       :projectTags="['design','development','p5.js',]"
-      caseStudyLink="posts/2019-year-in-review"
+      caseStudyLink="2019-year-in-data"
       projectLink="https://bendoesdata.com/experimental-projects/2019-review/"
       />
 
