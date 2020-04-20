@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="case-study-wrapper">
     <div class="box">
         <b-img fluid src="/images/projects_spotify.png"></b-img>
         <div class="header-text">
@@ -120,78 +120,3 @@
   }
   }
 </script>
-
-<style lang="css" scoped>
-  .container {
-    margin: auto
-  }
-
-  .box{
-    position: relative;
-    display: inline-block; /* Make the width of box same as image */
-  }
-  
-  .box .header-text{
-      position: absolute;
-      z-index: 999;
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-      color: white;
-      top: 10%; /* Adjust this value to move the positioned div up and down */
-      text-align: center;
-      width: 60%; /* Set the width of the positioned div */
-    }
-
-    h1 {
-        font-size: 5rem;
-    }
-
-    h2 {
-      font-size: 3rem
-    }
-
-    h3 {
-      font-size: 2rem
-    }
-
-    .project-intro {
-        height: 300px;
-        text-align: center;
-        margin-top: 100px;
-        top: 30%;
-        max-width: 800px
-    }
-
-    .project-description {
-      margin-bottom: 300px;
-      margin-top: 150px
-    }
-
-    p {
-        font-size: 21px;
-    }
-
-    /* Enter and leave animations can use different */
-    /* durations and timing functions.              */
-    .slide-fade-enter-active {
-      transition: all .6s ease;
-    }
-    .slide-fade-leave-active {
-      transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-    }
-    .slide-fade-enter, .slide-fade-leave-to
-    /* .slide-fade-leave-active below version 2.1.8 */ {
-      transform: translateX(10px);
-      opacity: 0;
-    }
-
-    .caption {
-      margin-top: 30px;
-      max-width: 800px;
-      margin-top: 30px;
-      margin-left: auto;
-      margin-right: auto
-    }
-
-</style>
