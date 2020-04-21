@@ -30,7 +30,7 @@
       image="/images/projects_r2f.png"
       imageside="left"
       :projectTags="['data analysis','creative direction']"
-      caseStudyLink="posts/root-to-flower"
+      caseStudyLink="root-to-flower"
       />
 
   </div>

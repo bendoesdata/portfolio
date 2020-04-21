@@ -7,7 +7,7 @@
             <div class="project-summary mx-auto">
               <h2>{{ title }}</h2>
               <p>{{ summary }}</p>
-              
+
               <div class="tag-holder">
                 <b-badge
                 v-for="tag in projectTags"
@@ -166,7 +166,7 @@ export default {
 }
 
 .fade-enter-active {
-  transition: opacity 2s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .fade-enter-to {

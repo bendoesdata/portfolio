@@ -25,9 +25,10 @@
   src: url('./fonts/CircularStd-Black.otf');
 }
 
-  p a {
+  p {
     font-family: "Open Sans", sans-serif;
-    font-size: 21px
+    font-size: 21px;
+    line-height: 1.7;
   }
 
   body {
@@ -244,7 +245,8 @@
 
     .case-study-wrapper p {
         font-size: 21px;
-        margin-top: 30px
+        margin-top: 30px;
+        line-height: 1.7;
     }
 
     /* Enter and leave animations can use different */
