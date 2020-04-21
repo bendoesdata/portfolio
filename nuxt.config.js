@@ -1,20 +1,19 @@
 const path = require("path");
 var glob = require('glob');
 var SocialSharing = require('vue-social-sharing');
-import Mode from 'frontmatter-markdown-loader/mode'
+// import Mode from 'frontmatter-markdown-loader/mode'
 
 
-/* https://github.com/jake-101/bael-template */
-async function getDynamicPaths(urlFilepathTable) {
-  return [].concat(
-    ...Object.keys(urlFilepathTable).map(url => {
-      var filepathGlob = urlFilepathTable[url];
-      return glob
-        .sync(filepathGlob, { cwd: "content" })
-        .map(filepath => `${url}/${path.basename(filepath, ".md")}`);
-    })
-  );
-}
+// async function getDynamicPaths(urlFilepathTable) {
+//   return [].concat(
+//     ...Object.keys(urlFilepathTable).map(url => {
+//       var filepathGlob = urlFilepathTable[url];
+//       return glob
+//         .sync(filepathGlob, { cwd: "content" })
+//         .map(filepath => `${url}/${path.basename(filepath, ".md")}`);
+//     })
+//   );
+// }
 
 export default async() => {
   return {
@@ -57,9 +56,10 @@ export default async() => {
     ],
 
     generate: {
-      routes: await getDynamicPaths({
-        "/posts": "posts/*.md"
-      })
+
+      // routes: await getDynamicPaths({
+      //   "/posts": "posts/*.md"
+      // })
     },
 
     /*
@@ -68,17 +68,17 @@ export default async() => {
     */
     build: {
       extractCSS: true,
-      extend(config, ctx) {
-        // add frontmatter-markdown-loader
-        config.module.rules.push({
-          test: /\.md$/,
-          include: path.resolve(__dirname, "content"),
-          loader: "frontmatter-markdown-loader",
-          options: {
-            mode: [Mode.VUE_COMPONENT, Mode.META]
-          }
-        });
-      }
+      // extend(config, ctx) {
+      //   // add frontmatter-markdown-loader
+      //   config.module.rules.push({
+      //     test: /\.md$/,
+      //     include: path.resolve(__dirname, "content"),
+      //     loader: "frontmatter-markdown-loader",
+      //     options: {
+      //       mode: [Mode.VUE_COMPONENT, Mode.META]
+      //     }
+      //   });
+      // }
     }
   }
 };
