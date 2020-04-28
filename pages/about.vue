@@ -23,8 +23,23 @@
             Ben is a multidisciplinary designer and developer of data visualization products. Most of his work leans on a few core skillsets—most notably data visualization, creative coding, and UX design.
           </p>
           <p>
-            Ben is also a climate activist, recovering journalist, and lover of fine breads.
+            Currently, Ben uses these skills at Tagup to create data visualizations for machine learning and predictive analytics. Most of the time this includes writing Python, Javascript, HTML/CSS, and D3.js to create interactive visualization tools. His previous work includes working with a team of information designers to create reports, interactive websites, and data visualization tools.
           </p>
+          <p>
+            Ben sees the world through data and through shapes. He enjoys creating pieces of generative art that mimics natural phenomenon with code. Ben is also a climate activist, recovering journalist, and lover of fancy breads.
+          </p>
+          <h4>Find me on some other websites below</h4>
+          <div class="connect-social-container">
+            <a href="https://twitter.com/bendoesdataviz" target="_blank">
+              <img src="/icons/twitter.svg" width=60px alt="">
+            </a>
+            <a href="https://medium.com/@bendoesdataviz" target="_blank">
+              <img src="/icons/linkedin.svg" width=60px alt="">
+            </a>
+            <a href="mailto:benjamincooley94@gmail.com" target="_blank">
+              <img src="/icons/minutemailer.svg" width=60px alt="">
+            </a>
+          </div>
         </b-container>
       </b-col>
     </b-row>

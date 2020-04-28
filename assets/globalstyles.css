@@ -271,5 +271,15 @@
       margin-right: auto
     }
 
+    .connect-social-container {
+      margin: auto;
+      padding: 30px;
+    }
+
+    .connect-social-container img {
+      margin: auto;
+      padding: 10px;
+    }
+
 
 
