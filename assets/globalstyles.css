@@ -31,6 +31,13 @@
     line-height: 1.7;
   }
 
+  .case-study-wrapper li {
+    font-family: "Open Sans", sans-serif;
+    font-size: 21px;
+    line-height: 1.7;
+    margin-top: 10px
+  }
+
   body {
     font-family: "CircReg", sans-serif;
   }
@@ -246,7 +253,7 @@
     .case-study-wrapper p {
         font-size: 21px;
         margin-top: 30px;
-        line-height: 1.5;
+        line-height: 1.7;
     }
 
     /* Enter and leave animations can use different */
@@ -264,11 +271,13 @@
     }
 
     .case-study-wrapper .caption {
-      margin-top: 30px;
-      max-width: 800px;
+      margin-top: 10px;
+      max-width: 600px;
       margin-top: 30px;
       margin-left: auto;
-      margin-right: auto
+      margin-right: auto;
+      font-size: 18px;
+      padding: 10px
     }
 
     .connect-social-container {
