@@ -38,15 +38,16 @@
         </b-col>
         <b-col order-md="1" md>
           <div class="grow-img container">
-            <transition name="fade">
-              <b-img class="image"
-              :src="image"
-              fluid
-              alt="Responsive image"
-              v-on:load="onLoaded"
-              v-show="loaded"></b-img>
-            </transition>
-
+            <nuxt-link :to="caseStudyLink">
+              <transition name="fade">
+                <b-img class="image"
+                :src="image"
+                fluid
+                alt="Responsive image"
+                v-on:load="onLoaded"
+                v-show="loaded"></b-img>
+              </transition>
+            </nuxt-link>
           </div>
         </b-col>
       </b-row>
