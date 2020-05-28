@@ -224,6 +224,13 @@
         font-size: 5rem;
     }
 
+    @media only screen and (max-width: 800px) {
+      .case-study-wrapper h1 {
+        font-size: 36px;
+        background-color: rgba(0,0,0,0.5);
+      }
+    }
+
     .case-study-wrapper h2 {
       font-size: 3rem
     }

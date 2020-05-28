@@ -1,7 +1,7 @@
 <template>
   <div class="post-container mx-auto">
     <b-container class="">
-    <h1 class="mb-4">Blogs, articles and tutorials</h1>
+    <h1 class="mb-4" style="padding-left: 10px">Blogs, articles and tutorials</h1>
     <br>
       <div v-for="post in myWriting" :key="post.title">
         <b-container fluid>
@@ -56,7 +56,7 @@ export default {
         }
     },
     mounted() {
-        console.log(writings)
+
     },
     methods: {
 

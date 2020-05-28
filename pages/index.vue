@@ -40,9 +40,9 @@
           </nuxt-link>
         </b-col>
         <b-col md class="dark-tile tile">
-          <nuxt-link to="/experiments">
+          <nuxt-link to="/artwork">
             <b-container class="mx-auto">
-                <h2 class="square-text">Art</h2>
+                <h2 class="square-text">Artwork</h2>
             </b-container>
           </nuxt-link>
         </b-col>
@@ -104,6 +104,7 @@ import '~/assets/globalstyles.css'
     margin: auto;
     margin-top: 80px;
     margin-bottom: 10px;
+    margin-left: 10px;
     font-size: 3.5vmax;
     padding: 30px;
     max-width: 900px;
