@@ -40,18 +40,18 @@
           </nuxt-link>
         </b-col>
         <b-col md class="dark-tile tile">
-          <nuxt-link to="/artwork">
+          <nuxt-link to="/experiments">
             <b-container class="mx-auto">
-                <h2 class="square-text">Artwork</h2>
+                <h2 class="square-text">Experiments</h2>
             </b-container>
           </nuxt-link>
         </b-col>
       </b-row>
       <b-row no-gutters>
         <b-col md class="light-tile tile">
-          <nuxt-link to="/experiments">
+          <nuxt-link to="/artwork">
             <b-container class="mx-auto">
-                <h2 class="square-text">Experiments</h2>
+                <h2 class="square-text">Artwork</h2>
             </b-container>
           </nuxt-link>
         </b-col>
