@@ -51,6 +51,17 @@
               </p>
             </b-card-text>
         </b-card>
+        <b-card>
+        <a href="http://igor.gold.ac.uk/~bcool001/portfolio/trump-cabinet-conflicts/index.html">
+            <b-card-img src="/experimental-projects/trump-network.png" alt="Trump Network Graph" class="rounded-1"></b-card-img>
+          </a>
+            <b-card-text>
+              <p>
+                <span class="experiment-title">Trump Cabinet Conflicts</span>.
+                Using Buzzfeed's amazing Trumpworld dataset, I created an interactive data visualisation and scrollable story to analyze the connections between Trump's cabinet members and other sources.
+              </p>
+            </b-card-text>
+        </b-card>
     </b-card-group>
   </b-container>
   </div>
