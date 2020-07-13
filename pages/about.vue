@@ -36,6 +36,9 @@
             <a href="https://www.linkedin.com/in/benjamincooley/" target="_blank">
               <img src="/icons/linkedin.svg" width=60px alt="">
             </a>
+            <a href="https://github.com/bendoesdata" target="_blank">
+              <img src="/icons/github.svg" width=60px alt="">
+            </a>
             <a href="mailto:benjamincooley94@gmail.com" target="_blank">
               <img src="/icons/minutemailer.svg" width=60px alt="">
             </a>
