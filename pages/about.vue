@@ -33,7 +33,7 @@
             <a href="https://twitter.com/bendoesdataviz" target="_blank">
               <img src="/icons/twitter.svg" width=60px alt="">
             </a>
-            <a href="https://medium.com/@bendoesdataviz" target="_blank">
+            <a href="https://www.linkedin.com/in/benjamincooley/" target="_blank">
               <img src="/icons/linkedin.svg" width=60px alt="">
             </a>
             <a href="mailto:benjamincooley94@gmail.com" target="_blank">
