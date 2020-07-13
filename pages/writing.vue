@@ -2,6 +2,7 @@
   <div class="post-container mx-auto">
     <b-container class="">
     <h1 class="mb-4" style="padding-left: 10px">Blogs, articles and tutorials</h1>
+    <p style="padding-left: 10px; margin-top: -20px">I also write a semi-weekly newsletter called <a href="https://mailchi.mp/7029eac7f34a/data-curious-signup" target="_blank">Data Curious</a>.</p>
     <br>
       <div v-for="post in myWriting" :key="post.title">
         <b-container fluid>
