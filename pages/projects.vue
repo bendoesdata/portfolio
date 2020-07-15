@@ -1,8 +1,12 @@
 <template>
   <div>
     <b-container fluid>
-      <b-jumbotron header="Projects" lead="Highlights of my favorite work">
+      <b-jumbotron header="Projects">
       </b-jumbotron>
+    </b-container>
+
+    <b-container style="margin-bottom: 100px; text-align: center; max-width: 550px">
+      <p>A few of my favorite projects from over the years. You can also view my latest coding experiments <nuxt-link to="/experiments">here</nuxt-link>.</p>
     </b-container>
 
       <project-highlight
