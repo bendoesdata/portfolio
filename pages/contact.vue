@@ -10,7 +10,7 @@
       <b-col md>
         <b-container class="about-text" style="max-width: 700px">
           <p>
-            I'm currently working full time at Tagup, but I'm open to taking commissions for side projects within data visualization, generative art, and civic tech.
+            I'm currently working full time as a Visualization Software Engineer at the <a href="https://www.broadinstitute.org/" target="_blank">Broad Instititue</a>, but I'm open to taking commissions for side projects within data visualization, generative art, and civic tech.
           </p>
           <p>
             I am particularly passionate about climate advocacy, sustainable food systems, and wealth inequality. 
