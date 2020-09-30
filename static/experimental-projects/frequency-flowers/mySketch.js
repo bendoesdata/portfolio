@@ -1,7 +1,11 @@
-var song, slider, amp, bgColor, sideBarX, trebStartY, trebRange, midStartY, midRange;
+var myCanvas, song, slider, amp, bgColor, sideBarX, trebStartY, trebRange, midStartY, midRange;
 
 var trebhistory = [];
 var midhistory = [];
+
+var button, button2;
+
+var saveMode = false;
 
 function handleFile(file) {	
 	song = loadSound(file, loaded);
@@ -17,8 +21,14 @@ function handleSongSelect() {
 	}
 }
 
+function saveFlower() {
+	saveMode = true;
+	saveCanvas(myCanvas, "frequency-flower.png");
+	saveMode = false;
+}
+
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	myCanvas = createCanvas(windowWidth, windowHeight);
 	sideBarX = width/9;
 
 	sel = createSelect();
@@ -31,11 +41,15 @@ function setup() {
 	// sel.disable('Select a song');
 
 	input = createFileInput(handleFile);
-	input.position(sideBarX + 180, 120);
+	input.position(sideBarX + 160, 117);
 	  
 	button = createButton('play/pause');
 	button.position(sideBarX, 160);
 	button.mousePressed(pressPlay)
+
+	button2 = createButton('save flower');
+	button2.position(sideBarX+100, 160);
+	button2.mousePressed(saveFlower)
 	
 	// load sound file with a callback function
 	// song = loadSound("mean-something.mp3", loaded);
@@ -101,22 +115,17 @@ function draw() {
 	stroke('#cde3d6')
 	strokeWeight(3);
 	noFill();
-	text('FREQUENCY FLOWERS', sideBarX-10, 80);
+	text('FREQUENCY FLOWERS', sideBarX-80, 80);
 	pop()
-
-	push()
-	textSize(18)
-	noStroke();
-	fill('#fff')
-	text('OR', sideBarX+130, 130)
-	pop()
-
+	
+// sidebar labels
 	push()
 	let labelOffset = 30;
 	textSize(14)
 	noStroke();
 	fill('#fff')
 	textAlign("right")
+	text('select or upload', sideBarX-labelOffset, 127)
 	text('volume', sideBarX-labelOffset, 207)
 	text('background', sideBarX-labelOffset, 257)
 	text('bass', sideBarX-labelOffset, 297)
