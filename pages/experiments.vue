@@ -1,12 +1,23 @@
 <template>
   <div>
     <b-container fluid>
-      <b-jumbotron header="Experiments" lead="Things I've built for fun, learning, curiosity and kicks">
+      <b-jumbotron header="Experiments" lead="Things I've built for fun, learning, curiosity and kicks.">
       </b-jumbotron>
     </b-container>
 
   <b-container class="experiment-cards-holder">
     <b-card-group columns>
+        <b-card>
+          <a href="/experimental-projects/frequency-flowers">
+            <b-card-img src="/images/flowers.png" alt="Frequency Flowers" class="rounded-1"></b-card-img>
+          </a>
+            <b-card-text>
+              <p>
+                <span class="experiment-title">Frequency Flowers</span>.
+                A user customizable audio visualization that transfroms a song into a flower.
+              </p>
+            </b-card-text>
+        </b-card>
         <b-card>
           <a href="/experimental-projects/asteroids.html">
             <b-card-img src="/images/asteroids.png" alt="Near Earth Asteroids" class="rounded-1"></b-card-img>
