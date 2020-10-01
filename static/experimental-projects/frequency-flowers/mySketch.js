@@ -22,9 +22,7 @@ function handleSongSelect() {
 }
 
 function saveFlower() {
-	saveMode = true;
-	saveCanvas(myCanvas, "frequency-flower.png");
-	saveMode = false;
+	saveCanvas(pg, "frequency-flower.png");
 }
 
 function setup() {
@@ -115,7 +113,7 @@ function draw() {
 	stroke('#cde3d6')
 	strokeWeight(3);
 	noFill();
-	text('FREQUENCY FLOWERS', sideBarX-80, 80);
+	text('FREQUENCY FLOWERS', sideBarX-90, 80);
 	pop()
 	
 // sidebar labels
@@ -125,7 +123,8 @@ function draw() {
 	noStroke();
 	fill('#fff')
 	textAlign("right")
-	text('select or upload', sideBarX-labelOffset, 127)
+	text('select/upload', sideBarX-labelOffset, 127)
+	// text('controls', sideBarX-labelOffset, 167)
 	text('volume', sideBarX-labelOffset, 207)
 	text('background', sideBarX-labelOffset, 257)
 	text('bass', sideBarX-labelOffset, 297)
