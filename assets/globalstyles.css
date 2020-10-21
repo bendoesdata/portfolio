@@ -100,6 +100,7 @@
     margin: auto
   }
 
+
   .post-container {
     max-width: 900px;
     margin-top: 40px;
@@ -205,7 +206,13 @@
 
   .case-study-wrapper .box{
     position: relative;
-    display: inline-block; /* Make the width of box same as image */
+    margin-left: auto
+    /* display: inline-block; Make the width of box same as image */
+  }
+
+  .box .img-fluid {
+    display: block;
+    margin: auto
   }
 
   .case-study-wrapper .box .header-text{

@@ -86,11 +86,11 @@ export default {
     },
     caseStudyLink: {
       type: String,
-      requred: false
+      required: false
     },
     projectLink: {
       type: String,
-      requred: false
+      required: false
     }
   },
   data: function() {
