@@ -97,7 +97,7 @@
   }
 
   div.container {
-    margin: auto
+    margin: auto;
   }
 
 
@@ -212,7 +212,7 @@
 
   .box .img-fluid {
     display: block;
-    margin: auto
+    margin: auto;
   }
 
   .case-study-wrapper .box .header-text{
@@ -236,6 +236,11 @@
         font-size: 36px;
         background-color: rgba(0,0,0,0.5);
       }
+
+      .project-description {
+        margin-top: 250px;
+        padding: 10px
+      }
     }
 
     .case-study-wrapper h2 {
@@ -251,7 +256,8 @@
         text-align: center;
         margin-top: 100px;
         top: 30%;
-        max-width: 800px
+        max-width: 800px;
+        padding: 5px;
     }
 
     .container {
@@ -260,8 +266,9 @@
 
     .case-study-wrapper .project-description {
       margin-bottom: 300px;
-      margin-top: 150px;
-      max-width: 600px
+      margin-top: 200px;
+      max-width: 600px;
+      padding: 10px
     }
 
     .case-study-wrapper p {
@@ -302,6 +309,10 @@
     .connect-social-container img {
       margin: auto;
       padding: 10px;
+    }
+
+    .page-container {
+      overflow-x: hidden;
     }
 
 

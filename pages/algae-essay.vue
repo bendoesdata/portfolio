@@ -102,11 +102,11 @@
         <b-row no-gutters>
             <b-col md="1"></b-col>
             <b-col md="5">
-                <b-img fluid style="max-width: 600px; margin-left: 10%" src="/images/algae/tree-screenshot-0.png"></b-img>
+                <b-img fluid style="padding: 10px" src="/images/algae/tree-screenshot-0.png"></b-img>
                 <p class="caption">This tree simulation proved one of the trickiest parts of the piece: when a user clicks start, bubbles of CO2 begin to disappear into the trees.</p>
             </b-col>
             <b-col md="5">
-                <b-img fluid style="max-width: 600px; margin-left: 10%" src="/images/algae/tree-screenshot-2.png"></b-img>
+                <b-img fluid style="padding: 10px" src="/images/algae/tree-screenshot-2.png"></b-img>
                 <p class="caption">But as time goes on, trees die and release these blue dots (sequestered) back into the atmosphere of red dots.</p>
             </b-col>
             <b-col md="1"></b-col>
