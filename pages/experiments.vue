@@ -8,7 +8,18 @@
   <b-container class="experiment-cards-holder">
     <b-card-group columns>
         <b-card>
-          <a href="/experimental-projects/frequency-flowers">
+          <a href="https://objective-wiles-09a6fb.netlify.app/">
+            <b-card-img src="/images/to-the-books.png" alt="To All the Books visualization story" class="rounded-1"></b-card-img>
+          </a>
+            <b-card-text>
+              <p>
+                <span class="experiment-title">To All the Books I Read Before (in 2020)</span>.
+                An interactive scrollytelling story analyzing my Goodreads data from 2020.
+              </p>
+            </b-card-text>
+        </b-card>
+        <b-card>
+          <a href="/experimental-projects/frequency-flowers" target="_blank">
             <b-card-img src="/images/flowers.png" alt="Frequency Flowers" class="rounded-1"></b-card-img>
           </a>
             <b-card-text>
