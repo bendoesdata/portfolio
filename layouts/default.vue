@@ -25,7 +25,7 @@
   </div>
   <footer class="footer-holder">
     <b-container class="mx-auto">
-      <p class="footer-creds">Ben Cooley © 2020</p>
+      <p class="footer-creds">Ben Cooley archive © 2020</p>
     </b-container>
   </footer>
 </div>
