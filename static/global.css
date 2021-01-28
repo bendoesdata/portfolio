@@ -39,7 +39,7 @@
   }
 
   body {
-    font-family: CircReg, sans-serif;
+    font-family: "Open Sans", sans-serif;
   }
 
   a {
@@ -52,6 +52,23 @@
 
   h4, h5, h6 {
     font-family: "CircMed", sans-serif
+  }
+
+  button {
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    width: 100%;
+    font-size: 26px;
+    margin: 5px;
+    padding: 8px;
+  }
+
+  button:hover {
+    background-color: rgb(41, 41, 41);
+    cursor: pointer;
+    box-shadow: 0 12px 20px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
   }
 
   /* flexbox classes */
