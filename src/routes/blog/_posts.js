@@ -9,6 +9,22 @@
 
 const posts = [
 	{
+		title: 'hiiii',
+		slug: 'test',
+		html: `
+		<h1 id="hello-world">hello world</h1>
+		<p>A test md file that converts to <strong>HTML</strong>.</p>
+		<h2 id="header">Header</h2>
+		<p>This is a list:</p>
+		<ul>
+		<li>one</li>
+		<li>two</li>
+		<li>three</li>
+		</ul>
+		<h4 id="woahhhh">woahhhh</h4>
+		`
+	},
+	{
 		title: 'What is Sapper?',
 		slug: 'what-is-sapper',
 		html: `

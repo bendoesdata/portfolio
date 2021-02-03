@@ -48,6 +48,55 @@ export default
             "tags": ['generative', 'audio']
         },
         {
+            "name": "My Year in Data: a Visual Reflection on 2019",
+            "description": "I tracked my activities for a year. Then I visualized them. Here’s what I learned. ",
+            "image": "/images/projects/year_2019.png",
+            "link": "https://medium.com/nightingale/my-year-in-data-a-visual-reflection-on-2019-e1545be7d680",
+            "tags": ['blog']
+        },
+        {
+            "name": "Here’s What I Learned From 30 Days of Creative Coding (a Codevember Retrospective)",
+            "description": "Go easy on yourself. Try something new. Learn in public. ",
+            "image": "/images/projects/arcs.png",
+            "link": "https://medium.com/better-programming/heres-what-i-learned-from-30-days-of-creative-coding-a-codevember-retrospective-8c05a8497d24",
+            "tags": ['blog', 'creative coding']
+        },
+        {
+            "name": "How to build a simple time series dashboard in Python with Panel, Altair and a Jupyter Notebook",
+            "description": "Two filters + one interactive area chart in roughly 25 lines of code.",
+            "image": "/images/projects/altair-panel.png",
+            "link": "https://towardsdatascience.com/how-to-build-a-time-series-dashboard-in-python-with-panel-altair-and-a-jupyter-notebook-c0ed40f02289",
+            "tags": ['blog', 'creative coding']
+        },
+        {
+            "name": "A new UX method for building better data visualization products",
+            "description": "You’ve heard of user personas, and maybe even Jobs to Be Done. But what about QTBA? No? Good. I made it up.",
+            "image": "/images/projects/altair-panel.png",
+            "link": "https://uxdesign.cc/a-new-ux-method-for-building-better-data-visualization-products-22338762b61c",
+            "tags": ['blog', 'UX', 'design']
+        },
+        {
+            "name": "Why visual literacy is essential to good data visualization",
+            "description": "We know data literacy matters. But visual literacy matters too. Here’s why.",
+            "image": "/images/projects/literacy.jpeg",
+            "link": "https://towardsdatascience.com/why-visual-literacy-is-essential-to-good-data-visualization-5b9dffb5aa6f",
+            "tags": ['blog', 'UX', 'design']
+        },
+        {
+            "name": "How to make a gif map using Python, Geopandas and Matplotlib",
+            "description": "No need for Photoshop: make an animated chart using only Python and the command line.",
+            "image": "/images/projects/gif-map.gif",
+            "link": "https://towardsdatascience.com/how-to-make-a-gif-map-using-python-geopandas-and-matplotlib-cd8827cefbc8",
+            "tags": ['blog', 'maps', 'tutorial']
+        },
+        {
+            "name": "Let’s make a map! Using Geopandas, Pandas and Matplotlib to make a Choropleth map",
+            "description": "A beginner-friendly tutorial on how to get started using Geopandas to create shaded choropleth maps. ",
+            "image": "/images/projects/geopandas.png",
+            "link": "https://towardsdatascience.com/lets-make-a-map-using-geopandas-pandas-and-matplotlib-to-make-a-chloropleth-map-dddc31c1983d",
+            "tags": ['blog', 'maps', 'tutorial']
+        },
+        {
             "name": "Codevember",
             "description": "That one month in 2019 I spent every day of November writing a new piece of creative code. Browse the 30 designs that came from it here.",
             "image": "/images/projects/codevember-header.png",

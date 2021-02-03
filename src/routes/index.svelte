@@ -21,6 +21,7 @@
 	.intro-text {
 		margin: auto;
 		margin-bottom: 10px;
+		padding: 20px;
 	}
 
 	.intro-text h1 {
@@ -67,7 +68,7 @@
 			</div>
 		</div>
 		<div class="column _5">
-			<img width="100%" src="/images/ben-trace.svg" alt="">
+				<img src="/images/ben-trace.svg" alt="">
 		</div>
 	</div>
 </main>
