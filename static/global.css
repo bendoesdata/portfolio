@@ -29,6 +29,19 @@
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
     line-height: 1.7;
+    color: #E2E2E2
+  }
+
+  a {
+    color: white;
+  }
+
+  a:visited {
+    color: rgb(174, 192, 206)
+  }
+
+  a:hover {
+    color: lightslategray
   }
 
   .case-study-wrapper li {
@@ -40,6 +53,10 @@
 
   body {
     font-family: "Open Sans", sans-serif;
+    background-color: #000;
+    color: #E2E2E2;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
   a {
@@ -48,10 +65,12 @@
 
   h1, h2, h3 {
     font-family: "CircBold", sans-serif;
+    color: #fff
   }
 
   h4, h5, h6 {
-    font-family: "CircMed", sans-serif
+    font-family: "CircMed", sans-serif;
+    color: #E2E2E2
   }
 
   h1 {
@@ -59,11 +78,12 @@
   }
 
   button {
-    background-color: black;
-    color: white;
+    background-color: #E2E2E2;
+    color: black;
     border-radius: 25px;
+    border: none;
     width: 100%;
-    font-size: 26px;
+    font-size: 22px;
     margin: 5px;
     padding: 8px;
   }
@@ -103,233 +123,56 @@
 		}
 	}
 
-  .navbar-brand {
-    font-size: 24px;
-    font-family: "CircBold", sans-serif
-  }
-
-  .badge {
-    padding: 5px;
-    margin-right: 10px
-  }
-
-  .card-body div.tag-holder {
-    padding-left: 20px;
-    padding-right: 20px
-  }
-
-  .experiment-title {
-    font-family: "CircBold", sans-serif
-  }
-
-  .experiment-cards-holder {
-    margin: auto
-  }
-
-  .card-body {
-    padding: 0;
-    border-radius: 0.5;
-    min-height: 250px;
-  }
-
-  .card-text {
-    padding: 1.25rem
-  }
-
-  .about-image {
-    margin-bottom: 30px
-  }
-
-  .about-text {
-    padding: 10px
-  }
-
-  .about-text p {
-    padding: 10px;
-    font-size: 21px
-  }
-
-  div.container {
-    margin: auto;
-  }
-
-
-  .post-container {
-    max-width: 900px;
-    margin-top: 40px;
-  }
-
-  .blog-read-link {
-    margin-top: 5px;
-    margin-left: 20px
-  }
-
-  .blog-preview img {
-    display: block;
-    width: 100%;
-    height: auto
-  }
-
-  h4.card-title {
-    margin-top:5px;
-    padding: 20px;
-    font-size: 26px;
-  }
-
-  h6.card-subtitle {
-    color: rgb(185) !important;
-    font-size: 18px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-top: -20px;
-    font-family: "CircReg", sans-serif
-  }
-
-  .nav-link a {
-    color: gray
-  }
-
-  .navbar {
-    -webkit-box-shadow: 0 4px 6px -6px #999;
-    -moz-box-shadow: 0 4px 6px -6px #999;
-    box-shadow: 0 4px 6px -6px #999;
-  }
-
-  a.nuxt-link-exact-active {
+  .selectContainer .listItem {
     color: black
   }
 
-  #page-container {
-    position: relative;
-    min-height: 100vh;
+  .selectContainer .multiSelectItem_label {
+    color: black
   }
 
-  #content-wrap {
-  padding-bottom: 2.5rem;    /* Footer height */
-}
-
-  footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 5rem;
-  background-color: rgb(235, 235, 235);
-  color: black;
-  text-align: center;
-
-}
-
-.pre-footer {
-  height: 200px
-}
-
-.footer-creds {
-  margin-top: 20px;
-  font-family: "CircReg", sans-serif;
-}
-
- .jumbotron h1 {
-    /* padding-left: 20px; */
-    font-family: "CircBold", sans-serif;
-
+  input.multiSelect {
+    background-color: #222323;
   }
 
-  @media only screen and (max-width: 600px) {
-  .jumbotron h1 {
-    font-size: 42px
-  }
-}
-
-  .jumbotron p.lead {
-    padding-left: 10px;
-    margin-top: 0px
+  /* BLOG STYLES */
+  /* anything with the .blog class is the layout for a blog post */
+  .blog {
+    padding: 10px;
   }
 
-  .jumbotron {
-    background-color: white
+  .blog h1, h2, h3, h4, p, a {
+    max-width: 600px;
+    margin: 20px auto;
   }
 
-  div.container-fluid {
-    padding-right: 0px;
-    padding-left: 0px
+  .blog ul {
+    max-width: 600px;
+  }
+  
+  .blog p {
+    line-height: 1.6;
+	}
+
+  .blog img.fullwidth {
+		width: 100%;
+		height: auto
   }
 
-  /* case study page styles */
-
-  .case-study-wrapper .box{
-    position: relative;
-    margin-left: auto
-    /* display: inline-block; Make the width of box same as image */
+  .blog img.text-aligned {
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  .blog a {
+    color: aquamarine
   }
 
-  .box .img-fluid {
-    display: block;
-    margin: auto;
+  .blog a:hover {
+    color: rgb(94, 186, 155)
   }
 
-  .case-study-wrapper .box .header-text{
-      position: absolute;
-      z-index: 999;
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-      color: white;
-      top: 10%; /* Adjust this value to move the positioned div up and down */
-      text-align: center;
-      width: 60%; /* Set the width of the positioned div */
-    }
-
-    .case-study-wrapper h1 {
-        font-size: 5rem;
-    }
-
-    @media only screen and (max-width: 800px) {
-      .case-study-wrapper h1 {
-        font-size: 36px;
-        background-color: rgba(0,0,0,0.5);
-      }
-
-      .project-description {
-        margin-top: 250px;
-        padding: 10px
-      }
-    }
-
-    .case-study-wrapper h2 {
-      font-size: 3rem
-    }
-
-    .case-study-wrapper h3 {
-      font-size: 2rem
-    }
-
-    .case-study-wrapper .project-intro {
-        height: 300px;
-        text-align: center;
-        margin-top: 100px;
-        top: 30%;
-        max-width: 800px;
-        padding: 5px;
-    }
-
-    .container {
-      margin: auto
-    }
-
-    .case-study-wrapper .project-description {
-      margin-bottom: 300px;
-      margin-top: 200px;
-      max-width: 600px;
-      padding: 10px
-    }
-
-    .case-study-wrapper p {
-        font-size: 21px;
-        margin-top: 30px;
-        line-height: 1.7;
-    }
-
-    .page-container {
-      overflow-x: hidden;
-    }
+  .blog a:visited {
+    color: rgb(162, 237, 212)
+  }

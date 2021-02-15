@@ -27,7 +27,6 @@
 		all elements inside .content
 	*/
 	.content :global(h2) {
-		font-size: 1.4em;
 		font-weight: 500;
 	}
 
@@ -44,18 +43,11 @@
 		padding: 0;
 	}
 
-	.content :global(ul) {
-		line-height: 1.5;
-	}
-
 	.content :global(li) {
 		margin: 0 0 0.5em 0;
 	}
 
-	.content  {
-		max-width: 600px;
-		margin: 0 auto;
-	}
+	
 </style>
 
 <svelte:head>
@@ -64,6 +56,6 @@
 
 <h1>{post.title}</h1>
 
-<div class="content">
+<div class="blog">
 	{@html post.html}
 </div>

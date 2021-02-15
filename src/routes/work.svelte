@@ -9,6 +9,12 @@
 
     $: projects = work.projects.filter(item => item.tags.some(r=> selectedCategories.includes(r)));
 
+    $: if (projects.length < 1) {
+        projects = work.projects
+    } else {
+        projects = work.projects.filter(item => item.tags.some(r=> selectedCategories.includes(r)));
+    }
+
     function handleSelect(event) {
         selectedCategories = [];
         if (event.detail != null) {
@@ -16,7 +22,9 @@
                 selectedCategories.push(d.value)
             })
         }
-	}
+    }
+    
+    selectedCategories=[]
 </script>
 
 <svelte:head>
@@ -24,20 +32,22 @@
 </svelte:head>
 
 <main>
-<h1>Work</h1>
+<h1 style="padding: 10px">An archive of past work</h1>
 
-<Select items={projectCategories} selectedValue={projectCategories} isMulti={true} on:select={handleSelect}></Select>
-
-{#if selectedCategories}
-<p>
-    {projects.length} projects selected
-</p>
-{:else}
-<p>No projects available</p>
-{/if}
+<div class="select-holder">
+    <p>filter work by </p>
+    <div class="auto-select-holder">
+    <Select items={projectCategories} selectedValue={selectedCategories} isMulti={true} on:select={handleSelect}></Select>
+    </div>
+    {#if selectedCategories}
+    <p class="projects-selected">
+        {projects.length} projects selected
+    </p>
+    {/if}
+</div>
 <div class="grid-box">
     {#each projects as project}
-    <div in:fade out:fade>
+    <div in:fade>
         <div class="project-card">
             <div class="img-holder">
                 <img src={project.image} alt="">
@@ -48,7 +58,6 @@
                     {#each project.tags as tag}
                     <span>{tag}</span>
                     {/each}
-                    
                 </div>
                 <p>{project.description}</p>
             </div>
@@ -71,8 +80,17 @@
         height: auto
     }
 
+    h1 {
+        font-size: 36px
+    }
+
     main {
-        padding: 10px
+        padding: 10px;
+        background-color: black;
+    }
+
+    h2 {
+        color: #fff
     }
 
     .grid-box {
@@ -84,16 +102,18 @@
 
     /* On mouse-over, add a deeper shadow */
     .project-card:hover {
-        box-shadow: 0 16px 26px 0 rgba(0,0,0,0.4);
+        box-shadow: 0 16px 26px 0 rgba(244, 244, 244, 0.2);
     }
 
     .project-card {
-        border: 0.5px solid rgb(205, 205, 205);
-        border-radius: 0px 0px 15px 15px;
+        border: 0px solid rgb(205, 205, 205);
+        border-radius: 10px 10px 15px 15px;
         padding: 0px;
         margin: 10px;
         /* Add shadows to create the "card" effect */
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+        background-color: #222323;
+        color: #17191D;
         transition: 0.3s;
     }
 
@@ -102,7 +122,7 @@
     }
 
     a {
-        color: black;
+        color: #fff;
         font-size: 18px;
         font-weight: 600;
         text-transform: uppercase;
@@ -114,7 +134,7 @@
     .btn-holder {
         margin:auto 0;
         padding: 15px;
-        margin-bottom: 10px
+        margin-bottom: 20px
     }
 
     .img-holder img {
@@ -125,7 +145,7 @@
     }
     
     a:hover {
-        background-color: rgb(201, 201, 201);
+        background-color: rgb(130, 130, 130);
         transition: 0.3s;
     }
 
@@ -138,5 +158,29 @@
         padding-bottom: 4px;
         margin: 6px;
         font-size: 14px;
+    }
+
+    .select-holder {
+        padding: 20px;
+        display: flex;
+        max-width: 800px;
+        margin: 0 auto
+    }
+
+    .select-holder p {
+        flex: 0.5;
+        text-align: right
+    }
+
+    .auto-select-holder {
+        width: 100%;
+        flex: 1.4;
+        margin: 0 auto;
+        padding: 10px
+    }
+
+    .projects-selected {
+        font-size: 14px;
+        
     }
 </style>
