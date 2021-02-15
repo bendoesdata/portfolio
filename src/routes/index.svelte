@@ -101,7 +101,7 @@
 	<Highlight imgSide="left"
 	title="Repurposing Hub"
 	description="Development for the Drug Repurposing Hub, a database to accelerate drug discovery and treatments through compound analysis."
-	link="/work"
+	link="https://dev.clue.io/repurposing-app"
 	tags="data viz, dev"
 	image="/images/front-page/rephub.png"
 	imgAlt="A data table showing drug compounds from the Repusposing Hub, with charts on the right hande side to summarize the compounds available." />
