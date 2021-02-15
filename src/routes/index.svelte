@@ -89,20 +89,20 @@
 	description="Data viz essay looking back on the books I read in 2020."
 	link="https://objective-wiles-09a6fb.netlify.app/"
 	tags="data viz, dev, essay"
-	image="/images/front-page/book-sort.png"
+	image="/images/front-page/books2.png"
 	imgAlt="A cluster of colorful bubbles grouped by linear number rating, with 1 on the left and 5 on the right." />
 	<Highlight 
-	title="Tiny Algae and the Political Theater of Planting 1 Trillion Trees" 
+	title="Tiny Algae and the Theater of Planting 1 Trillion Trees" 
 	description="An interactive data essay written for the Parametric Press issue on climate change."
 	link="https://parametric.press/issue-02/algae/"
 	tags="data viz, dev, essay"
 	image="/images/front-page/algae-radar.png"
 	imgAlt="A radar chart comparing metrics such as land use, water use, and CO2 across multiple carbon capture methods." />
 	<Highlight imgSide="left"
-	title="Repurposing Hub"
-	description="Development for the Drug Repurposing Hub, a database to accelerate drug discovery and treatments through compound analysis."
-	link="https://dev.clue.io/repurposing-app"
-	tags="data viz, dev"
-	image="/images/front-page/rephub.png"
+	title="2019 - A Year in Data"
+	description="A retrospective of the data I tracked during 2019. Each category of data became a data viz poster to highlight and remember stats from the year."
+	link="/experimental-projects/2019-review"
+	tags="data viz, dev, design"
+	image="/images/front-page/workouts.png"
 	imgAlt="A data table showing drug compounds from the Repusposing Hub, with charts on the right hande side to summarize the compounds available." />
 </main>

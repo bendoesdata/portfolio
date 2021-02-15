@@ -75,7 +75,7 @@
 	}
 
 	.tag-container {
-		margin-top: 5px
+		margin-top: 0px
 	}
 
 	span {
@@ -122,6 +122,7 @@
 		max-width: 400px;
 		margin: 0 auto;
 		margin-top: 10px;
+		margin-bottom: 0px
 	}
 
 	h2 {
