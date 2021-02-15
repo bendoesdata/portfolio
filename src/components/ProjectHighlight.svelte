@@ -121,7 +121,7 @@
 		padding: 10px;
 		max-width: 400px;
 		margin: 0 auto;
-		margin-top: 30px;
+		margin-top: 10px;
 	}
 
 	h2 {
