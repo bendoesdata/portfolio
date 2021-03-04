@@ -56,7 +56,7 @@
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>Benjamin Cooley</title>
 </svelte:head>
 
 <main>
