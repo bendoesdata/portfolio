@@ -10,7 +10,7 @@ const cream = '#F7F6F4'
 
 // make sure data is loaded first
 function preload() {
-    mydata = loadJSON('../2019-review/data/steps.json');
+    mydata = loadJSON('../data/steps.json');
     regFont = loadFont('../fonts/CircularStd-Medium.otf')
     boldFont = loadFont('../fonts/CircularStd-Bold.otf')
     bolderFont = loadFont('../fonts/CircularStd-Black.otf')
