@@ -5,18 +5,10 @@
 	export let segment;
 </script>
 
-<style>
-	main {
-		position: relative;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-</style>
-
 <Nav {segment}/>
 
-<main>
+<div>
 	<slot></slot>
-</main>
+</div>
 
 <Footer></Footer>

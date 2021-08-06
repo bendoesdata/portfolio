@@ -1,9 +1,12 @@
 <style>
 	footer {
-        background-color: black;
+        background-color: rgb(218, 218, 218);
         text-align: center;
-        color: lightgray;
         padding: 20px;
+    }
+
+    a {
+        color: gray
     }
 
     p {
