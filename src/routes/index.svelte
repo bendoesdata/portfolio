@@ -39,7 +39,7 @@
 		imgAlt="Screenshot of a flood dashboard. A map is on the left, with various charts on the right showing rainfall, population exposed, and duration for each flood event in a given region."
 	>
 		<p>
-			Exploratory dashboard of the world’s largest collection of flood
+			Dashboard of the world’s largest collection of flood
 			maps. In collaboration with <a
 				class="description-link"
 				href="https://www.cloudtostreet.ai/"

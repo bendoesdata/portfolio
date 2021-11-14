@@ -128,7 +128,8 @@
 		margin-bottom: 0px;
 	}
 
-	h2 {
+	.project-text h2 {
+		margin-top: -10px;
 		font-size: 36px;
 	}
 
