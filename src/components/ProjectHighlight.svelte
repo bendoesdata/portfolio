@@ -104,7 +104,7 @@
 		top: 0;
 		left: 0;
 		background-color: #d2d2d2;
-		opacity: 0.4;
+		opacity: 0.2;
 		transition: 1s;
 	}
 

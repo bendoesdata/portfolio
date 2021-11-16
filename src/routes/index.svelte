@@ -30,6 +30,29 @@
 		<p>Here's some recent work.</p>
 	</div>
 	<Highlight
+		imgSide="right"
+		title="3d UMAP for genetic modeling analysis"
+		credit="Published in Cell Systems"
+		link="https://broadinstitute.github.io/webster-umap-minisite/#/"
+		tags="data viz, design, dev"
+		image="/images/projects/webster.png"
+		imgAlt="Screenshot of a UMAP dashboard."
+	>
+		<p>
+			A 3d visualization tool that shows the correlation of certain biological functions to sets of genes. <a
+				class="description-link"
+				href="https://broadinstitute.github.io/webster-umap-minisite/#/"
+				target="_blank">View the tool</a
+			>
+			and read the 
+			<a
+				class="description-link"
+				href="https://medium.com/@patternvizlab/introducing-a-novel-approach-to-3d-umap-visualization-for-single-cell-genomic-analysis-b79cf09f1af6"
+				target="_blank">design write-up</a
+			> for more details.
+		</p>
+	</Highlight>
+	<Highlight
 		imgSide="left"
 		title="Global Flood Database"
 		credit="Published in Nature"
