@@ -75,6 +75,7 @@
 	.project-row {
 		background-color: #fff;
 		height: 50vh;
+		margin-bottom: 100px;
 	}
 
 	.tag-container {
