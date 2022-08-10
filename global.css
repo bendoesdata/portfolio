@@ -1,18 +1,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap');
 
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
   p {
     font-family: "Poppins", sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.7;
     color: #333
   }
 
   a {
     color: rgb(63, 63, 63);
+    font-size: 20px;
+    line-height: 1.7;
   }
 
   a:visited {
-    color: rgb(174, 192, 206)
+    color: rgb(112, 152, 183)
   }
 
   a:hover {
@@ -116,44 +168,19 @@
     background-color: #222323;
   }
 
-  /* BLOG STYLES */
-  /* anything with the .blog class is the layout for a blog post */
-  .blog {
-    padding: 10px;
+  footer {
+    background-color: rgb(218, 218, 218);
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    display: block;
   }
 
-  .blog h1, h2, h3, h4, p, a {
-    max-width: 600px;
-    margin: 20px auto;
+  footer p {
+      font-size: 16px;
   }
 
-  .blog ul {
-    max-width: 600px;
-  }
-  
-  .blog p {
-    line-height: 1.6;
-	}
-
-  .blog img.fullwidth {
-		width: 100%;
-		height: auto
-  }
-
-  .blog img.text-aligned {
-    max-width: 600px;
-    height: auto;
-    margin: 0 auto;
-  }
-  
-  .blog a {
-    color: aquamarine
-  }
-
-  .blog a:hover {
-    color: rgb(94, 186, 155)
-  }
-
-  .blog a:visited {
-    color: rgb(162, 237, 212)
+  footer span {
+      text-decoration: line-through;
+      padding: 3px
   }

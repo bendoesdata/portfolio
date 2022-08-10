@@ -18,11 +18,6 @@
 		margin: 0px auto;
 	}
 
-	a {
-		color: rgb(29, 29, 29);
-		font-size: 32px;
-	}
-
 	a.description-link {
 		font-size: inherit;
 	}
@@ -38,21 +33,27 @@
 
 	.intro-text {
 		margin: auto;
-		margin-bottom: 10px;
+		margin-bottom: 70px;
 		padding: 20px;
 		margin-left: 10px;
 	}
 
+	.intro-text p {
+		max-width: 700px;
+		margin-bottom: 20px;
+	}
+
 	.intro-text h1 {
-		margin-top: 3em;
+		margin-top: 2em;
 		font-size: 3.4vmax;
 		padding: 0px;
 		color: #333;
 		font-weight: 500;
+		margin-bottom: 30px;
 	}
 
 	.gray-text {
-		color: #c4c4c4;
+		color: #a7a7a7;
 	}
 
 	.btn-holder {
@@ -60,10 +61,9 @@
 		margin: 0px auto;
 	}
 
-	@media screen and (max-width: 800px) {
-		.header-row {
-			margin-bottom: 80px;
-		}
+	.container {
+		margin-left: 10px;
+		padding: 20px;
 	}
 
 	.img-container {
@@ -85,27 +85,149 @@
 		padding-top: 150px;
 		position: bottom;
 	}
+
+	#work-grid {
+		display: grid;
+		grid-gap: 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		margin-bottom: 200px;
+		margin-top: 100px;
+		margin-left: 10px;
+	}
+
+	.work-container {
+		position: relative;
+		text-align: center;
+		color: white;
+		box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+		transition: box-shadow .3s;
+	}
+
+	.work-container h3 {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		width: 70%;
+		transform: translate(-50%, -50%);
+	}
+
+	.work-container p {
+		position: absolute;
+		pointer-events: none;
+		font-size: 16px;
+		top: 60%;
+		left: 50%;
+		width: 100%;
+		padding-left: 5px;
+		padding-right: 5px;
+		transform: translate(-50%, -20%);
+		font-weight: 500
+		
+	}
+
+	#work-grid img {
+		object-fit: cover;
+		width: 400px;
+		height: 400px;
+	}
+
+	#work-grid .overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255, 255, 255, 0.549);
+	}
+
+	#work-grid .overlay:hover {
+		border: solid 1px gray;
+		cursor: pointer;
+		background-color: rgba(255, 255, 255, 0);
+	}
+
+	#work-grid .work-container:hover {
+		box-shadow: 0 5px 15px rgb(0 0 0 / 0.5)
+	}
+	@media screen and (max-width: 800px) {
+		.header-row {
+			margin-bottom: 80px;
+			height: auto;
+		}
+
+		.intro-text {
+			margin-left: 0px;
+		}
+
+		.container {
+			margin-left: 0px;
+		}
+
+		#work-grid {
+			margin-left: 0px;
+		}
+
+		.img-container {
+			height: 10vh
+		}
+	}
 </style>
+<script src="data/projects.js"></script>
+
 
 <body>
-    <header class="row header-row">
-		<div class="column _60">
-			<div in:fade class="intro-text">
-				<h1>
-					Ben<span class="gray-text"
-					>jamin</span> Cooley is a creative technologist focusing on visualization and human-computer interaction.
-					
-				</h1>
+	<main>
+		<div>
+		<div class="row header-row">
+			<div class="column _70">
+				<div class="intro-text">
+					<h1>
+						Ben<span class="gray-text"
+						>jamin</span> Cooley is a creative technologist focusing on visualization and human-computer interaction.
+					</h1>
+					<p>His work explores new ways of seeing and experiencing information by using information design, data visualization, creative coding, and machine learning to create intuitive user interfaces.</p>
+					<p>
+						Ben currently works as a Visualization Software Engineer in the <a href="https://pattern.broadinstitute.org/">Pattern</a> lab at the <a href="https://www.broadinstitute.org/">Broad Institute</a>. He is also an adjunct lecturer at Northeastern University's <a href="https://camd.northeastern.edu/">College of Arts, Media and Design (CAMD)</a>.
+					</p>
+					<p>
+						After going to college for journalism, Ben received an MSc in Computational Journalism from <a href="https://www.gold.ac.uk/">Goldsmiths, University of London</a>. Though his focus is now on software tool-making, Ben continues to use his background in journalism to create narrative driven designs.
+					</p>
+				</div>
+			</div>
+			<div class="column _30 img-container" />
+		</div>
+		</div>
+		<div class="container">
+			<div>
+				<h2>Selected work</h2>
+				<div id="work-grid"></div>
+			</div>
+			<div>
+				<h2>Writing</h2>
+			</div>
+			<div>
+				<h2>Other</h2>
 			</div>
 		</div>
-		<div class="column _40 img-container" />
-	</header>
-    <main>
-
-    </main>
+	</main>
     <footer>
         <a href="https://twitter.com/bendoesdataviz">twitter</a> / <a href="https://github.com/bendoesdata">github</a> / <a href="https://medium.com/@bendoesdataviz">medium</a>
         <p>© Benjamin Cooley</p>
         <p>Made with <span>&#9825;</span> a keyboard.</p>
     </footer>
 </body>
+<script>
+	    console.log(data)
+    const grid = document.getElementById('work-grid');
+
+    data.forEach(d => {
+        let newNode = document.createElement('div');
+        newNode.classList.add('work-container');
+        newNode.innerHTML = '<img src="'+d.imgUrl+'" alt="'+d.description+'" />'
+		let overlayDiv = document.createElement('div');
+		overlayDiv.classList.add('overlay')
+		overlayDiv.innerHTML = '<a href="'+d.url+'"><div style="width: 100%; height: 100%"><h3>' + d.title + '</h3><p>' + d.description + '</p></div></a>'
+		newNode.appendChild(overlayDiv)
+        grid.appendChild(newNode)
+    })
+</script>
