@@ -27,7 +27,7 @@
 	</div>
 	<div class="row">
 		<div class="column">
-			<img src="/images/bensquare.png" alt="">
+			<img src="/images/ben.jpg" width=400 alt="pic of ben">
 		</div>
 		<div class="column">
 
@@ -141,7 +141,6 @@
 		</p>
 	</Highlight>
 </main>
-
 <style>
 	main {
 		/* max-width: 1800px; */
