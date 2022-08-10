@@ -105,7 +105,7 @@
 		top: 0;
 		left: 0;
 		background-color: #d2d2d2;
-		opacity: 0.2;
+		opacity: 0.1;
 		transition: 1s;
 	}
 
@@ -153,6 +153,7 @@
 
 		.project-row {
 			height: 100%;
+			margin-top: 100px;
 		}
 
 		h2 {

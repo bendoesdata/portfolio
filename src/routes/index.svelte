@@ -12,10 +12,9 @@
 		<div class="column _60">
 			<div in:fade class="intro-text">
 				<h1>
-					Ben does data visualization<span class="gray-text"
-						>, creative coding, information design, visual
-						journalism, UX engineering, and front-end development.</span
-					>
+					Ben<span class="gray-text"
+					>jamin</span> Cooley is a creative technologist focusing on visualization and human-computer interaction.
+					
 				</h1>
 				<!-- <div class="btn-holder">
 				<a href="/work">
@@ -25,6 +24,14 @@
 			</div>
 		</div>
 		<div class="column _40 img-container" />
+	</div>
+	<div class="row">
+		<div class="column">
+			<img src="/images/bensquare.png" alt="">
+		</div>
+		<div class="column">
+
+		</div>
 	</div>
 	<div class="project-intro">
 		<p>Here's some recent work.</p>
@@ -175,7 +182,7 @@
 	}
 
 	.gray-text {
-		color: #a7a7a7;
+		color: #c4c4c4;
 	}
 
 	.btn-holder {
