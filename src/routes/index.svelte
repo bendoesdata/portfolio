@@ -25,14 +25,6 @@
 		</div>
 		<div class="column _40 img-container" />
 	</div>
-	<div class="row">
-		<div class="column">
-			<img src="/images/ben.jpg" width=400 alt="pic of ben">
-		</div>
-		<div class="column">
-
-		</div>
-	</div>
 	<div class="project-intro">
 		<p>Here's some recent work.</p>
 	</div>
