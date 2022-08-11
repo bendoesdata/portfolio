@@ -5,10 +5,26 @@
     <meta charset=utf-8>
     <meta content="width=device-width,initial-scale=1" name=viewport>
     <meta content=#333333 name=theme-color>
+	<script src="data/projects.js"></script>
     <!-- <link href=favicon.png rel=icon type=image/png> -->
     
     <title>Benjamin Cooley</title>
     <meta name="description" content="Portfolio website for Benjamin Cooley, creative technologist and data visualization developer.">
+	<script>
+	
+		const grid = document.getElementById('work-grid');
+	
+		data.forEach(d => {
+			let newNode = document.createElement('div');
+			newNode.classList.add('work-container');
+			newNode.innerHTML = '<img src="'+d.imgUrl+'" alt="'+d.description+'" loading="lazy" />'
+			let overlayDiv = document.createElement('div');
+			overlayDiv.classList.add('overlay')
+			overlayDiv.innerHTML = '<a href="'+d.url+'"><div style="width: 100%; height: 100%"><h3>' + d.title + '</h3><p>' + d.description + '</p></div></a>'
+			newNode.appendChild(overlayDiv)
+			grid.appendChild(newNode)
+		})
+	</script>
 
 	<!-- critical CSS for initial page load -->
 	<style>
@@ -374,19 +390,3 @@ p, h1, h2, h3, h4, h5, h6 {
         <p>Made with <span>&#9825;</span> a keyboard.</p>
     </footer>
 </body>
-<script src="data/projects.js"></script>
-<script>
-	
-	const grid = document.getElementById('work-grid');
-
-    data.forEach(d => {
-        let newNode = document.createElement('div');
-        newNode.classList.add('work-container');
-        newNode.innerHTML = '<img src="'+d.imgUrl+'" alt="'+d.description+'" loading="lazy" />'
-		let overlayDiv = document.createElement('div');
-		overlayDiv.classList.add('overlay')
-		overlayDiv.innerHTML = '<a href="'+d.url+'"><div style="width: 100%; height: 100%"><h3>' + d.title + '</h3><p>' + d.description + '</p></div></a>'
-		newNode.appendChild(overlayDiv)
-        grid.appendChild(newNode)
-    })
-</script>
