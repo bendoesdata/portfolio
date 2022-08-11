@@ -374,10 +374,10 @@ p, h1, h2, h3, h4, h5, h6 {
         <p>Made with <span>&#9825;</span> a keyboard.</p>
     </footer>
 </body>
-<script async src="data/projects.js"></script>
+<script src="data/projects.js"></script>
 <script>
-	setTimeout(()=>{
-		const grid = document.getElementById('work-grid');
+	
+	const grid = document.getElementById('work-grid');
 
     data.forEach(d => {
         let newNode = document.createElement('div');
@@ -389,5 +389,4 @@ p, h1, h2, h3, h4, h5, h6 {
 		newNode.appendChild(overlayDiv)
         grid.appendChild(newNode)
     })
-	}, 50)
 </script>
