@@ -5,67 +5,51 @@
     <meta charset=utf-8>
     <meta content="width=device-width,initial-scale=1" name=viewport>
     <meta content=#333333 name=theme-color>
-	<script src="data/projects.js"></script>
     <!-- <link href=favicon.png rel=icon type=image/png> -->
     
     <title>Benjamin Cooley</title>
     <meta name="description" content="Portfolio website for Benjamin Cooley, creative technologist and data visualization developer.">
-	<script>
-	
-		const grid = document.getElementById('work-grid');
-	
-		data.forEach(d => {
-			let newNode = document.createElement('div');
-			newNode.classList.add('work-container');
-			newNode.innerHTML = '<img src="'+d.imgUrl+'" alt="'+d.description+'" loading="lazy" />'
-			let overlayDiv = document.createElement('div');
-			overlayDiv.classList.add('overlay')
-			overlayDiv.innerHTML = '<a href="'+d.url+'"><div style="width: 100%; height: 100%"><h3>' + d.title + '</h3><p>' + d.description + '</p></div></a>'
-			newNode.appendChild(overlayDiv)
-			grid.appendChild(newNode)
-		})
-	</script>
 
 	<!-- critical CSS for initial page load -->
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap');
 
 		body {
-    font-family: "Poppins", sans-serif;
-    background-color: white;
-    color: #333;
-    margin-left: 0px;
-    margin-right: 0px;
-  }
+			font-family: "Poppins", sans-serif;
+			background-color: white;
+			color: #333;
+			margin-left: 0px;
+			margin-right: 0px;
+		}
 
-  p {
-    font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    line-height: 1.7;
-    color: #333
-  }
+		p {
+			font-family: "Poppins", sans-serif;
+			font-size: 20px;
+			line-height: 1.7;
+			color: #333
+		}
 
-  a {
-    color: rgb(63, 63, 63);
-    font-size: 20px;
-    line-height: 1.7;
-  }
+		a {
+			color: rgb(63, 63, 63);
+			font-size: 20px;
+			line-height: 1.7;
+		}
 
-  a:visited {
-    color: rgb(112, 152, 183)
-  }
+		a:visited {
+			color: rgb(112, 152, 183)
+		}
 
-  a:hover {
-    color: rgb(63, 63, 63)
-  }
+		a:hover {
+			color: rgb(63, 63, 63)
+		}
 
-  a {
-	font-family: "Poppins", sans-serif;
-  }
+		a {
+			font-family: "Poppins", sans-serif;
+		}
 
-  h2 {
-    font-size: 2rem;
-  }
+		h2 {
+			font-size: 2rem;
+		}
 
 		.intro-text {
 			margin: auto;
@@ -236,6 +220,7 @@ p, h1, h2, h3, h4, h5, h6 {
 		left: 50%;
 		width: 70%;
 		transform: translate(-50%, -50%);
+		color: black;
 	}
 
 	.work-container p {
@@ -288,11 +273,11 @@ p, h1, h2, h3, h4, h5, h6 {
 	}
 
   #work-grid .work-container:hover h3 {
-		color: rgba(1,1,1,0.2)
+		color: rgba(1,1,1,0.1)
 	}
 
   #work-grid .work-container:hover p {
-		color: rgba(1,1,1,0.2)
+		color: rgba(1,1,1,0.1)
 	}
 
 	@media screen and (max-width: 800px) {
@@ -339,6 +324,7 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 	</style>
 </head>
+<script id="projectData" async src="data/projects.js"></script>
 <body>
 	<main>
 		<div>
@@ -390,3 +376,20 @@ p, h1, h2, h3, h4, h5, h6 {
         <p>Made with <span>&#9825;</span> a keyboard.</p>
     </footer>
 </body>
+<script>
+	var script = document.querySelector('#projectData');
+	script.addEventListener('load', function() {
+		const grid = document.getElementById('work-grid');
+
+		data.forEach(d => {
+			let newNode = document.createElement('div');
+			newNode.classList.add('work-container');
+			newNode.innerHTML = '<img src="'+d.imgUrl+'" alt="'+d.description+'" loading="lazy" />'
+			let overlayDiv = document.createElement('div');
+			overlayDiv.classList.add('overlay')
+			overlayDiv.innerHTML = '<a href="'+d.url+'"><div style="width: 100%; height: 100%"><h3>' + d.title + '</h3><p>' + d.description + '</p></div></a>'
+			newNode.appendChild(overlayDiv)
+			grid.appendChild(newNode)
+		})
+	});
+</script>
