@@ -29,7 +29,7 @@ const data = [
         "Interactive article on the potential of algae for carbon sequestration.",
     type: "data visualization",
     imgUrl: "../images/front-page/algae-radar.png",
-    url: "https://global-flood-database.cloudtostreet.info/",
+    url: "https://parametric.press/issue-02/algae/",
     },
   {
       title: "To All the Books I Read in 2020",
