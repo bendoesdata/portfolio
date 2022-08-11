@@ -5,176 +5,95 @@
     <meta charset=utf-8>
     <meta content="width=device-width,initial-scale=1" name=viewport>
     <meta content=#333333 name=theme-color>
-    <link href=global.css rel=stylesheet>
-    <link href=favicon.png rel=icon type=image/png>
+    <!-- <link href=favicon.png rel=icon type=image/png> -->
     
-    <title>About</title>
+    <title>Benjamin Cooley</title>
     <meta name="description" content="Portfolio website for Benjamin Cooley, creative technologist and data visualization developer.">
-</head>
 
-<style>
-	main {
-		/* max-width: 1800px; */
-		margin: 0px auto;
-	}
+	<!-- critical CSS for initial page load -->
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap');
 
-	a.description-link {
-		font-size: inherit;
-	}
+		body {
+    font-family: "Poppins", sans-serif;
+    background-color: white;
+    color: #333;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 
-	.cta {
-		text-align: left;
-		margin-left: 0.5em;
-	}
+  p {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #333
+  }
 
-	.header-row {
-		height: 90vh;
-	}
+  a {
+    color: rgb(63, 63, 63);
+    font-size: 20px;
+    line-height: 1.7;
+  }
 
-	.intro-text {
-		margin: auto;
-		margin-bottom: 70px;
-		padding: 20px;
-		margin-left: 10px;
-	}
+  a:visited {
+    color: rgb(112, 152, 183)
+  }
 
-	.intro-text p {
-		max-width: 700px;
-		margin-bottom: 20px;
-	}
+  a:hover {
+    color: rgb(63, 63, 63)
+  }
 
-	.intro-text h1 {
-		margin-top: 2em;
-		font-size: 3.4vmax;
-		padding: 0px;
-		color: #333;
-		font-weight: 500;
-		margin-bottom: 30px;
-	}
+  a {
+	font-family: "Poppins", sans-serif;
+  }
 
-	.gray-text {
-		color: #a7a7a7;
-	}
+  h1, h2, h3 {
+    font-family: "Poppins", sans-serif;
+    color: #333
+  }
 
-	.btn-holder {
-		width: 200px;
-		margin: 0px auto;
-	}
+  h4, h5, h6 {
+    font-family: "Poppins", sans-serif;
+    color: #333
+  }
 
-	.container {
-		margin-left: 10px;
-		padding: 20px;
-	}
+  h1 {
+    font-size: 4rem;
+    font-weight: 500;
+  }
 
-	.img-container {
-		width: 100%;
-		background-image: url("/images/untitled.svg");
-		height: 750px;
-		background-position: left;
-		background-repeat: no-repeat;
-		background-size: cover;
-		position: relative;
-		margin: auto 0;
-	}
-
-	.project-intro p {
-		height: 200px;
-		text-align: center;
-		font-size: 28px;
-		font-weight: "regular";
-		padding-top: 150px;
-		position: bottom;
-	}
-
-	#work-grid {
-		display: grid;
-		grid-gap: 2rem;
-		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-		margin-bottom: 200px;
-		margin-top: 100px;
-		margin-left: 10px;
-	}
-
-	.work-container {
-		position: relative;
-		text-align: center;
-		color: white;
-		box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-		transition: box-shadow .3s;
-	}
-
-	.work-container h3 {
-		position: absolute;
-		top: 40%;
-		left: 50%;
-		width: 70%;
-		transform: translate(-50%, -50%);
-	}
-
-	.work-container p {
-		position: absolute;
-		pointer-events: none;
-		font-size: 16px;
-		top: 60%;
-		left: 50%;
-		width: 100%;
-		padding-left: 5px;
-		padding-right: 5px;
-		transform: translate(-50%, -20%);
-		font-weight: 500
-		
-	}
-
-	#work-grid img {
-		object-fit: cover;
-		width: 400px;
-		height: 400px;
-	}
-
-	#work-grid .overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(255, 255, 255, 0.549);
-	}
-
-	#work-grid .overlay:hover {
-		border: solid 1px gray;
-		cursor: pointer;
-		background-color: rgba(255, 255, 255, 0);
-	}
-
-	#work-grid .work-container:hover {
-		box-shadow: 0 5px 15px rgb(0 0 0 / 0.5)
-	}
-	@media screen and (max-width: 800px) {
-		.header-row {
-			margin-bottom: 80px;
-			height: auto;
-		}
+  h2 {
+    font-size: 2rem;
+  }
 
 		.intro-text {
-			margin-left: 0px;
+			margin: auto;
+			margin-bottom: 70px;
+			padding: 20px;
+			margin-left: 10px;
 		}
 
-		.container {
-			margin-left: 0px;
+		.intro-text p {
+			max-width: 700px;
+			margin-bottom: 20px;
 		}
 
-		#work-grid {
-			margin-left: 0px;
+		.intro-text h1 {
+			margin-top: 2em;
+			font-size: 3.4vmax;
+			padding: 0px;
+			color: #333;
+			font-weight: 500;
+			margin-bottom: 30px;
 		}
 
-		.img-container {
-			height: 10vh
+		.gray-text {
+			color: #929292;
 		}
-	}
-</style>
-<script src="data/projects.js"></script>
+	</style>
 
-
+	<link defer href="global.css" rel=stylesheet>
+</head>
 <body>
 	<main>
 		<div>
@@ -185,12 +104,12 @@
 						Ben<span class="gray-text"
 						>jamin</span> Cooley is a creative technologist focusing on visualization and human-computer interaction.
 					</h1>
-					<p>His work explores new ways of seeing and experiencing information by using information design, data visualization, creative coding, and machine learning to create intuitive user interfaces.</p>
+					<p>His work explores new ways of seeing and experiencing information through data visualization, creative coding, information design, and machine learning to create intuitive user interfaces.</p>
 					<p>
 						Ben currently works as a Visualization Software Engineer in the <a href="https://pattern.broadinstitute.org/">Pattern</a> lab at the <a href="https://www.broadinstitute.org/">Broad Institute</a>. He is also an adjunct lecturer at Northeastern University's <a href="https://camd.northeastern.edu/">College of Arts, Media and Design (CAMD)</a>.
 					</p>
 					<p>
-						After going to college for journalism, Ben received an MSc in Computational Journalism from <a href="https://www.gold.ac.uk/">Goldsmiths, University of London</a>. Though his focus is now on software tool-making, Ben continues to use his background in journalism to create narrative driven designs.
+						After completing a Bachelor's degree in journalism, Ben received an MSc in Computational Journalism from <a href="https://www.gold.ac.uk/">Goldsmiths, University of London</a>. Though his focus is now on software tool-making, Ben continues to use his background in journalism to create narrative driven designs. Ben also enjoys using technology as a generative tool, and often uses procedural techniques for writing and performing music as <a href="https://bdexter.com/">b.dexter</a>.
 					</p>
 				</div>
 			</div>
@@ -202,32 +121,44 @@
 				<h2>Selected work</h2>
 				<div id="work-grid"></div>
 			</div>
-			<div>
-				<h2>Writing</h2>
-			</div>
-			<div>
-				<h2>Other</h2>
+			<div class="row" style="margin-bottom: 100px">
+				<div class="column _33">
+					<div class="circle-img" style="margin: 0 auto">
+						<img width="100%" src="images/ben-square.jpg" alt="Image of Ben holding his cat.">
+					</div>
+				</div>
+				<div class="column _33" style="padding: 10px">
+					<h2>Contact</h2>
+					<p>If you would like to collaborate, you can reach me at benjamincooley94 at gmail dot com.</p>
+				</div>
+				<div class="column _33"  style="padding: 10px">
+					<h2>Online</h2>
+					<a href="https://twitter.com/bendextercooley">Twitter</a><br>
+					<a href="https://github.com/bendoesdata">Github</a><br>
+					<a href="https://medium.com/@bendextercooley">Medium</a><br>
+				</div>
 			</div>
 		</div>
 	</main>
     <footer>
-        <a href="https://twitter.com/bendoesdataviz">twitter</a> / <a href="https://github.com/bendoesdata">github</a> / <a href="https://medium.com/@bendoesdataviz">medium</a>
         <p>© Benjamin Cooley</p>
         <p>Made with <span>&#9825;</span> a keyboard.</p>
     </footer>
 </body>
+<script async src="data/projects.js"></script>
 <script>
-	    console.log(data)
-    const grid = document.getElementById('work-grid');
+	setTimeout(()=>{
+		const grid = document.getElementById('work-grid');
 
     data.forEach(d => {
         let newNode = document.createElement('div');
         newNode.classList.add('work-container');
-        newNode.innerHTML = '<img src="'+d.imgUrl+'" alt="'+d.description+'" />'
+        newNode.innerHTML = '<img src="'+d.imgUrl+'" alt="'+d.description+'" loading="lazy" />'
 		let overlayDiv = document.createElement('div');
 		overlayDiv.classList.add('overlay')
 		overlayDiv.innerHTML = '<a href="'+d.url+'"><div style="width: 100%; height: 100%"><h3>' + d.title + '</h3><p>' + d.description + '</p></div></a>'
 		newNode.appendChild(overlayDiv)
         grid.appendChild(newNode)
     })
+	}, 200)
 </script>

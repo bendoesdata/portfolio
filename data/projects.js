@@ -1,11 +1,19 @@
 const data = [
     {
-        title: "Webster UMAP",
+        title: "3d Webster UMAP",
         description:
             "A 3d visualization tool that shows the correlation of certain biological functions to sets of genes.",
         type: "data visualization",
         imgUrl: "../images/projects/webster.png",
         url: "https://broadinstitute.github.io/webster-umap-minisite/#/",
+    },
+    {
+        title: "GutSee App",
+        description:
+            "A mobile app for patients participating in a longitudinal study tracking changes in microbiome health.",
+        type: "data visualization",
+        imgUrl: "../images/front-page/gutsee-post.png",
+        url: "https://microbiome.mit.edu/research/flagship-project/",
     },
   {
       title: "Global Flood Dashboard",
@@ -15,6 +23,14 @@ const data = [
       imgUrl: "../images/front-page/c2s-dashboard.png",
       url: "https://global-flood-database.cloudtostreet.info/",
   },
+  {
+    title: "Parametric Press Essay",
+    description:
+        "Interactive article on the potential of algae for carbon sequestration.",
+    type: "data visualization",
+    imgUrl: "../images/front-page/algae-radar.png",
+    url: "https://global-flood-database.cloudtostreet.info/",
+    },
   {
       title: "To All the Books I Read in 2020",
       description:
