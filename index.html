@@ -47,21 +47,6 @@
 	font-family: "Poppins", sans-serif;
   }
 
-  h1, h2, h3 {
-    font-family: "Poppins", sans-serif;
-    color: #333
-  }
-
-  h4, h5, h6 {
-    font-family: "Poppins", sans-serif;
-    color: #333
-  }
-
-  h1 {
-    font-size: 4rem;
-    font-weight: 500;
-  }
-
   h2 {
     font-size: 2rem;
   }
@@ -90,9 +75,253 @@
 		.gray-text {
 			color: #929292;
 		}
-	</style>
 
-	<link defer href="global.css" rel=stylesheet>
+		*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+  /* flexbox classes */
+  .row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	}
+	.column {
+		flex-basis: 100%;
+	}
+
+	@media screen and (min-width: 800px) {
+		.column {
+			flex: 1;
+		}
+		._30 {
+			flex: 3;
+		}
+		._50 {
+			flex: 5;
+		}
+    ._40 {
+			flex: 4;
+		}
+    ._60 {
+			flex: 6;
+		}
+		._70 {
+			flex: 7;
+		}
+		._33 {
+			flex: 3.3;
+		}
+	}
+
+  footer {
+    background-color: rgb(218, 218, 218);
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    display: block;
+  }
+
+  footer p {
+      font-size: 16px;
+  }
+
+  footer span {
+      text-decoration: line-through;
+      padding: 3px
+  }
+
+  main {
+		/* max-width: 1800px; */
+		margin: 0px auto;
+	}
+
+	.container {
+		margin-left: 10px;
+		padding: 20px;
+	}
+
+	.img-container {
+		width: 100%;
+		background-image: url("/images/untitled.svg");
+		height: 750px;
+		background-position: left;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		margin: auto 0;
+	}
+
+	.project-intro p {
+		height: 200px;
+		text-align: center;
+		font-size: 28px;
+		font-weight: "regular";
+		padding-top: 150px;
+		position: bottom;
+	}
+
+	.work-container {
+		position: relative;
+		text-align: center;
+		color: white;
+		box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+		transition: box-shadow .3s;
+	}
+
+	.work-container h3 {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		width: 70%;
+		transform: translate(-50%, -50%);
+	}
+
+	.work-container p {
+		position: absolute;
+		pointer-events: none;
+		font-size: 16px;
+		top: 60%;
+		left: 50%;
+		width: 100%;
+		padding-left: 10px;
+		padding-right: 10px;
+		transform: translate(-50%, -20%);
+		font-weight: 500;
+		color: black;
+	}
+
+
+	#work-grid {
+		display: grid;
+		grid-gap: 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		margin-bottom: 200px;
+		margin-top: 100px;
+		margin-left: 10px;
+	}
+
+	#work-grid img {
+		object-fit: cover;
+		width: 100%;
+		height: 300px;
+	}
+
+	#work-grid .overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255, 255, 255, 0.649);
+	}
+
+	#work-grid .overlay:hover {
+		border: solid 1px gray;
+		cursor: pointer;
+		background-color: rgba(255, 255, 255, 0);
+	}
+
+	#work-grid .work-container:hover {
+		box-shadow: 0 5px 15px rgb(0 0 0 / 0.5)
+	}
+
+  #work-grid .work-container:hover h3 {
+		color: rgba(1,1,1,0.2)
+	}
+
+  #work-grid .work-container:hover p {
+		color: rgba(1,1,1,0.2)
+	}
+
+	@media screen and (max-width: 800px) {
+    .intro-text h1 {
+      font-size: 4vmax;
+    }
+		.header-row {
+			margin-bottom: 80px;
+			height: auto;
+		}
+
+		.intro-text {
+			margin-left: 0px;
+      padding: 15px
+		}
+
+		.container {
+			margin-left: 0px;
+      padding: 15px
+		}
+
+		#work-grid {
+			margin-left: 0px;
+		}
+
+		.img-container {
+			height: 10vh
+		}
+	}
+
+  .circle-img {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .circle-img img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+  }
+	</style>
 </head>
 <body>
 	<main>
@@ -160,5 +389,5 @@
 		newNode.appendChild(overlayDiv)
         grid.appendChild(newNode)
     })
-	}, 200)
+	}, 50)
 </script>
