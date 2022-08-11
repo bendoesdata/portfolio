@@ -324,7 +324,7 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 	</style>
 </head>
-<script id="projectData" type="module" async src="data/projects.js"></script>
+<script id="projectData" src="data/projects.js"></script>
 <body>
 	<main>
 		<div>
@@ -377,8 +377,6 @@ p, h1, h2, h3, h4, h5, h6 {
     </footer>
 </body>
 <script>
-	var script = document.querySelector('#projectData');
-	script.addEventListener('load', function() {
 		const grid = document.getElementById('work-grid');
 
 		data.forEach(d => {
@@ -391,5 +389,5 @@ p, h1, h2, h3, h4, h5, h6 {
 			newNode.appendChild(overlayDiv)
 			grid.appendChild(newNode)
 		})
-	});
+	
 </script>
