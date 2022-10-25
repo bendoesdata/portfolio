@@ -8,9 +8,9 @@ const data = [
         url: "https://broadinstitute.github.io/webster-umap-minisite/#/",
     },
     {
-        title: "GutSee App",
+        title: "GutSee Mobile App",
         description:
-            "A mobile app for patients participating in a longitudinal study tracking changes in microbiome health.",
+            "App for a longitudinal study tracking changes in microbiome health.",
         type: "data visualization",
         imgUrl: "../images/front-page/gutsee-post.png",
         url: "https://microbiome.mit.edu/research/flagship-project/",
