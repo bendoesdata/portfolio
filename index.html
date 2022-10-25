@@ -2,49 +2,51 @@
 <html lang=en>
 
 <head>
-    <meta charset=utf-8>
-    <meta content="width=device-width,initial-scale=1" name=viewport>
-    <meta content=#333333 name=theme-color>
-    <!-- <link href=favicon.png rel=icon type=image/png> -->
-    
-    <title>Benjamin Cooley</title>
-    <meta name="description" content="Portfolio website for Benjamin Cooley, creative technologist and data visualization developer.">
+	<meta charset=utf-8>
+	<meta content="width=device-width,initial-scale=1" name=viewport>
+	<meta content=#333333 name=theme-color>
+	<!-- <link href=favicon.png rel=icon type=image/png> -->
+
+	<title>Benjamin Cooley</title>
+	<meta name="description"
+		content="Portfolio website for Benjamin Cooley, creative technologist and data visualization developer.">
 
 	<!-- critical CSS for initial page load -->
 	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;700;900&display=swap');
 
+		/* color palettte: banana mania and eggplant
+		https://randoma11y.com/?color=dodgerblue */
 		body {
-			font-family: "Poppins", sans-serif;
-			background-color: white;
-			color: #333;
+			font-family: "Figtree", sans-serif;
+			background-color: #643955;
+			color: #ede7a4;
 			margin-left: 0px;
 			margin-right: 0px;
 		}
 
 		p {
-			font-family: "Poppins", sans-serif;
-			font-size: 20px;
+			font-family: "Figtree", sans-serif;
+			font-size: 21px;
 			line-height: 1.7;
-			color: #333
 		}
 
 		a {
-			color: rgb(112, 152, 183);
 			font-size: 20px;
 			line-height: 1.7;
+			color: #ede7a4;
 		}
 
 		a:visited {
-			color: rgb(112, 152, 183)
+			color: #ede7a4;
 		}
 
 		a:hover {
-			color: rgb(63, 63, 63)
+			color: rgb(171, 171, 171)
 		}
 
 		a {
-			font-family: "Poppins", sans-serif;
+			font-family: "Figtree", sans-serif;
 		}
 
 		h2 {
@@ -67,285 +69,352 @@
 			margin-top: 2em;
 			font-size: 3.4vmax;
 			padding: 0px;
-			color: #333;
-			font-weight: 500;
+			font-weight: 700;
 			margin-bottom: 30px;
 		}
 
 		.gray-text {
-			color: #929292;
+			color: rgba(238, 231, 164, 0.6);
 		}
 
-		*, *::before, *::after {
-  box-sizing: border-box;
-}
-/*
+		.blob {
+			position: absolute;
+			top: 30%;
+			right: -2%;
+			width: 600px;
+			height: 600px;
+			margin-top: 20px;
+			background-color: #67515f;
+			border-radius: 28% 72% 58% 42% / 34% 64% 36% 66%;
+			z-index: -10;
+		}
+
+		/* CSS RESET BELOW */
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+		}
+
+		/*
   2. Remove default margin
 */
-* {
-  margin: 0;
-}
-/*
+		* {
+			margin: 0;
+		}
+
+		/*
   3. Allow percentage-based heights in the application
 */
-html, body {
-  height: 100%;
-}
-/*
+		html,
+		body {
+			height: 100%;
+		}
+
+		/*
   Typographic tweaks!
   4. Add accessible line-height
   5. Improve text rendering
 */
-body {
-  -webkit-font-smoothing: antialiased;
-}
-/*
+		body {
+			-webkit-font-smoothing: antialiased;
+		}
+
+		/*
   6. Improve media defaults
 */
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
-/*
+		img,
+		picture,
+		video,
+		canvas,
+		svg {
+			display: block;
+			max-width: 100%;
+		}
+
+		/*
   7. Remove built-in form typography styles
 */
-input, button, textarea, select {
-  font: inherit;
-}
-/*
+		input,
+		button,
+		textarea,
+		select {
+			font: inherit;
+		}
+
+		/*
   8. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-}
-/*
+		p,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			overflow-wrap: break-word;
+		}
+
+		/*
   9. Create a root stacking context
 */
-#root, #__next {
-  isolation: isolate;
-}
+		#root,
+		#__next {
+			isolation: isolate;
+		}
 
-  /* flexbox classes */
-  .row {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	}
-	.column {
-		flex-basis: 100%;
-	}
+		/* flexbox classes */
+		.row {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
 
-	@media screen and (min-width: 800px) {
 		.column {
-			flex: 1;
-		}
-		._30 {
-			flex: 3;
-		}
-		._50 {
-			flex: 5;
-		}
-    ._40 {
-			flex: 4;
-		}
-    ._60 {
-			flex: 6;
-		}
-		._70 {
-			flex: 7;
-		}
-		._33 {
-			flex: 3.3;
-		}
-	}
-
-  footer {
-    background-color: rgb(218, 218, 218);
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    display: block;
-  }
-
-  footer p {
-      font-size: 16px;
-  }
-
-  footer span {
-      text-decoration: line-through;
-      padding: 3px
-  }
-
-  main {
-		/* max-width: 1800px; */
-		margin: 0px auto;
-	}
-
-	.container {
-		margin-left: 10px;
-		padding: 20px;
-	}
-
-	.img-container {
-		width: 100%;
-		background-image: url("/images/untitled.svg");
-		height: 750px;
-		background-position: left;
-		background-repeat: no-repeat;
-		background-size: cover;
-		position: relative;
-		margin: auto 0;
-	}
-
-	.project-intro p {
-		height: 200px;
-		text-align: center;
-		font-size: 28px;
-		font-weight: "regular";
-		padding-top: 150px;
-		position: bottom;
-	}
-
-	.work-container {
-		position: relative;
-		text-align: center;
-		color: white;
-		box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-		transition: box-shadow .3s;
-	}
-
-	.work-container h3 {
-		position: absolute;
-		top: 40%;
-		left: 50%;
-		width: 70%;
-		transform: translate(-50%, -50%);
-		color: black;
-	}
-
-	.work-container p {
-		position: absolute;
-		pointer-events: none;
-		font-size: 16px;
-		top: 60%;
-		left: 50%;
-		width: 100%;
-		padding-left: 10px;
-		padding-right: 10px;
-		transform: translate(-50%, -20%);
-		font-weight: 500;
-		color: black;
-	}
-
-
-	#work-grid {
-		display: grid;
-		grid-gap: 2rem;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		margin-bottom: 200px;
-		margin-top: 100px;
-		margin-left: 10px;
-	}
-
-	#work-grid img {
-		object-fit: cover;
-		width: 100%;
-		height: 300px;
-	}
-
-	#work-grid .overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(255, 255, 255, 0.649);
-	}
-
-	#work-grid .overlay:hover {
-		border: solid 1px gray;
-		cursor: pointer;
-		background-color: rgba(255, 255, 255, 0);
-	}
-
-	#work-grid .work-container:hover {
-		box-shadow: 0 5px 15px rgb(0 0 0 / 0.5)
-	}
-
-  #work-grid .work-container:hover h3 {
-		color: rgba(1,1,1,0.1)
-	}
-
-  #work-grid .work-container:hover p {
-		color: rgba(1,1,1,0.1)
-	}
-
-	@media screen and (max-width: 800px) {
-    .intro-text h1 {
-      font-size: 4vmax;
-    }
-		.header-row {
-			margin-bottom: 80px;
-			height: auto;
+			flex-basis: 100%;
 		}
 
-		.intro-text {
-			margin-left: 0px;
-      padding: 15px
+		@media screen and (min-width: 1240px) {
+			.blob {
+				background-color: #ede7a4;
+			}
+		}
+
+		@media screen and (min-width: 800px) {
+			.column {
+				flex: 1;
+			}
+
+			._30 {
+				flex: 3;
+			}
+
+			._50 {
+				flex: 5;
+			}
+
+			._40 {
+				flex: 4;
+			}
+
+			._60 {
+				flex: 6;
+			}
+
+			._70 {
+				flex: 7;
+			}
+
+			._33 {
+				flex: 3.3;
+			}
+		}
+
+		footer {
+			background-color: #ede7a4;
+			text-align: center;
+			padding: 20px;
+			position: relative;
+			display: block;
+			color: #643955
+		}
+
+		footer p {
+			font-size: 16px;
+		}
+
+		footer span {
+			text-decoration: line-through;
+			padding: 3px
+		}
+
+		main {
+			/* max-width: 1800px; */
+			margin: 0px auto;
 		}
 
 		.container {
-			margin-left: 0px;
-      padding: 15px
-		}
-
-		#work-grid {
-			margin-left: 0px;
+			margin-left: 10px;
+			padding: 20px;
 		}
 
 		.img-container {
-			height: 10vh
+			width: 100%;
+			background-image: url("/images/untitled.svg");
+			height: 750px;
+			background-position: left;
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: relative;
+			margin: auto 0;
 		}
-	}
 
-  .circle-img {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-  }
-  
-  .circle-img img {
-    display: inline;
-    margin: 0 auto;
-    height: 100%;
-    width: auto;
-  }
+		.project-intro p {
+			height: 200px;
+			text-align: center;
+			font-size: 28px;
+			font-weight: "regular";
+			padding-top: 150px;
+			position: bottom;
+		}
+
+		.work-container {
+			position: relative;
+			text-align: center;
+			color: white;
+			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+			transition: box-shadow .3s;
+			color: #ede7a4;
+		}
+
+		.work-container h3 {
+			position: absolute;
+			top: 40%;
+			left: 50%;
+			width: 70%;
+			transform: translate(-50%, -50%);
+			font-weight: 700;
+			font-size: 26px
+			
+		}
+
+		.work-container p {
+			position: absolute;
+			pointer-events: none;
+			font-size: 18px;
+			top: 60%;
+			left: 50%;
+			width: 100%;
+			padding-left: 10px;
+			padding-right: 10px;
+			transform: translate(-50%, -20%);
+			font-weight: 500;
+			
+		}
+
+
+		#work-grid {
+			display: grid;
+			grid-gap: 2rem;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			margin-bottom: 200px;
+			margin-top: 100px;
+			margin-left: 10px;
+		}
+
+		#work-grid img {
+			object-fit: cover;
+			width: 100%;
+			height: 300px;
+		}
+
+		#work-grid .overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(100, 57, 85, 0.8);
+		}
+
+		#work-grid .overlay:hover {
+			border: solid 1px gray;
+			cursor: pointer;
+			background-color: rgba(255, 255, 255, 0);
+		}
+
+		#work-grid .work-container:hover {
+			box-shadow: 0 5px 15px rgb(0 0 0 / 0.5)
+		}
+
+		#work-grid .work-container:hover h3 {
+			color: rgba(1, 1, 1, 0)
+		}
+
+		#work-grid .work-container:hover p {
+			color: rgba(1, 1, 1, 0)
+		}
+
+		@media screen and (max-width: 800px) {
+			.intro-text h1 {
+				font-size: 4vmax;
+			}
+
+			.header-row {
+				margin-bottom: 80px;
+				height: auto;
+			}
+
+			.intro-text {
+				margin-left: 0px;
+				padding: 15px
+			}
+
+			.container {
+				margin-left: 0px;
+				padding: 15px
+			}
+
+			#work-grid {
+				margin-left: 0px;
+			}
+
+			.img-container {
+				height: 10vh
+			}
+		}
+
+		.circle-img {
+			width: 300px;
+			height: 300px;
+			position: relative;
+			overflow: hidden;
+			border-radius: 50%;
+		}
+
+		.circle-img img {
+			display: inline;
+			margin: 0 auto;
+			height: 100%;
+			width: auto;
+		}
 	</style>
 </head>
 <script id="projectData" src="data/projects.js"></script>
+
 <body>
 	<main>
 		<div>
-		<div class="row header-row">
-			<div class="column _70">
-				<div class="intro-text">
-					<h1>
-						Ben<span class="gray-text"
-						>jamin</span> Cooley is a creative technologist focusing on visualization and human-computer interaction.
-					</h1>
-					<p>His work explores new ways of seeing and experiencing information through data visualization, interaction design, and creative coding.</p>
-					<p>
-						Ben currently works as a Visualization Software Engineer in the <a href="https://pattern.broadinstitute.org/">Pattern</a> lab at the <a href="https://www.broadinstitute.org/">Broad Institute</a>. He is also an adjunct lecturer at Northeastern University's <a href="https://camd.northeastern.edu/">College of Arts, Media and Design (CAMD)</a>.
-					</p>
-					<p>
-						After completing a Bachelor's degree in journalism, Ben received an MSc in Computational Journalism from <a href="https://www.gold.ac.uk/">Goldsmiths, University of London</a>. Though his focus is now on software tool-making, Ben continues to use his background in journalism to create narrative driven designs. Ben also enjoys using technology as a generative tool, and often uses procedural techniques for writing and performing music as <a href="https://bdexter.com/">b.dexter</a>.
-					</p>
+			<div class="blob"></div>
+			<div class="row header-row">
+				
+				<div class="column _70">
+					<div class="intro-text">
+						<h1>
+							Ben<span class="gray-text">jamin</span> Cooley is a creative technologist focusing on
+							visualization and human-computer interaction.
+						</h1>
+						<p>His work explores new ways of seeing and experiencing information through data visualization,
+							interaction design, and creative coding.</p>
+						<p>
+							Ben currently works as a Visualization Software Engineer in the <a
+								href="https://pattern.broadinstitute.org/">Pattern</a> lab at the <a
+								href="https://www.broadinstitute.org/">Broad Institute</a>. He is also an adjunct
+							lecturer at Northeastern University's <a href="https://camd.northeastern.edu/">College of
+								Arts, Media and Design (CAMD)</a>.
+						</p>
+						<p>
+							After completing a Bachelor's degree in journalism, Ben received an MSc in Computational
+							Journalism from <a href="https://www.gold.ac.uk/">Goldsmiths, University of London</a>.
+							Though his focus is now on software tool-making, Ben continues to use his background in
+							journalism to create narrative driven designs. Ben also enjoys using technology as a
+							generative tool, and often uses procedural techniques for writing and performing music as <a
+								href="https://bdexter.com/work">Saint Silva</a>.
+						</p>
+					</div>
 				</div>
+				
 			</div>
-			<div class="column _30 img-container" />
-		</div>
 		</div>
 		<div class="container">
 			<div>
@@ -360,10 +429,12 @@ p, h1, h2, h3, h4, h5, h6 {
 				</div>
 				<div class="column _33" style="padding: 10px">
 					<h2>Contact</h2>
+					<br>
 					<p>If you would like to collaborate, you can reach me at benjamincooley94 at gmail dot com.</p>
 				</div>
-				<div class="column _33"  style="padding: 10px">
+				<div class="column _33" style="padding: 10px">
 					<h2>Online</h2>
+					<br>
 					<a href="https://twitter.com/bendextercooley">Twitter</a><br>
 					<a href="https://github.com/bendoesdata">Github</a><br>
 					<a href="https://medium.com/@bendextercooley">Medium</a><br>
@@ -371,23 +442,23 @@ p, h1, h2, h3, h4, h5, h6 {
 			</div>
 		</div>
 	</main>
-    <footer>
-        <p>© Benjamin Cooley</p>
-        <p>Made with <span>&#9825;</span> a keyboard.</p>
-    </footer>
+	<footer>
+		<p>© Benjamin Cooley</p>
+		<p>Made with <span>&#9825;</span> a keyboard.</p>
+	</footer>
 </body>
 <script>
-		const grid = document.getElementById('work-grid');
+	const grid = document.getElementById('work-grid');
 
-		data.forEach(d => {
-			let newNode = document.createElement('div');
-			newNode.classList.add('work-container');
-			newNode.innerHTML = '<img src="'+d.imgUrl+'" alt="'+d.description+'" loading="lazy" />'
-			let overlayDiv = document.createElement('div');
-			overlayDiv.classList.add('overlay')
-			overlayDiv.innerHTML = '<a href="'+d.url+'"><div style="width: 100%; height: 100%"><h3>' + d.title + '</h3><p>' + d.description + '</p></div></a>'
-			newNode.appendChild(overlayDiv)
-			grid.appendChild(newNode)
-		})
-	
+	data.forEach(d => {
+		let newNode = document.createElement('div');
+		newNode.classList.add('work-container');
+		newNode.innerHTML = '<img src="' + d.imgUrl + '" alt="' + d.description + '" loading="lazy" />'
+		let overlayDiv = document.createElement('div');
+		overlayDiv.classList.add('overlay')
+		overlayDiv.innerHTML = '<a href="' + d.url + '"><div style="width: 100%; height: 100%"><h3>' + d.title + '</h3><p>' + d.description + '</p></div></a>'
+		newNode.appendChild(overlayDiv)
+		grid.appendChild(newNode)
+	})
+
 </script>
