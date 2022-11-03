@@ -1,0 +1,38 @@
+name: data
+on:
+  schedule:
+    - cron: 0 0 * * *
+  workflow_dispatch: {}
+  push:
+    paths:
+      - .github/workflows/flat.yml
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup deno
+        uses: denoland/setup-deno@main
+        with:
+          deno-version: v1.10.x
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://openlibrary.org/people/bendextercooley/books/already-read.json
+          downloaded_filename: data/books-already-read.json
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://openlibrary.org/people/bendextercooley/books/currently-reading.json
+          downloaded_filename: data/books-reading.json
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://docs.google.com/spreadsheets/d/e/2PACX-1vSmCQpEj8lo3AVss7eQdxDx-MW4d8uQO6cP39V6uGLUfjhDLDqGPJQHsgMLZjhopgxuVqWBfrLmkoaA/pub?output=csv
+          downloaded_filename: data/past-articles.csv
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://docs.google.com/spreadsheets/d/e/2PACX-1vRFBL3j0ypihBCybuY2kMLddwyD34rKMJCMfcHQ0ydrJtroxXxATMdEkO_pJrm8Nh1KfmV8hZaYbhYd/pub?output=csv
+          downloaded_filename: data/article-highlights.csv
