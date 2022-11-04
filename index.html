@@ -53,6 +53,19 @@
 			font-size: 2rem;
 		}
 
+		#articles {
+			background-color: #ede7a4;
+			color: #643955
+		}
+
+		#articles a {
+			color: #643955
+		}
+
+		#articles h3, span, a {
+			max-width: 600px
+		}
+
 		.intro-text {
 			margin: auto;
 			margin-bottom: 70px;
@@ -79,7 +92,7 @@
 
 		.blob {
 			position: absolute;
-			top: 30%;
+			top: 32%;
 			right: -2%;
 			width: 600px;
 			height: 600px;
@@ -174,7 +187,7 @@
 			flex-basis: 100%;
 		}
 
-		@media screen and (min-width: 1240px) {
+		@media screen and (min-width: 1300px) {
 			.blob {
 				background-color: #ede7a4;
 			}
@@ -381,6 +394,7 @@
 	</style>
 </head>
 <script id="projectData" src="data/projects.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.6.1/dist/d3.min.js"></script>
 
 <body>
 	<main>
@@ -420,8 +434,16 @@
 			<div>
 				<h2>Selected work</h2>
 				<div id="work-grid"></div>
+			</div>	
+		</div>
+		<div id="articles">
+			<div class="container" style="padding-top: 30px; padding-bottom: 30px">
+				<h2 style="margin-bottom: 0px">Recently read</h2>
+				<p style="font-size: 16px">Five most recent articles read via Instapaper</p>
 			</div>
-			<div class="row" style="margin-bottom: 100px">
+		</div>
+		<div class="container">
+			<div class="row" style="margin-bottom: 100px; margin-top: 50px">
 				<div class="column _33">
 					<div class="circle-img" style="margin: 0 auto">
 						<img width="100%" src="images/ben-square.jpg" alt="Image of Ben holding his cat.">
@@ -460,5 +482,46 @@
 		newNode.appendChild(overlayDiv)
 		grid.appendChild(newNode)
 	})
+
+	Promise.all([
+      d3.csv("./data/past-articles.csv"),
+	  d3.csv("./data/article-highlights.csv")
+    ]).then((datasets) => {
+    //   console.log(datasets[0])
+	//   console.log(datasets[1])
+	let articles = []
+	  datasets[0].reverse().forEach((d,i)=>{
+		let obj={}
+
+		obj.date=Object.values(d)[0];
+		obj.title=Object.values(d)[1];
+		obj.description=Object.values(d)[2];
+		obj.link=Object.values(d)[3];
+		articles.push(obj)
+
+		if (i<5) {
+			
+		d3.select('#articles .container')
+			.append('div')
+			.html(
+				'<a target="_blank" href="'+Object.values(d)[3]+'"><h4 style="margin-top: 10px">'+Object.values(d)[1]+'</h4></a>'+
+				'<span style="font-size: 14px; font-style: italic;">Read on '+Object.values(d)[0]+'</span>'
+			)
+		}
+	  })
+
+	  let highlights = []
+	  datasets[1].forEach(d=>{
+		let obj={}
+		
+		obj.date=Object.values(d)[0];
+		obj.title=Object.values(d)[1];
+		obj.description=Object.values(d)[2];
+		obj.link=Object.values(d)[3];
+		highlights.push(obj)
+	  })
+	  console.log(articles, highlights)
+    });
+	
 
 </script>
