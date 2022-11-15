@@ -25,82 +25,6 @@
 			margin-right: 0px;
 		}
 
-		p {
-			font-family: "Figtree", sans-serif;
-			font-size: 21px;
-			line-height: 1.7;
-		}
-
-		a {
-			font-size: 20px;
-			line-height: 1.7;
-			color: #ede7a4;
-		}
-
-		a:visited {
-			color: #ede7a4;
-		}
-
-		a:hover {
-			color: rgb(171, 171, 171)
-		}
-
-		a {
-			font-family: "Figtree", sans-serif;
-		}
-
-		h2 {
-			font-size: 2rem;
-		}
-
-		#articles {
-			background-color: #ede7a4;
-			color: #111
-		}
-
-		#articles a {
-			color: #333
-		}
-
-		#articles h3, span, a {
-			max-width: 600px
-		}
-
-		.intro-text {
-			margin: auto;
-			margin-bottom: 70px;
-			padding: 20px;
-			margin-left: 10px;
-		}
-
-		.intro-text p {
-			max-width: 700px;
-			margin-bottom: 20px;
-		}
-
-		.intro-text h2 {
-			margin-top: 0.2em;
-			font-size: 8rem;
-			padding: 0px;
-			font-weight: 700;
-			margin-bottom: 30px;
-		}
-
-		.gray-text {
-			color: rgba(162, 162, 162, 0.8);
-		}
-
-		.blob {
-			position: absolute;
-			top: 32%;
-			right: -2%;
-			width: 600px;
-			height: 600px;
-			margin-top: 20px;
-			background-color: #333;
-			border-radius: 28% 72% 58% 42% / 34% 64% 36% 66%;
-			z-index: -10;
-		}
 
 		/* CSS RESET BELOW */
 		*,
@@ -174,6 +98,86 @@
 		#root,
 		#__next {
 			isolation: isolate;
+		}
+
+
+		p {
+			font-family: "Figtree", sans-serif;
+			font-size: 21px;
+			line-height: 1.7;
+		}
+
+		a {
+			font-size: 20px;
+			line-height: 1.7;
+			color: #ede7a4;
+		}
+
+		a:visited {
+			color: #ede7a4;
+		}
+
+		a:hover {
+			color: rgb(171, 171, 171)
+		}
+
+		a {
+			font-family: "Figtree", sans-serif;
+		}
+
+		h2 {
+			font-size: 2rem;
+		}
+
+		#articles {
+			background-color: #ede7a4;
+			color: #111
+		}
+
+		#articles a {
+			color: #333
+		}
+
+		#articles h3,
+		span,
+		a {
+			max-width: 600px
+		}
+
+		.intro-text {
+			margin: auto;
+			margin-bottom: 70px;
+			padding: 20px;
+			margin-left: 10px;
+		}
+
+		.intro-text p {
+			max-width: 700px;
+			margin-bottom: 20px;
+		}
+
+		.intro-text h2 {
+			margin-top: 0.2em;
+			font-size: 8rem;
+			padding: 0px;
+			font-weight: 700;
+			margin-bottom: 30px;
+		}
+
+		.gray-text {
+			color: rgba(162, 162, 162, 0.8);
+		}
+
+		.blob {
+			position: absolute;
+			top: 32%;
+			right: -2%;
+			width: 600px;
+			height: 600px;
+			margin-top: 20px;
+			background-color: #333;
+			border-radius: 28% 72% 58% 42% / 34% 64% 36% 66%;
+			z-index: -10;
 		}
 
 		/* flexbox classes */
@@ -258,7 +262,7 @@
 
 		.project-intro p {
 			height: 200px;
-			text-align: center;
+			text-align: left;
 			font-size: 28px;
 			font-weight: "regular";
 			padding-top: 150px;
@@ -266,8 +270,7 @@
 		}
 
 		.work-container {
-			position: relative;
-			text-align: center;
+			text-align: left;
 			color: white;
 			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 			transition: box-shadow .3s;
@@ -275,35 +278,24 @@
 		}
 
 		.work-container h3 {
-			position: absolute;
-			top: 35%;
-			left: 50%;
-			width: 70%;
-			transform: translate(-50%, -50%);
 			font-weight: 700;
-			font-size: 26px
-			
+			font-size: 26px;
+			text-decoration: underline;
 		}
 
-		.work-container p {
-			position: absolute;
-			pointer-events: none;
+		.work-container a {
 			font-size: 18px;
-			top: 60%;
-			left: 50%;
 			width: 100%;
-			padding-left: 10px;
-			padding-right: 10px;
-			transform: translate(-50%, -20%);
 			font-weight: 500;
-			
+			text-decoration: none;
 		}
 
 
 		#work-grid {
 			display: grid;
 			grid-gap: 2rem;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-row-gap: 4rem;
+			grid-template-columns: repeat(auto-fit, minmax(320px, 0.8fr));
 			margin-bottom: 200px;
 			margin-top: 100px;
 			margin-left: 10px;
@@ -313,38 +305,16 @@
 			object-fit: cover;
 			width: 100%;
 			height: 300px;
+			margin-bottom: 20px;
 		}
 
 		#work-grid .overlay {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(27, 27, 27, 0.8);
-		}
-
-		#work-grid .overlay:hover {
-			border: solid 1px gray;
-			cursor: pointer;
-			background-color: rgba(255, 255, 255, 0);
-		}
-
-		#work-grid .work-container:hover {
-			box-shadow: 0 5px 15px rgb(0 0 0 / 0.5)
-		}
-
-		#work-grid .work-container:hover h3 {
-			color: rgba(1, 1, 1, 0)
-		}
-
-		#work-grid .work-container:hover p {
-			color: rgba(1, 1, 1, 0)
+			position: relative;
 		}
 
 		.reverse-on-mobile h2 {
-				text-align: center;
-			}
+			text-align: center;
+		}
 
 		@media screen and (max-width: 800px) {
 			.intro-text h2 {
@@ -417,9 +387,10 @@
 							DATA
 						</h2>
 						<div class="row" style="margin-bottom: 40px">
-							<h1 class="column" style="margin-left: 30px; max-width: 500px; line-height: 1.5; font-weight: 400; font-size: 22px; margin-top: 20px; text-transform: uppercase;">
-								Ben<span class="gray-text">jamin</span> Cooley is a creative technologist specializing in
-								visualization and human-computer interaction
+							<h1 class="column"
+								style="margin-left: 30px; max-width: 500px; line-height: 1.5; font-weight: 400; font-size: 22px; margin-top: 20px; text-transform: uppercase;">
+								Ben<span class="gray-text">jamin</span> Cooley is a creative technologist specializing
+								in visualization
 							</h1>
 							<h2 class="column" style="text-align: center;">
 								DESIGN
@@ -429,9 +400,9 @@
 							<h2 class="column">
 								CODE
 							</h2>
-							<h1 class="column" style="margin-left: 30px; max-width: 500px; line-height: 1.5; font-weight: 400; font-size: 22px; margin-top: 20px; text-transform: uppercase;">
-								exploring new ways of seeing and experiencing information through data visualization,
-							information design, and creative coding.
+							<h1 class="column"
+								style="margin-left: 30px; max-width: 500px; line-height: 1.5; font-weight: 400; font-size: 22px; margin-top: 20px; text-transform: uppercase;">
+								exploring new ways of seeing and experiencing information and data
 							</h1>
 						</div>
 						<p>
@@ -451,14 +422,14 @@
 						</p>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 		<div class="container">
 			<div>
 				<h2>Selected work</h2>
 				<div id="work-grid"></div>
-			</div>	
+			</div>
 		</div>
 		<!-- <div id="articles">
 			<div class="container" style="padding-top: 30px; padding-bottom: 30px">
@@ -502,50 +473,50 @@
 		newNode.innerHTML = '<img src="' + d.imgUrl + '" alt="' + d.description + '" loading="lazy" />'
 		let overlayDiv = document.createElement('div');
 		overlayDiv.classList.add('overlay')
-		overlayDiv.innerHTML = '<a href="' + d.url + '"><div style="width: 100%; height: 100%"><h3>' + d.title + '</h3><p>' + d.description + '</p></div></a>'
+		overlayDiv.innerHTML = '<a href="' + d.url + '"><h3>' + d.title + '</h3><p>' + d.description + '</p></a>'
 		newNode.appendChild(overlayDiv)
 		grid.appendChild(newNode)
 	})
 
 	Promise.all([
-      d3.csv("./data/past-articles.csv"),
-	  d3.csv("./data/article-highlights.csv")
-    ]).then((datasets) => {
-    //   console.log(datasets[0])
-	//   console.log(datasets[1])
-	let articles = []
-	  datasets[0].reverse().forEach((d,i)=>{
-		let obj={}
+		d3.csv("./data/past-articles.csv"),
+		d3.csv("./data/article-highlights.csv")
+	]).then((datasets) => {
+		//   console.log(datasets[0])
+		//   console.log(datasets[1])
+		let articles = []
+		datasets[0].reverse().forEach((d, i) => {
+			let obj = {}
 
-		obj.date=Object.values(d)[0];
-		obj.title=Object.values(d)[1];
-		obj.description=Object.values(d)[2];
-		obj.link=Object.values(d)[3];
-		articles.push(obj)
+			obj.date = Object.values(d)[0];
+			obj.title = Object.values(d)[1];
+			obj.description = Object.values(d)[2];
+			obj.link = Object.values(d)[3];
+			articles.push(obj)
 
-		if (i<5) {
-			
-		d3.select('#articles .container')
-			.append('div')
-			.html(
-				'<a target="_blank" href="'+Object.values(d)[3]+'"><h4 style="margin-top: 10px">'+Object.values(d)[1]+'</h4></a>'+
-				'<span style="font-size: 14px; font-style: italic;">Read on '+Object.values(d)[0]+'</span>'
-			)
-		}
-	  })
+			if (i < 5) {
 
-	  let highlights = []
-	  datasets[1].forEach(d=>{
-		let obj={}
-		
-		obj.date=Object.values(d)[0];
-		obj.title=Object.values(d)[1];
-		obj.description=Object.values(d)[2];
-		obj.link=Object.values(d)[3];
-		highlights.push(obj)
-	  })
-	  console.log(articles, highlights)
-    });
-	
+				d3.select('#articles .container')
+					.append('div')
+					.html(
+						'<a target="_blank" href="' + Object.values(d)[3] + '"><h4 style="margin-top: 10px">' + Object.values(d)[1] + '</h4></a>' +
+						'<span style="font-size: 14px; font-style: italic;">Read on ' + Object.values(d)[0] + '</span>'
+					)
+			}
+		})
+
+		let highlights = []
+		datasets[1].forEach(d => {
+			let obj = {}
+
+			obj.date = Object.values(d)[0];
+			obj.title = Object.values(d)[1];
+			obj.description = Object.values(d)[2];
+			obj.link = Object.values(d)[3];
+			highlights.push(obj)
+		})
+		console.log(articles, highlights)
+	});
+
 
 </script>
