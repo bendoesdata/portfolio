@@ -1,0 +1,58 @@
+
+/* overrides the global.css body styles */
+body {
+    background-color: #ede7a4;
+    color:  #111;
+    font-family: "Figtree", sans-serif;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.container {
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 620px;
+}
+
+#content {
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 620px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+p {
+    margin-bottom: 25px
+}
+
+h2 {
+    margin-bottom: 10px
+}
+
+h3 {
+    margin-bottom: 10px;
+    font-size: 26px
+}
+
+a, a:visited {
+    color:  #111;
+}
+
+a:hover {
+    color: rgb(88, 88, 88)
+}
+
+li {
+    font-size: 21px;
+    line-height: 1.6;
+    margin-bottom: 10px
+}
+
+.date-tag {
+    display: block;
+    margin-top: 5px;
+    font-style: italic;
+}

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+	<meta charset=utf-8>
+	<meta content="width=device-width,initial-scale=1" name=viewport>
+	<meta content=#333333 name=theme-color>
+	<!-- <link href=favicon.png rel=icon type=image/png> -->
+
+	<title>GutSee</title>
+	<meta name="description"
+		content="Project description for GutSee, developed by Benjamin Cooley.">
+
+        <link rel="stylesheet" href="../global.css">
+        <link rel="stylesheet" href="../blog.css">
+</head>
+
+<body>
+    <header class="container" style="margin-top: 50px">
+        <h1>On teaching how to code for data visualization</h1>
+        <span class="date-tag">Posted on Dec 22, 2022</span>
+    </header>
+    <article id="content">
+
+<!-- start main content -->
+
+Over the past year, I had the opportunity to teach as an adjunct lecturer at Northeastern University. It was my first time teaching in a formal setting and I learned a lot from the experience—about visualization, pedagogy, learning, and ultimately about myself. Looking back on the experience, I wanted to document some of the themes that I ran into again and again during class. Maybe it will be useful to others teaching programming and data visualization classes.
+
+For context, I taught two classes this year: [Visualization Technologies 1](https://searchneu.com/NEU/202310/search/Visualization%20Technologies%201%3A%20Fundamentals) and [Visualization Technologies 2](https://searchneu.com/NEU/202310/search/Visualization%20Technologies%202). Both of them focused on using code as the primary mechanism for translating, interpreting, and ultimately visualizing information and data. Both classes were available to any Masters-level students at Northeastern, no prerequisites required. On a practical level, these were data visualization classes but I use "visualization" interchangeably.
+
+## Visualization is inherently <br>multi-disciplinary
+
+This is something I have experienced personally as a primarily self-taught visualization (vis) person. But it became even more apparent when I started teaching vis. 
+
+If you teach a student how to write D3 code that creates a scatter plot, they will do it. But it will likely be a bad scatter plot.
+
+To create high-quality visualizations, you should learn much more than just code. You also need to know about storytelling, design, color contrast, accessibility, statistics. Good data visualization *expects* knowledge of these other disciplines. It also requires knowledge of other tools: tools for shaping/re-shaping data, tools for sketching, tools for debugging code.
+
+As a teacher, this was a difficult task. I had a whole syllabus of lessons to get through, and most of them focused on how to use Javscript to create visualizations (more on choosing JS for is later). Many of my students in Vis Tech 1 had never written code before. 
+
+*But should I at least teach the basics of information design? That would require a few extra lessons...I would also need to introduce some color theory. Something on Gestalt groupings would also be good.*
+
+And so on and so forth. There is never enough time!
+
+For Vis Tech 1, I had a few students who were majoring in the information design program. Those students had a significant advantage over the others, and their work proved it. They already had a good grasp of visual encodings and grammars. They were only missing some of the technical skills required to build their designs.
+
+In the end, I decided to focus on teaching a skill (code) rather than teaching an entire discipline (information design and visualization). I chose to stay highly focused on the skills required to *program* visualizations and hoped that the truly interested students would put in time outside of class to learn more about theory and design. It is unrealistic to expect a crash-course in an entire discpline in 14 weeks.
+
+## Teaching code is mostly teaching how to read documentation
+
+This takeaway is very much in the vein of "give a person a fish, eat for a day; teach a person to fish, they eat for life." 
+
+Unfortunately, software writing is rarely friendly to newcomers. My first two weeks of class were spent convinvcing people: "Yes, you can do this! Code doesn't have to be scary!"
+
+Luckily there are a few organizations that do a good job in this space, specifically the [Processing Foundation](https://processingfoundation.org/). I introduced Javascript by teaching my students [p5.js](https://p5js.org/), partially because they have some of the best documentation I have ever seen. It's thorough, approachable, has plenty of examples, and is explained in plain English.
+
+I discovered which students would excel in the class by how quickly they started looking at the documentation to find answers. During in-class excercises, my first response to a student who was struggling to add a feature or find a bug in their code was: "did you check the docs?" 
+
+Teaching students to find the answer in a well-structured set of documentation equips them to *solve problems on their own*, a crucial skill in programming (and arguably, in life).
+
+## On using Javascript
+
+In the past, lecturers for this course have used Processing (Java flavor) to teach programming visualizations. The benefit of this is you get a dedicated code editor and you only need to learn one language. The downside is the interactivity can be limited for beginners, and it doesn't run in the browser. 
+
+I chose Javascript as the main technology for my courses, and I still go back and forth on if this was the right decision. On the one hand, learning Javascript opens up a huge visualization world. It's the langauge of the web and ubiquitous in the browser. It's the language of D3.js, the most influential and well-known visualization library out there.
+
+But it's also just a weird language. It's not inuitive or human readable, in the way that Python is. And it requires knowing *other* technologies too (again, multi-disciplinary!).
+
+As a developer experienced writing code for the web, I took for granted how much you need to know to write Javascript. You also need to know about HTML and CSS. So now you are learning *three* languages instead of one. Also, you need to learn how to debug your code using something called Developer Tools and the Console. 
+
+In my experience, students really struggled switching back and forth between HTML, CSS, and Javascript. "Which one uses the arrows? Do I need a curly bracket here? What's a class again?" All very good questions! The last one especially, since **both CSS and Javascript use classes but they are not the same thing** (*facepalm*).
+
+I would like to thank my students publicly for their patience with some of my less-than-satisfactory explanations for why certain coding languages are the way they are. I didn't write them and I know, it can feel unnecessarily confusing. But I promise, it gets better with practice and time!
+
+I think in the end, although it may have been slightly over-ambitious, I'm happy with choosing Javascript. For the students who were really interested in vis, learning the basics of JS vis libraries and some basic HTML/CSS opened up an entire world for them to learn more. 
+
+And for students who maybe were not so interested continuing to code after this class, at least they were exposed to a semester's worth of practicing a new technical skill, which is good for the brain. And they also know how code works on a conceptual (semi-practical) level.
+
+## On using Glitch
+
+Finally, I wanted to document my experience using [Glitch](https://glitch.com/) as the primary tool in class for writing and teaching code. I chose to teach using Glitch because it is beginner-friendly, playful, and operates entirely in the browser. No need to download an IDE or text editor and fiddle with the settings. I wanted class to be about learning the material, not about setting up a laptop for frontend software development.
+
+I think overall I'm pretty happy with my experience using Glitch. At the end of the class, I took an informal poll from students to get their feedback as well. Here's what we decided:
+
+### The good
+- the ability to get started coding right away
+- easy to "Preview in new window" and have your code auto-refresh to show immediate results
+- files were well-organized and easy to find (no directory diving)
+- I could create a "Team" for the students to join and share resources and code examples
+- the ability to "Remix" became an essential teaching tool: I could write the boilerplate code to create a template, and then students could Remix my code to complete an in-class challenge. This was probably my favorite feature and hugely valuable when it came to teaching.
+- students really enjoyed the "Playlists" feature, which allowed me to save and curate Glitch collections (most of which I coded myself) into categories like "HTML", "Javascript", and "D3". Made it easy to find later when they worked on assignments.
+
+<br>
+### The not so good
+- ironically, Glitch tended to have a decent number of literal "glitches": some students (and myself one time) couldn't access the Teams page randomly. The browser just showed a blank screen. A similar thing happened with some students having trouble signing into their account. It usually resolved itself one way or another, but was certainly tedious.
+- students found the auto-naming feature a bit annoying. When you create a new project, a random three word name is assigned. If you don't rename your project right away to something more informative for searching purposes, it can be hard to remember where to find your code.
+- for one of the class assignments, multiple students encountered a very weird bug when loading in a local CSV file. At first, the file would show up fine. But when they switched over to their Javascript file to edit their code, and then clicked back over to the CSV file, the CSV was empty. Similarly, JS libraries such as Vega-Lite seemed to have difficulty parsing the CSV file for visualizing. It's still unclear to me if this was a Glitch issue or Vega-Lite issue. But the solution that worked was to convert the CSV to JSON on a different site, and then copy/paste the JSON as a new file in Glitch. Which leads me to suspect this was a CSV parsing issue. Either way, it was a weird and frustrating bug, and at least part of it felt specific to Glitch.
+
+## Closing thoughts
+
+For now, these are the lessons that really stood out to me. I wanted to write these down while they are still fresh (I just submitted final grades last week!) but I'm sure I'll have more to say about the topic in the future.
+
+Teaching was a rewarding experience for me and I hope to have the opportunity in the future. Some students struggled more than others, but everyone made a real effort to learn a new and unfamiliar skill. And in a few cases, some students truly impressed me with their curiosity, creativity, and desire to build something totally new to them. It was inspiring. And I hope they also left class feeling excited about what they built.
+
+The experience also reinforced the somewhat tired expression "the best way to learn is to teach". I found myself discovering and rediscovering certain parts of Javascript and development that I had long forgotten. Teaching made me a better programmer at work.
+
+Next semester I will not be teaching a class. Instead I'm taking some time to reflect and think about what's coming next in my work life. But whatever comes, I'm thankful for this experience and what it taught me.
+
+
+    </article>
+    <div class="container">
+        <a class="back-icon" href="/">&#8678; back </a>
+    </div>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <script>
+        // grab the markdown html, which CANNOT be indented
+        let res = document.getElementById('content').innerHTML;
+        var converter = new showdown.Converter();
+        document.getElementById('content').innerHTML = converter.makeHtml(res)
+    </script>
+</body>
+</html>
