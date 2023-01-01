@@ -17,8 +17,8 @@
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.5.0",
     "bulma": "^0.8.0",
-    "frontmatter-markdown-loader": "3.1.0",
-    "nuxt": "^2.5.1",
+    "frontmatter-markdown-loader": "3.7.0",
+    "nuxt": "^3.0.0",
     "reqlim": "^0.0.0",
     "vue-social-sharing": "^2.4.7"
   },
