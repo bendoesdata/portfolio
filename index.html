@@ -304,7 +304,7 @@ body {
 	data.forEach(d => {
 		let newNode = document.createElement('div');
 		newNode.classList.add('work-container');
-		newNode.innerHTML = '<img src="' + d.imgUrl + '" alt="' + d.description + '" loading="lazy" />'
+		newNode.innerHTML = '<a href="' + d.url +'"><img src="' + d.imgUrl + '" alt="' + d.description + '" loading="lazy" /></a>'
 		let overlayDiv = document.createElement('div');
 		overlayDiv.classList.add('overlay')
 		overlayDiv.innerHTML = '<a href="' + d.url + '"><h3>' + d.title + '</h3><p>' + d.description + '</p></a>'
