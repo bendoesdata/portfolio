@@ -25,7 +25,8 @@ h1 {
 }
 
 p {
-    margin-bottom: 25px
+    margin-bottom: 25px;
+    font-size: 18px;
 }
 
 h2 {
