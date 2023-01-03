@@ -20,7 +20,7 @@ const data = [
       description:
           "Design for one of the world’s largest collection of flood maps.",
       type: "data visualization",
-      imgUrl: "../images/front-page/c2s-dashboard.png",
+      imgUrl: "../images/front-page/dashboard.png",
       url: "projects/global-flood-dashboard.html",
   },
   {
