@@ -145,7 +145,7 @@ main {
 
 @media screen and (min-width: 800px) {
     .bordered {
-        border: solid 2px #ede7a4;
+        /* border: solid 2px #ede7a4; */
         margin: 30px;
     }
     .column {
