@@ -1,21 +1,29 @@
 var url = 'https://api.nasa.gov/neo/rest/v1/feed?api_key=yLeK5umsbkYxahsLWuYq7XoeWgkseD3cZUXBdzVb';
 var bubbles = [];
 let synth;
-const notes = ["C3", "E3", "F3", "G2", "B2", "C4", "D4", "F4", "G3", "A3", "B4", "C5", "G4", "G4", "G4", "E4"]
+const notes = [ "G2",  "B2", "C3", "E3", "F3", "G3", "A3", "C4", "D4", "F4", "G4", "B4", "C5", "E6"]
 const intervals = [1, 2, 4, 6, 8, 12]
 let d;
 let allVals = []
 let allSynths = [];
+let distances = []
 let nasa;
+
+let attackTime = 0.02;
+let decayTime = 0.6;
+let susPercent = 0.5;
+let releaseTime = 2;
+
+let minMag, maxMag;
+let minDistance, maxDistance;
+
+let verb;
 
 function preload() {
   nasa = loadJSON(url); 
 }
 
 function setup() {
-
-  
-
   var height = 600;
   
   synth = new p5.PolySynth();
@@ -27,7 +35,6 @@ function setup() {
   angleMode(DEGREES)
   
   noStroke();
-  
   
   drawViz()
   
@@ -44,17 +51,15 @@ function mousePressed() {
     // setInterval(playNote, round(timing)*1000, notes[round(val)]);
     let vel = 0.2;
     let dur = 1;
-    let timeConverted = (timing+1)*1000
-    setInterval(playNote, timeConverted, i, val)
+    // time is currently being calculated based on the index value
+    // need to replace it with the mapped distance value
+    // let timeConverted = (timing+1)*2000
+    let timeConverted = map(distances[i], minDistance, maxDistance, 2, 16)
+    timeConverted = timeConverted*1000;
+    setInterval(playNote, timeConverted, i, val, timeConverted)
     // synth.play(notes[round(val)], vel, timing, dur); 
     // allSynths[i].play(notes[round(val)], vel, timing, dur)
   })
-  // setInterval(playNote, 1000, notes[0]);
-  // setInterval(playNote, 1000, notes[3]);
-  // setInterval(playNote, 1000, notes[5]);
-  // setInterval(playNote, 1000, notes[9])
-  // setInterval(playNote, 2000, notes[2]);
-  // setInterval(playNote, 4000, notes[5]);
   
 }
 
@@ -71,29 +76,26 @@ function draw() {
   
   // draw earth
   ellipse(0,0,60);
-  
+
+
   
   var c = color('rgba(24, 119, 168,0.7)')
   fill(c);
-  
+  let r = frameCount/10;
   for (var i = 0; i < sats.length; i++) {  
     var distance = sats[i].close_approach_data[0].miss_distance.lunar
     
-    var size = sats[i].estimated_diameter.miles.estimated_diameter_max
+    var size = sats[i].absolute_magnitude_h;
     
-    var sizeScaled = map(size, 0.01, 1, 5, 100)
-    rotate(frameCount)  
-    ellipse(-(distance*2),0, sizeScaled, sizeScaled);
+    var sizeScaled = map(size, minMag, maxMag, 5, 50)
     
+    rotate(r)  
+    ellipse(0,map(distance, minDistance, maxDistance, 50, 250), sizeScaled, sizeScaled);
   }
-  
-  
-  console.log('hi')
 }
 
 function drawViz() {
   
-  let today = "2022-10-27"
   let now = new Date()
   let nowFormatted = now.toISOString().split('T')[0]
   
@@ -101,37 +103,46 @@ function drawViz() {
   var sats = nasa.near_earth_objects[nowFormatted]; 
   console.log(sats);
   
-  
-  // background(5);
-  // fill(220); 
-  
-  // // draw earth
-  // ellipse(0,0,100);
-  
-  // var c = color('rgba(24, 119, 168,0.7)')
-  // fill(c);
-  
   for (var i = 0; i < sats.length; i++) {  
-    allVals.push(sats[i].absolute_magnitude_h)
+    allVals.push(+sats[i].absolute_magnitude_h)
+    distances.push(+sats[i].close_approach_data[0].miss_distance.lunar)
 
     let sy = new p5.MonoSynth();
+
+
+    verb = new p5.Reverb();
+
+    verb.process(sy, 8, 8)
+    sy.setADSR(attackTime, decayTime, susPercent, releaseTime);
     allSynths.push(sy)
   }
+
+  // find the maximum value in the allVals array
+  maxMag = max(allVals)
+  minMag = min(allVals)
+  minDistance = min(distances)
+  maxDistance = max(distances)
+
+  console.log(minMag, maxMag)
   
-  // fill(5)
-  // textSize(22);
-  // text("near earth asteroids",width-(width/3),50);
-  
-  // textSize(12);
-  // text("asteroids passing earth today",width-(width/3),70);
-  
+  // scale the range of the data to fit into the canvas
 } 
 
-function playNote(index, val) {
-  console.log(index)
-  let vel = 0.1;
+function playNote(index, val, timing) {
+  // console.log(index)
+  let vel = 0.2;
   let time = 0;
-  let dur = 0.5;
+  let dur = 0.3;
+  console.log(round(val),notes[round(val)])
+  console.log(timing)
+  push()
+  translate(width/2, height/2)
+    noFill()
+    stroke(255)
+    strokeWeight(2)
+    ellipse(0,0,map(index, 0,12, 50, 500));
+  pop()
+
   allSynths[index].play(notes[round(val)], vel, time, dur)
   // synth.play(note, vel, time, dur); 
 }
