@@ -70,9 +70,14 @@ a:hover {
     font-size: 16px
 }
 
+.images {
+    padding: 20px;
+}
+
 .images img {
-    padding: 30px;
-    width: 100%
+    width: 100%;
+    box-shadow: 0.5rem 0.5rem #ede7a4;
+    margin-bottom: 50px;
 }
 
 .images {
