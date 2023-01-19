@@ -73,6 +73,10 @@ figure {
     background-color:  #111;
 }
 
+.dark-mode a, a:visited {
+    color:  #ede7a4;
+}
+
 #dark-toggle {
     position: absolute;
     right: 8%;
