@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <button id="dark-toggle" onclick="toggleDarkMode()">🌓 Dark Mode</button>
     <header class="container" style="margin-top: 50px">
         <h1>Sonifying the Global Jukebox</h1>
         <span class="date-tag">Posted on Jan 19, 2023</span>
@@ -28,7 +29,7 @@
 
 <iframe width="100%" height="200" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1427884402&color=%23272c38&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; margin-bottom: 30px; color: #111111;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/bendextercooley" title="Ben Dexter Cooley" target="_blank" style="color: #111111; text-decoration: none;">Ben Dexter Cooley</a> · <a href="https://soundcloud.com/bendextercooley/global-jukebox-sonification" title="Global Jukebox Sonification" target="_blank" style="color: #111111; text-decoration: none;">Global Jukebox Sonification</a></div>
 
-## The culture meanings of instruments
+## The cultural meanings of instruments
 
 Have you ever wondered what a culture's instrumentation says about itself? I mean, maybe not… it is a… very specific question. But, it *is* based on a simpler, more intuitive premise: the things that a culture invent probably reflect a shared value or priority for that culture. Right? Without any well-researched, peer-reviewed evidence, this still sounds likely to me.
 
@@ -119,6 +120,27 @@ If you'd like to join in on the sonification challenges, join us on the [Decibel
         let res = document.getElementById('content').innerHTML;
         var converter = new showdown.Converter();
         document.getElementById('content').innerHTML = converter.makeHtml(res)
+        
+        let darkMode = false;
+        function toggleDarkMode() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+
+            darkMode = !darkMode;
+            console.log(darkMode);
+            if (darkMode) {
+                document.getElementById('dark-toggle').innerHTML = "🌗 Light Mode"
+                document.getElementById('dark-toggle').style.color = "#ede7a4";
+                document.getElementById('dark-toggle').style.borderColor = "#ede7a4";
+            } else {
+                document.getElementById('dark-toggle').innerHTML = "🌓 Dark Mode"
+                // change color of #dark-toggle to color: #ede7a4
+                document.getElementById('dark-toggle').style.color = "#111";
+                document.getElementById('dark-toggle').style.borderColor = "#111";
+
+                
+            }
+        }
     </script>
 </body>
 </html>

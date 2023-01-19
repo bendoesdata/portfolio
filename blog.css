@@ -67,3 +67,20 @@ figcaption {
 figure {
     margin-bottom: 20px
 }
+
+.dark-mode {
+    color: #ede7a4;
+    background-color:  #111;
+}
+
+#dark-toggle {
+    position: absolute;
+    right: 8%;
+    top: 2%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: solid 2px #111;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
