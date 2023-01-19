@@ -17,6 +17,7 @@
 
 <body>
     <header class="container" style="margin-top: 50px">
+        <button id="dark-toggle" onclick="toggleDarkMode()">🌓 Dark Mode</button>
         <h1>On teaching how to code data visualizations</h1>
         <span class="date-tag">Posted on Dec 22, 2022</span>
     </header>
@@ -115,6 +116,24 @@ Next semester I will not be teaching a class. Instead I'm taking some time to re
         let res = document.getElementById('content').innerHTML;
         var converter = new showdown.Converter();
         document.getElementById('content').innerHTML = converter.makeHtml(res)
+
+        let darkMode = false;
+        function toggleDarkMode() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+
+            darkMode = !darkMode;
+            if (darkMode) {
+                document.getElementById('dark-toggle').innerHTML = "🌗 Light Mode"
+                document.getElementById('dark-toggle').style.color = "#ede7a4";
+                document.getElementById('dark-toggle').style.borderColor = "#ede7a4";
+            } else {
+                document.getElementById('dark-toggle').innerHTML = "🌓 Dark Mode"
+                // change color of #dark-toggle to color: #ede7a4
+                document.getElementById('dark-toggle').style.color = "#111";
+                document.getElementById('dark-toggle').style.borderColor = "#111";
+            }
+        }
     </script>
 </body>
 </html>
