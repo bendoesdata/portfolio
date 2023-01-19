@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+	<meta charset=utf-8>
+	<meta content="width=device-width,initial-scale=1" name=viewport>
+	<meta content=#333333 name=theme-color>
+	<!-- <link href=favicon.png rel=icon type=image/png> -->
+
+	<title>Sonification of the Global Jukebox</title>
+	<meta name="description"
+		content="A blog post detailing a sonification made by Ben Dexter Cooley with data from the Global Jukebox.">
+
+        <link rel="stylesheet" href="../global.css">
+        <link rel="stylesheet" href="../blog.css">
+</head>
+
+<body>
+    <header class="container" style="margin-top: 50px">
+        <h1>Sonifying the Global Jukebox</h1>
+        <span class="date-tag">Posted on Jan 19, 2023</span>
+    </header>
+    <article id="content">
+
+<!-- start main content -->
+
+*The following post introduces a data sonification that I created in response to the monthly sonification challenge set by [Decibels](https://decibels.community/), a data sonification community I am part of.*
+
+Have you ever wondered what a culture's instrumentation says about itself? I mean, maybe not… it is a… very specific question. But, it *is* based on a simpler, more intuitive premise: the things that a culture invent probably reflect a shared value or priority for that culture. Right? Without any well-researched, peer-reviewed evidence, this still sounds likely to me.
+
+I was asking myself this question after looking at particular dataset: the Global Jukebox (journal article [here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0275469) and interactive map [here](https://theglobaljukebox.org/)). This dataset holds many rows and columns containing data about instruments: how large they are, who often plays them, when they were invented, and what they are used for. This last question—what their most important function in society is—stuck with me. 
+
+The following data sonification is a sonic exploration of this question. After a bit of analysis, I was able to identify the 5 most common “functions” for instruments across all cultures in the dataset: DANCE, RITUALS, PASSIVE LISTENING, SELF ENTERTAINMENT, and SIGNALING. I ignored some categories such as MISSING DATA here. Then, using a sonification approach called parameter mapping, I assigned different functions to different aspects of the music. The result is a series of soundscapes on loop, each one representing a different culture.
+
+To decode the meaning, here's what you need to know:
+- The tempo of the song corresponds to how many instruments are primarily meant for DANCING. Faster beats mean more dance-y instruments.
+- RITUALS is captured by the melody of an arpeggiating synthesizer. Melodies with more frequent notes correspond to more instruments. Very sparse, random melodies mean there are few instruments specifically attached to rituals.
+- PASSIVE LISTENING is encoded through how much reverb is added to the lead synthesizer. So washed out tones that sound “distant” in a way tells us that this culture has more instruments dedicated to passive listening.
+- SELF ENTERTAINMENT is represented by a single sample: the downward slide of a guitar. The volume of this sample tells us how many instruments are meant for self entertainment. 
+- Finally, SIGNALING is captured by the cutoff level of the bass of the track. More growly, harsh sounds mean higher values, while rounded, soft tones mean lower. Signaling is a bit of an obscure category, but it is often attached to purposes of war or politics.
+
+Let's take a listen to a few cultures that are very high in one of these 5 functions to pick out the differences.
+
+### Southern United States
+
+<figure>
+    <figcaption>Listen to the the sonification:</figcaption>
+    <audio
+        controls
+        src="../audio/south-us-trimmed.wav">
+    </audio>
+</figure>
+
+### Japan
+
+<figure>
+    <figcaption>Listen to the the sonification:</figcaption>
+    <audio
+        controls
+        src="../audio/japan-trimmed.wav">
+    </audio>
+</figure>
+
+### Northern India
+
+<figure>
+    <figcaption>Listen to the the sonification:</figcaption>
+    <audio
+        controls
+        src="../audio/n-india-trimmed.wav">
+    </audio>
+</figure>
+
+### Zulu
+
+<figure>
+    <figcaption>Listen to the the sonification:</figcaption>
+    <audio
+        controls
+        src="../audio/zulu-trimmed.wav">
+    </audio>
+</figure>
+
+### Ashanti
+
+<figure>
+    <figcaption>Listen to the the sonification:</figcaption>
+    <audio
+        controls
+        src="../audio/ashanti-trimmed.wav">
+    </audio>
+</figure>
+
+As you can hear, each of the above five cultures really stands out in one of the most common instrument functions. Southern United States by far was credited with the most instruments meant for DANCE. Zulu had the most instruments dedicated to SELF-ENTERTAINMENT. Interestingly, N. India had the highest value for PASSIVE LISTENING, but playing back the tracks, JAPAN also seems to have a relatively high number for this category with some reverb-drenched tones (in contrast, JAPAN was a clear leader in instruments dedicated to RITUALS, which can be heard in the near constant cadence of arpeggiating notes). Ashanti had one of the slowest beats, but the growliest bass (i.e. high in SIGNALING).
+
+I love that sonification can introduce this level of nuance. This was a fun challenge to get started with and I hope to spin out more of this kind of work in the future.
+
+For those curious, my process was the following:
+- download data from Global Jukebox and load into Google Sheets 
+- create a Pivot Table to group the data in interesting ways, looking for a story angle
+- find the top cultures for specific functions and download small datasets for each one
+- load the data into Sonic Pi, which has some code written that will normalize values and map them to musical parameters (view the code on Github [here](https://github.com/bendoesdata/decibels-challenges/blob/main/01-global-jukebox.rb))
+- record the audio files and mix them in Audacity
+
+If you'd like to join in on the sonification challenges, join us on the [Decibels Discord](https://decibels.community/)!
+
+---
+
+*You can find me on [the Mastodon vis.social instance](https://vis.social/@bendexter) or [LinkedIn](https://www.linkedin.com/in/benjamincooley/). I also write a newsletter about these types of things called [Data Curious](https://datacurious.substack.com/).*
+
+    </article>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <script>
+        // grab the markdown html, which CANNOT be indented
+        let res = document.getElementById('content').innerHTML;
+        var converter = new showdown.Converter();
+        document.getElementById('content').innerHTML = converter.makeHtml(res)
+    </script>
+</body>
+</html>
