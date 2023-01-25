@@ -13,6 +13,17 @@
   </head>
 
   <body>
+    <script>
+      function hideIntro() {
+        console.log('go')
+        document.getElementById("intro").classList.add("hide")
+      }
+    </script>
     <script src="sketch.js"></script>
+    <div id="intro">
+      <h1>Asteroid Tones</h1>
+      <p>This is a data sonification of asteroids passing Earth today. It pulls live data from NASA's <a href="https://data.nasa.gov/Space-Science/Asteroids-NeoWs-API/73uw-d9i8" target="_blank">Near Earth Object API</a>.</p>
+      <button onclick="hideIntro()">Start</button>
+    </div>
   </body>
 </html>

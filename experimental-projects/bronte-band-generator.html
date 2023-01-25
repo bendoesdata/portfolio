@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bronte Bands</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- p5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>
+    <!-- ml5 -->
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <!-- RiTa -->
+    <script src="https://unpkg.com/rita"></script>
+
+    <link rel="stylesheet" type="text/css" href="../style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Machine learning tool to make band names based on the writings of Charlotte Bronte.">
+    <style>
+      button:hover {
+        background-color: #b2b2b2;
+      }
+
+      button {
+        border: 2px solid black; font-size: 20px; cursor: pointer; padding: 10px;
+      }
+
+      .container p {
+        max-width: 800px
+      }
+
+      html {
+        background: radial-gradient(#fff6db 10px, white 10px 60px, #fff9e6 60px );
+        background-size: 100px 100px;
+        accent-color: rgb(226, 194, 33);
+      }
+
+      .check-label {
+        font-size: 20px
+      }
+
+      .tooltip {
+        border: 1px solid black;
+        background-color: #fff6db;
+        border-radius: 20px;
+        padding: 5px 5px;
+        position: relative;
+        margin: 10px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px
+      }
+
+      .tooltip::after {
+        background-color: white;
+        border-radius: 10px;
+        color: black;
+        display: none;
+        border: 1px solid gray;
+        padding: 10px 15px;
+        position: absolute;
+        text-align: center;
+        width: 200px;
+        z-index: 999;
+      }
+
+      .tooltip::before {
+        background-color: white;
+        content: ' ';
+        display: none;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        z-index: 999;
+      }
+
+      .tooltip:hover::after {
+        display: block;
+      }
+
+      .tooltip:hover::before {
+        display: block;
+      }
+
+      .tooltip.top::after {
+        content: 'Only nouns are included by default';
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, calc(-100% - 10px));
+      }
+
+      #word-1, #word-2 {
+        font-size: 8vh; 
+        font-weight: 600
+      }
+
+      @media only screen and (max-width: 800px) {
+        #word-1, #word-2 {
+          font-size: 6vh; 
+          overflow-wrap: break-word;
+          font-weight: 600
+        }
+      }
+
+      #bronte-app .container p,a {
+        font-size: 16px; 
+        line-height: 1.6
+      }
+
+      body {
+        font-family:Georgia, 'Times New Roman', Times, serif
+      }
+    </style>
+  </head>
+
+  <body id="bronte-app">
+    <header class="container">
+      <div class="flex-row">
+        <div style="flex: 3">
+          <h1 style="font-family: 'Tangerine', cursive; font-weight: 700; font-size: 4em">
+            Brontë Band Generator
+          </h1>
+          <h2 style="font-family: 'Tangerine', cursive; font-size: 2em">Make your next great band name inspired by Brontë!</h2>
+          <p style="margin-top: 10px">This tool uses a <a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/">Long Short-Term Memory (LSTM)</a> network to create unusal, two-word band names. The LSTM uses as its source material a pre-trained model on a corpus of <a href="https://en.wikipedia.org/wiki/Charlotte_Bront%C3%AB">Charlotte Brontë</a>. Built using <a href="https://ml5js.org/">ml5.js</a> and <a href="https://p5js.org/">p5.js</a>. Dev notes on how I buit it <a href="/notepad/bronte-band-notes.html">here</a>.</p>
+        </div>
+        <div style="flex: 1">
+          <img src="./images/dither-bronte.png" width="250px" alt="Dithered image of Emily Bronte">
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container flex-row">
+        <p style="flex: 2;">Enter some seed text:
+          <input id="textInput" value="I went to the woods " />
+        </p>
+        <p style="flex: 1; border-left: solid 1px black; padding-left: 10px"># of words:
+          <input id="lenSlider" type="range" min="10" max="500" value="100" /> <span id="length">100</span></p>
+        <p style="flex: 1; border-left: solid 1px black; padding-left: 10px">text temperature:
+          <input id="tempSlider" type="range" min="0" max="1" step="0.01" /><span id="temperature">0.5</span></p>
+      </div>
+      <div class="container flex-row">
+        <div style="flex: 1; margin-bottom: 30px">
+          <button id="generate">GENERATE</button>
+          <p style="margin-top: 10px; font-style:italic" id="status">Loading model...</p>
+          <input type="checkbox" id="adj-check" name="adj">
+          <label class="check-label" for="adj"> Include adjectives</label><span class="tooltip top">(?)</span>
+        </div>
+        <div style="flex: 1">
+          <h3 style="display: inline">Model output:</h3>
+          <p style="font-style: italic; font-size: 20px" id="result"></p>
+        </div>
+        
+      </div>
+      <p style="cursor: pointer; text-decoration: underline; text-align: center;" id="shuffle"></p>
+      <div class="flex-row band-name" style="height: 30vh">
+        <div style="background-color: #649786; color: #eeeeee; height: 50vh; width: 100%; display: grid; place-items: center;">
+          <p id="word-1"></p>
+        </div>
+        <div style="background-color: #803A5A; color: #eeeeee; height: 50vh; width: 100%; display: grid; place-items: center;">
+          <p id="word-2"></p>
+        </div>
+      </div>
+    </main>
+    
+    <script>
+
+// Copyright (c) 2019 ml5
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
+/* ===
+ml5 Example
+LSTM Generator example with p5.js
+This uses a pre-trained model on a corpus of Virginia Woolf
+For more models see: https://github.com/ml5js/ml5-data-and-training/tree/master/models/charRNN
+=== */
+
+let charRNN;
+let textInput;
+let lengthSlider;
+let tempSlider;
+let button;
+let runningInference = false;
+
+// will hold the nouns after model has run
+let allWords = [];
+let adjectives = [];
+let includeAdjectives = false;
+
+const checkbox = document.getElementById('adj-check')
+
+checkbox.addEventListener('change', (event) => {
+  if (event.currentTarget.checked) {
+    includeAdjectives = true;
+  } else {
+    includeAdjectives = false;
+  }
+})
+
+function randomIntFromInterval(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function setup() {
+  noCanvas();
+
+  // Create the LSTM Generator passing it the model directory
+  charRNN = ml5.charRNN('./ml5-datasets-and-models/models/charRNN/charlotte_bronte/', modelReady);
+
+  // Grab the DOM elements
+  textInput = select('#textInput');
+  lengthSlider = select('#lenSlider');
+  tempSlider = select('#tempSlider');
+  button = select('#generate');
+  button2 = select('#shuffle');
+
+  // DOM element events
+  button.mousePressed(generate);
+  button2.mousePressed(shuffleText);
+  lengthSlider.input(updateSliders);
+  tempSlider.input(updateSliders);
+}
+
+// Update the slider values
+function updateSliders() {
+  select('#length').html(lengthSlider.value());
+  select('#temperature').html(tempSlider.value());
+}
+
+function modelReady() {
+  select('#status').html('');
+}
+
+function shuffleText() {
+  if (includeAdjectives) {
+    select('#word-1').html(adjectives[randomIntFromInterval(0, adjectives.length-1)])
+    select('#word-2').html(allWords[randomIntFromInterval(0, allWords.length-1)])
+  } else {
+    select('#word-1').html(allWords[randomIntFromInterval(0, allWords.length-1)])
+    select('#word-2').html(allWords[randomIntFromInterval(0, allWords.length-1)])
+  }
+}
+
+// Generate new text
+function generate() {
+  // prevent starting inference if we've already started another instance
+ if(!runningInference) {
+    runningInference = true;
+
+    // Update the status log
+    select('#status').html('Generating...');
+
+    // Grab the original text
+    let original = textInput.value();
+    // Make it to lower case
+    let txt = original.toLowerCase();
+
+    // Check if there's something to send
+    if (txt.length > 0) {
+      // This is what the LSTM generator needs
+      // Seed text, temperature, length to outputs
+      // TODO: What are the defaults?
+      let data = {
+        seed: txt,
+        temperature: tempSlider.value(),
+        length: lengthSlider.value()
+      };
+
+      // Generate text with the charRNN
+      charRNN.generate(data, gotData);
+
+      let textData = [];
+      // When it's done
+      function gotData(err, result) {
+        // Update the status log
+        select('#status').html('Ready!');
+        
+        setTimeout(()=> {
+          let partsOfSpeech = RiTa.pos(result.sample);
+        result.sample.split(' ').forEach((d, i) => {
+          let obj = {};
+          
+          obj.word = d;
+          obj.pos = RiTa.pos(d)
+
+          textData.push(obj);
+        })
+        allWords = [];
+        const filteredText = textData.filter(entry => entry.pos[0] == "nn" || entry.pos[0] == "nns" || entry.pos[0] == "nnp" || entry.pos[0] == "nnps");
+        let filteredAdj = textData.filter(entry => entry.pos[0] == "jj");
+        
+        filteredText.forEach(d => {
+          allWords.push(d.word.replace(/\W/g, ''));
+        })
+
+        filteredAdj.forEach(d => {
+          
+          adjectives.push(d.word.replace(/\W/g, ''));
+        })
+
+        if (includeAdjectives) {
+          select('#word-1').html(adjectives[0])
+          select('#word-2').html(allWords[1])
+        } else {
+          select('#word-1').html(allWords[0])
+          select('#word-2').html(allWords[1])
+        }
+        
+        }, 200)
+        
+        select('#result').html(txt + result.sample);
+        select('#shuffle').html('⟳ Shuffle the band name ⟳')
+        runningInference = false;
+      }
+    }
+  }
+}
+
+    </script>
+  </body>
+</html>
