@@ -26,6 +26,12 @@ p {
     margin-top: 20px
 }
 
+li {
+    font-size: 21px;
+    line-height: 1.7;
+    margin-top: 10px
+}
+
 a {
     color: black;
 }
@@ -76,7 +82,7 @@ a:hover {
 
 .images img {
     width: 100%;
-    box-shadow: 0.5rem 0.5rem #ede7a4;
+    /* box-shadow: 0.5rem 0.5rem #ede7a4; */
     margin-bottom: 50px;
 }
 
