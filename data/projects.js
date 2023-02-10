@@ -1,5 +1,13 @@
 const data = [
     {
+        title: "Microbiome Data Portal",
+        description:
+            "Data portal for exploring and visualizing microbiome research.",
+        type: "data visualization",
+        imgUrl: "../images/projects/microbiome/circle-cover.png",
+        url: "projects/microbiome-data-portal.html",
+    },
+    {
         title: "3d Webster UMAP",
         description:
             "A 3d visualization tool that maps biological funtions to genes.",
