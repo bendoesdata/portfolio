@@ -7,9 +7,9 @@
 	<meta content=#333333 name=theme-color>
 	<!-- <link href=favicon.png rel=icon type=image/png> -->
 
-	<title>Sonification of the Global Jukebox</title>
+	<title>Sonification of the Objects launched into space</title>
 	<meta name="description"
-		content="A blog post detailing a sonification made by Ben Dexter Cooley with data from the NASA on neart earth objects in space.">
+		content="A blog post detailing a sonification made by Ben Dexter Cooley of satelites launched into space over time.">
 
         <link rel="stylesheet" href="../global.css">
         <link rel="stylesheet" href="../blog.css">
@@ -25,31 +25,47 @@
 
 <!-- start main content -->
 
-*The following post introduces a data sonification that I created in response to the monthly sonification challenge set by [Decibels](https://decibels.community/), a data sonification community I am part of. You can listen to it two ways: the SoundCloud link is a "podcast style" version, where I introduce the dataset and each sound to act as a sort of "legend" for understanding the sonification. Or, you can read through the post below and listen to the sonification clips standalone (quicker option probably).*
+*The following post introduces a data sonification that I created in response to the monthly sonification challenge set by [Decibels](https://decibels.community/), a data sonification community. You can listen to it via the Soundcloud embed and read about how it was created in the text below.*
 
-<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1458123295&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/bendextercooley" title="Ben Cooley" target="_blank" style="color: #cccccc; text-decoration: none;">Ben Cooley</a> · <a href="https://soundcloud.com/bendextercooley/yearly-objects-launched-into-space" title="Yearly Objects Launched into Space" target="_blank" style="color: #111111; text-decoration: none;">Yearly Objects Launched into Space</a></div>
+<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1458123295&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="margin-bottom: 50px; font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/bendextercooley" title="Ben Cooley" target="_blank" style="color: #111111; text-decoration: none;">Ben Cooley</a> · <a href="https://soundcloud.com/bendextercooley/yearly-objects-launched-into-space" title="Yearly Objects Launched into Space" target="_blank" style="color: #111111; text-decoration: none;">Yearly Objects Launched into Space</a></div>
 
-## The cultural meanings of instruments
+## Challenge
 
-Have you ever wondered what a culture's instrumentation says about itself? I mean, maybe not… it is a… very specific question. But, it *is* based on a simpler, more intuitive premise: the things that a culture invent probably reflect a shared value or priority for that culture. Right? Without any well-researched, peer-reviewed evidence, this still sounds likely to me.
+For the February challenge, I had the pleasure of setting the initial dataset to sonify. I've been in a spacey mood lately, so I chose a dataset from Our World in Data showing, by county, the [yearly objects launched into space over time](https://ourworldindata.org/grapher/yearly-number-of-objects-launched-into-outer-space?country=OWID_WRL~USA~RUS~CHN~GBR~JPN~FRA~IND~DEU~European+Space+Agency).
 
-I was asking myself this question after looking at particular dataset: the Global Jukebox (journal article [here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0275469) and interactive map [here](https://theglobaljukebox.org/)). This dataset holds many rows and columns containing data about instruments: how large they are, who often plays them, when they were invented, and what they are used for. This last question—what their most important function in society is—stuck with me. 
+Here's what it looks like as a chart:
 
-The following data sonification is a sonic exploration of this question. After a bit of analysis, I was able to identify the 5 most common “functions” for instruments across all cultures in the dataset: DANCE, RITUALS, PASSIVE LISTENING, SELF ENTERTAINMENT, and SIGNALING. I ignored some categories such as MISSING DATA here. Then, using a sonification approach called parameter mapping, I assigned different functions to different aspects of the music. The result is a series of soundscapes on loop, each one representing a different culture.
+<iframe src="https://ourworldindata.org/grapher/yearly-number-of-objects-launched-into-outer-space?country=OWID_WRL~USA~RUS~CHN~GBR~JPN~FRA~IND~DEU~European+Space+Agency" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
 
-To decode the meaning, here's what you need to know:
-- The tempo of the song corresponds to how many instruments are primarily meant for DANCING. Faster beats mean more dance-y instruments.
-- RITUALS is captured by the melody of an arpeggiating synthesizer. Melodies with more frequent notes correspond to more instruments. Very sparse, random melodies mean there are few instruments specifically attached to rituals.
-- PASSIVE LISTENING is encoded through how much reverb is added to the lead synthesizer. So washed out tones that sound “distant” in a way tells us that this culture has more instruments dedicated to passive listening.
-- SELF ENTERTAINMENT is represented by a single sample: the downward slide of a guitar. The volume of this sample tells us how many instruments are meant for self entertainment. 
-- Finally, SIGNALING is captured by the cutoff level of the bass of the track. More growly, harsh sounds mean higher values, while rounded, soft tones mean lower. Signaling is a bit of an obscure category, but it is often attached to purposes of war or politics.
+For the parameter mapping, I decided to take a simple approach and map the data to the same musical scale, with higher notes representing more objects launched in space. Then, to capture the differences in each country (only selecting the top 4), I altered the ASDR envelope each time to create a different sound "stamp". This was a new approach that I had wanted to try for a while, so used the challenge as an excuse to finally experiment.
 
-Let's take a listen to a few cultures that are very high in one of these 5 functions to pick out the differences.
+## Same oscillator, different envelope
+
+The ASDR (attack, sustain, decay, release) is the cornerstone of modern electronic music. I didn't realize just how much these four parameters could change a single sound until I bought my first analog synth: a [Volca Keys](https://www.korg.com/us/products/dj/volca_keys/). This synth is very small and has limited controls to shape the sound, which is actually great for someone just learning about sound synthesis. 
+
+My motivation for using ASDR for sonification purposes boils down to two points: 
+
+1. I wondered if the ear could reasonably differentiate between a group of sounds that go through different envelopes. Can I make each one unique enough that they are discernable, but only tweak the ASDR?
+
+2. Data sonification almost always requires needing to write some code, or at the very least clean some data in a spreadsheet. I spend most of the day in front of a computer, so for my musical practice I really enjoy "tactile" playing time. I wondered if I could handle the sonification using some code in Sonic Pi, but then tweak all of the musical expressions in real-time using physical knobs on a physical instrument.
+
+## The approach
+
+I decided to handle the parameter mapping of data to MIDI notes using Sonic Pi, since that's what I've been using most lately. Then, I hooked up my Volca Keys to my laptop using a [USB to MIDI In/Out cable](https://www.amazon.com/usb-midi/s?k=usb+to+midi). Using Sonic Pi's MIDI send function, I could then have the computer play the notes (data) for me.
+
+Here's a video (no sound) of what that looked like in practice: 
+
+<video width="320" height="540" controls>
+    <source src="../audio/volca-sonic-pi.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
+
+I decided to only focus on the top 4 countries by objects launched into space for this sonification. For each country, I put the data into a loop, and fiddled with the ASDR knobs on the Volca until I found a sound that I felt was unique enough to capture this country. Below are short snippets of each country's "sound stamp" on it's own.
 
 ### United States
 
 <figure>
-    <figcaption>Listen to the the sonification:</figcaption>
+    <figcaption>Listen to the audio snippet:</figcaption>
     <audio
         controls
         src="../audio/usa-snippet.wav">
@@ -59,7 +75,7 @@ Let's take a listen to a few cultures that are very high in one of these 5 funct
 ### Russia
 
 <figure>
-    <figcaption>Listen to the the sonification:</figcaption>
+    <figcaption>Listen to the audio snippet:</figcaption>
     <audio
         controls
         src="../audio/russia-snippet.wav">
@@ -79,23 +95,20 @@ Let's take a listen to a few cultures that are very high in one of these 5 funct
 ### China
 
 <figure>
-    <figcaption>Listen to the the sonification:</figcaption>
+    <figcaption>Listen to the audio snippet:</figcaption>
     <audio
         controls
         src="../audio/china-snippet.wav">
     </audio>
 </figure>
 
-As you can hear, each of the above five cultures really stands out in one of the most common instrument functions. Southern United States by far was credited with the most instruments meant for DANCE. Zulu had the most instruments dedicated to SELF-ENTERTAINMENT. Interestingly, N. India had the highest value for PASSIVE LISTENING, but playing back the tracks, JAPAN also seems to have a relatively high number for this category with some reverb-drenched tones (in contrast, JAPAN was a clear leader in instruments dedicated to RITUALS, which can be heard in the near constant cadence of arpeggiating notes). Ashanti had one of the slowest beats, but the growliest bass (i.e. high in SIGNALING).
+Then, I put all the audio tracks together in Ableton Live and layed down a dark, moody drone in A minor underneath to set the tone. It felt ominous and sort of reckless torwards the end, like countries were just shooting things into space left and right. 
 
-I love that sonification can introduce this level of nuance. This was a fun challenge to get started with and I hope to spin out more of this kind of work in the future.
+While I like the tone of the piece, I'm still not sure how effective it is to only use ASDR for differentiating sounds for sonification. Perhaps if I used a wider note range scale it would be easier to hear the differences. Right now, the notes kind of sound muddy together, with a lot of mid-range frequencies. 
 
-For those curious, my process was the following:
-- download data from Global Jukebox and load into Google Sheets 
-- create a Pivot Table to group the data in interesting ways, looking for a story angle
-- find the top cultures for specific functions and download small datasets for each one
-- load the data into Sonic Pi, which has some code written that will normalize values and map them to musical parameters (view the code on Github [here](https://github.com/bendoesdata/decibels-challenges/blob/main/01-global-jukebox.rb))
-- record the audio files and mix them in Audacity
+Either way it was a fun experiment and I am looking forward to finding more "hybrid" ways of doing sonification. For me, it's so valuable to leave room for human expression in data sonification, and that's really hard to capture by writing code alone. Listen to the full piece below if you haven't already!
+
+<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1458123295&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="margin-bottom: 50px; font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/bendextercooley" title="Ben Cooley" target="_blank" style="color: #111111; text-decoration: none;">Ben Cooley</a> · <a href="https://soundcloud.com/bendextercooley/yearly-objects-launched-into-space" title="Yearly Objects Launched into Space" target="_blank" style="color: #111111; text-decoration: none;">Yearly Objects Launched into Space</a></div>
 
 If you'd like to join in on the sonification challenges, join us on the [Decibels Discord](https://decibels.community/)!
 
