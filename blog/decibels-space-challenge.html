@@ -37,15 +37,15 @@ Here's what it looks like as a chart:
 
 <iframe src="https://ourworldindata.org/grapher/yearly-number-of-objects-launched-into-outer-space?country=OWID_WRL~USA~RUS~CHN~GBR~JPN~FRA~IND~DEU~European+Space+Agency" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
 
-For the parameter mapping, I decided to take a simple approach and map the data to the same musical scale, with higher notes representing more objects launched in space. Then, to capture the differences in each country (only selecting the top 4), I altered the ASDR envelope each time to create a different sound "stamp". This was a new approach that I had wanted to try for a while, so used the challenge as an excuse to finally experiment.
+For the parameter mapping, I decided to take a simple approach and map the data to the same musical scale, with higher notes representing more objects launched in space. Then, to capture the differences in each country (only selecting the top 4), I altered the ADSR envelope each time to create a different sound "stamp". This was a new approach that I had wanted to try for a while, so used the challenge as an excuse to finally experiment.
 
 ## Same oscillator, different envelope
 
-The ASDR (attack, sustain, decay, release) is the cornerstone of modern electronic music. I didn't realize just how much these four parameters could change a single sound until I bought my first analog synth: a [Volca Keys](https://www.korg.com/us/products/dj/volca_keys/). This synth is very small and has limited controls to shape the sound, which is actually great for someone just learning about sound synthesis. 
+The ADSR (attack, sustain, decay, release) is the cornerstone of modern electronic music. I didn't realize just how much these four parameters could change a single sound until I bought my first analog synth: a [Volca Keys](https://www.korg.com/us/products/dj/volca_keys/). This synth is very small and has limited controls to shape the sound, which is actually great for someone just learning about sound synthesis. 
 
-My motivation for using ASDR for sonification purposes boils down to two points: 
+My motivation for using ADSR for sonification purposes boils down to two points: 
 
-1. I wondered if the ear could reasonably differentiate between a group of sounds that go through different envelopes. Can I make each one unique enough that they are discernable, but only tweak the ASDR?
+1. I wondered if the ear could reasonably differentiate between a group of sounds that go through different envelopes. Can I make each one unique enough that they are discernable, but only tweak the ADSR?
 
 2. Data sonification almost always requires needing to write some code, or at the very least clean some data in a spreadsheet. I spend most of the day in front of a computer, so for my musical practice I really enjoy "tactile" playing time. I wondered if I could handle the sonification using some code in Sonic Pi, but then tweak all of the musical expressions in real-time using physical knobs on a physical instrument.
 
@@ -60,7 +60,7 @@ Here's a video (no sound) of what that looked like in practice:
   Your browser does not support the video tag.
   </video>
 
-I decided to only focus on the top 4 countries by objects launched into space for this sonification. For each country, I put the data into a loop, and fiddled with the ASDR knobs on the Volca until I found a sound that I felt was unique enough to capture this country. Below are short snippets of each country's "sound stamp" on it's own.
+I decided to only focus on the top 4 countries by objects launched into space for this sonification. For each country, I put the data into a loop, and fiddled with the ADSR knobs on the Volca until I found a sound that I felt was unique enough to capture this country. Below are short snippets of each country's "sound stamp" on it's own.
 
 The US sound has a short attack and medium release, while Russia has a very long release. You can hear different variations in the other countries as well.
 
@@ -106,7 +106,7 @@ The US sound has a short attack and medium release, while Russia has a very long
 
 Then, I put all the audio tracks together in Ableton Live and layed down a dark, moody drone in A minor underneath to set the tone. It felt ominous and sort of reckless torwards the end, like countries were just shooting things into space left and right. 
 
-While I like the tone of the piece, I'm still not sure how effective it is to only use ASDR for differentiating sounds for sonification. Perhaps if I used a wider note range scale it would be easier to hear the differences. Right now, the notes kind of sound muddy together, with a lot of mid-range frequencies. 
+While I like the tone of the piece, I'm still not sure how effective it is to only use ADSR for differentiating sounds for sonification. Perhaps if I used a wider note range scale it would be easier to hear the differences. Right now, the notes kind of sound muddy together, with a lot of mid-range frequencies. 
 
 Either way it was a fun experiment and I am looking forward to finding more "hybrid" ways of doing sonification. For me, it's so valuable to leave room for human expression in data sonification, and that's really hard to capture by writing code alone. Listen to the full piece below if you haven't already!
 
