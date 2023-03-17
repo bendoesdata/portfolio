@@ -1,7 +1,7 @@
 
 /* overrides the global.css body styles */
 body {
-    background-color: #ede7a4;
+    background-color: #ffffff;
     color:  #222;
     font-family: "Figtree", sans-serif;
     margin-left: 0px;
@@ -53,7 +53,7 @@ a.button, a.button:visited {
 
 a.button:hover {
     background-color: black;
-    color: #ede7a4
+    color: #ffffff
 }
 
 a:hover {
@@ -82,7 +82,7 @@ a:hover {
 
 .images img {
     width: 100%;
-    /* box-shadow: 0.5rem 0.5rem #ede7a4; */
+    /* box-shadow: 0.5rem 0.5rem #ffffff; */
     margin-bottom: 50px;
 }
 

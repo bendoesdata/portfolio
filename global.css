@@ -85,15 +85,15 @@ p {
 a {
     font-size: 21px;
     line-height: 1.7;
-    color: #ede7a4;
+    color: #ffffff;
 }
 
 a:visited {
-    color: #ede7a4;
+    color: #ffffff;
 }
 
 a:hover {
-    color: #f0f0ee;
+    color: #d8d8d8
 }
 
 a {
@@ -105,7 +105,7 @@ h2 {
 }
 
 footer {
-    background-color: #ede7a4;
+    background-color: #ffffff;
     text-align: center;
     padding: 20px;
     position: relative;
@@ -145,7 +145,7 @@ main {
 
 @media screen and (min-width: 800px) {
     .bordered {
-        /* border: solid 2px #ede7a4; */
+        /* border: solid 2px #ffffff; */
         margin: 30px;
     }
     .column {

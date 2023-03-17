@@ -1,7 +1,7 @@
 
 /* overrides the global.css body styles */
 body {
-    background-color: #ede7a4;
+    background-color: #ffffff;
     color:  #111;
     font-family: "Figtree", sans-serif;
     margin-left: 0px;
@@ -69,7 +69,7 @@ figure {
 }
 
 .dark-mode {
-    color: #ede7a4;
+    color: #ffffff;
     background-color:  #111;
 }
 
