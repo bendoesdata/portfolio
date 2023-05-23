@@ -19,8 +19,8 @@
 https://randoma11y.com/?color=dodgerblue */
 body {
     font-family: "Figtree", sans-serif;
-    background-color: #121212;
-    color: #ffffff;
+    color: #121212;
+    background-color: #ffffff;
     margin-left: 0px;
     margin-right: 0px;
 }
@@ -34,6 +34,10 @@ body {
 			color: #333
 		}
 
+		a:visited, a {
+			color: #333
+		}
+
 		#articles h3,
 		span,
 		a {
@@ -42,15 +46,18 @@ body {
 
 		.intro-text {
 			margin: auto;
-			margin-bottom: 70px;
-			padding: 20px;
-			margin-left: 10px;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			height: 400px;
+			max-width: 1000px;
+			font-size: 1.4rem;
+			padding: 15px;
+			position: absolute;
+			top: 20%;
+			line-height: 1.4;
 		}
 
-		.intro-text p {
-			max-width: 700px;
-			margin-bottom: 20px;
-		}
+		
 
 		.intro-text h2 {
 			margin-top: 0.2em;
@@ -108,13 +115,13 @@ body {
 			color: #ffffff;
 		}
 
-		.work-container h3 {
+		#work-grid h3 {
 			font-weight: 700;
 			font-size: 26px;
 			text-decoration: underline;
 		}
 
-		.work-container a {
+		#work-grid a {
 			font-size: 18px;
 			width: 100%;
 			font-weight: 500;
@@ -171,6 +178,7 @@ body {
 			}
 
 			.header-row {
+				margin-top: 80px;
 				margin-bottom: 80px;
 				height: auto;
 			}
@@ -208,54 +216,64 @@ body {
 			height: 100%;
 			width: auto;
 		}
+
+		nav {
+			padding: 15px;
+			font-size: 1.5rem;
+			font-weight: 600;
+		}
+
+		/* for the main tag, make sure the width does not go beyond 800px  and everything is centered with margin 0 */
+		main {
+			margin: 0 auto;
+			max-width: 1200px;
+			
+		}
+
+		.description {
+			padding: 15px;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			max-width: 800px
+		}
+
+		#header-graphic {
+			height: 600px;
+		}
+
+		canvas {
+			object-fit: cover;
+		}
 	</style>
 </head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js" integrity="sha512-3RlxD1bW34eFKPwj9gUXEWtdSMC59QqIqHnD8O/NoTwSJhgxRizdcFVQhUMFyTp5RwLTDL0Lbcqtl8b7bFAzog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script id="projectData" src="data/projects.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7.6.1/dist/d3.min.js"></script>
+<script id="headerGraphic" src="header.js"></script>
 
 <body>
+	<nav>
+		Benjamin Cooley
+	</nav>
 	<main>
 		<div>
-			<div class="blob"></div>
-			<div class="row header-row">
-				<div class="column _70">
+			<div id="header-graphic"></div>
 					<div class="intro-text">
-						<h2>
-							DATA
-						</h2>
-						<div class="row" style="margin-bottom: 40px">
-							<h1 class="column"
-								style="margin-left: 30px; max-width: 500px; line-height: 1.5; font-weight: 400; font-size: 22px; margin-top: 20px; text-transform: uppercase;">
-								Ben<span class="gray-text">jamin</span> Cooley is a <br>creative technologist <br>and developer
-							</h1>
-							<h2 class="column" style="text-align: center;">
-								DESIGN
-							</h2>
-						</div>
-						<div class="row reverse-on-mobile" style="margin-bottom: 40px">
-							<h2 class="column">
-								CODE
-							</h2>
-							<h1 class="column"
-								style="margin-left: 30px; max-width: 500px; line-height: 1.5; font-weight: 400; font-size: 22px; margin-top: 20px; text-transform: uppercase;">
-								exploring new ways of<br> seeing and experiencing<br> information and data
-							</h1>
-						</div>
-						<br>
-						<p>
-							Ben currently works as a Visualization Software Engineer in the <a
-								href="https://pattern.broadinstitute.org/">Pattern</a> lab at the <a
-								href="https://www.broadinstitute.org/">Broad Institute</a>. He has previously taught as an adjunct
-								lecturer at Northeastern University's <a href="https://camd.northeastern.edu/">College of
-									Arts, Media and Design (CAMD)</a>. Ben also creates weird and wonderful <a href="/experimental-projects/">prototypes</a>, makes <a
-									href="https://www.instagram.com/st.silva.music/">electronic music</a>, and writes a semi-regular newsletter called <a href="https://datacurious.substack.com">Data Curious</a>, .
-						</p>
+						<h1>I create interfaces, visualizations, and experiences to connect people through data.</h1>
 					</div>
-				</div>
-
+			<div class="row description">
+				<p>
+					I currently work as a Visualization Software Engineer in the <a
+						href="https://pattern.broadinstitute.org/">Pattern</a> lab at the <a
+						href="https://www.broadinstitute.org/">Broad Institute</a>. Previously, I taught as an adjunct
+						lecturer at Northeastern University's <a href="https://camd.northeastern.edu/">College of
+							Arts, Media and Design (CAMD)</a>. I also create weird and wonderful <a href="/experimental-projects/">prototypes</a>, makes <a
+							href="https://www.instagram.com/st.silva.music/">electronic music</a>, and writes a semi-regular newsletter called <a href="https://datacurious.substack.com">Data Curious</a>.
+				</p>
 			</div>
 		</div>
-		<div class="container bordered">
+		<div class=" container">
 			<div>
 				<h2 style="margin-top: 10px">Selected work</h2>
 				<div id="work-grid"></div>
@@ -271,7 +289,7 @@ body {
 			<div class="row" style="margin-bottom: 100px; margin-top: 50px">
 				<div class="column _33">
 					<div class="circle-img" style="margin: 0 auto">
-						<img width="100%" src="images/ben-trace.svg" alt="Image of Ben holding his cat.">
+						<img width="100%" src="images/untitled.svg" alt="Image of Ben holding his cat.">
 					</div>
 				</div>
 				<div class="column _33" style="padding: 10px">
@@ -299,8 +317,8 @@ body {
 
 	data.forEach(d => {
 		let newNode = document.createElement('div');
-		newNode.classList.add('work-container');
-		newNode.innerHTML = '<a href="' + d.url +'"><img src="' + d.imgUrl + '" alt="' + d.description + '" loading="lazy" /></a>'
+		// newNode.classList.add('work-container');
+		newNode.innerHTML = '<a href="' + d.url +'"><img class="work-container" src="' + d.imgUrl + '" alt="' + d.description + '" loading="lazy" /></a>'
 		let overlayDiv = document.createElement('div');
 		overlayDiv.classList.add('overlay')
 		overlayDiv.innerHTML = '<a href="' + d.url + '"><h3>' + d.title + '</h3><p>' + d.description + '</p></a>'

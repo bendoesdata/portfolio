@@ -85,15 +85,15 @@ p {
 a {
     font-size: 21px;
     line-height: 1.7;
-    color: #ffffff;
+    color: #121212
 }
 
 a:visited {
-    color: #ffffff;
+    color: #121212
 }
 
 a:hover {
-    color: #d8d8d8
+    color: #4e4e4e
 }
 
 a {
@@ -144,10 +144,7 @@ main {
 }
 
 @media screen and (min-width: 800px) {
-    .bordered {
-        /* border: solid 2px #ffffff; */
-        margin: 30px;
-    }
+    
     .column {
         flex: 1;
     }
