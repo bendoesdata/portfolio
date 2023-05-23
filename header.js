@@ -22,7 +22,7 @@ class Circle {
         this.y = random(height);
 
         // assign a random value between 5 and 20 to this.r
-        this.r = random(5, 20);
+        this.r = random(3, 15);
 
         
     }
@@ -65,7 +65,7 @@ function setup() {
     myCanvas.parent("header-graphic");
 
     // Generate circles
-    for(let i=0; i<30; i++) {
+    for(let i=0; i<50; i++) {
         circles.push(new Circle());
     }
 
