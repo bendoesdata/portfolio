@@ -28,7 +28,7 @@ class Circle {
     }
 
     display() {
-        fill(230);
+        fill(240);
         noStroke();
         ellipse(this.x, this.y, this.r * 2, this.r * 2);
     }
@@ -42,11 +42,11 @@ class Line {
         this.endX = circle2.x;
         this.endY = circle2.y;
         this.progress = 0;
-        this.speed = 0.01;
+        this.speed = 0.02;
     }
 
     display() {
-        stroke(230);
+        stroke(240);
         strokeWeight(1.5);
         let currentX = lerp(this.startX, this.endX, this.progress);
         let currentY = lerp(this.startY, this.endY, this.progress);
@@ -71,7 +71,7 @@ function setup() {
 
     // Draw a line every 500 ms
     setInterval(() => {
-        if (lines.length < 5) {  // Only add a line if there are fewer than 5 active
+        if (lines.length < 10) {  // Only add a line if there are fewer than 5 active
             let circle1 = random(circles);
             let circle2 = random(circles);
 
@@ -82,7 +82,7 @@ function setup() {
 
             lines.push(new Line(circle1, circle2));
         }
-    }, 1500);
+    }, 1000);
 }
 
 // Draw function
