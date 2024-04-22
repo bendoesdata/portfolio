@@ -28,7 +28,7 @@ class Circle {
     }
 
     display() {
-        fill(240);
+        fill(220);
         noStroke();
         ellipse(this.x, this.y, this.r * 2, this.r * 2);
     }
@@ -46,7 +46,7 @@ class Line {
     }
 
     display() {
-        stroke(240);
+        stroke(210);
         strokeWeight(1.5);
         let currentX = lerp(this.startX, this.endX, this.progress);
         let currentY = lerp(this.startY, this.endY, this.progress);
