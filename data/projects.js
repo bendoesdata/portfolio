@@ -1,5 +1,13 @@
 const data = [
     {
+        title: "Map for Grasslands",
+        description:
+            "Interactive map to raise awareness for protecting America's grasslands.",
+        type: "data visualization",
+        imgUrl: "../images/projects/grasslands/Screenshot 2024-04-22 at 9.09.12 AM.png",
+        url: "projects/map-for-grasslands.html",
+    },
+    {
         title: "Microbiome Data Portal",
         description:
             "Data portal for exploring and visualizing microbiome research.",
