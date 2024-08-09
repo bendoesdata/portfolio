@@ -23,14 +23,6 @@ const data = [
         imgUrl: "../images/projects/webster.png",
         url: "projects/webster.html",
     },
-    {
-        title: "GutSee Mobile App",
-        description:
-            "App for a longitudinal study tracking changes in microbiome health.",
-        type: "data visualization",
-        imgUrl: "../images/front-page/gutsee-post.png",
-        url: "projects/gutsee.html",
-    },
   {
       title: "Global Flood Dashboard",
       description:
@@ -56,11 +48,19 @@ const data = [
       url: "projects/to-the-books.html",
   },
   {
-      title: "2019 - Visualized",
-      description:
-          "A visual retrospective of the data I tracked during 2019.",
-      type: "data visualization",
-      imgUrl: "../images/front-page/workouts.png",
-      url: "projects/my-year-2019.html",
-  },
+    title: "2019 - Visualized",
+    description:
+        "A visual retrospective of the data I tracked during 2019.",
+    type: "data visualization",
+    imgUrl: "../images/front-page/workouts.png",
+    url: "projects/my-year-2019.html",
+},
+  {
+    title: "GutSee Mobile App",
+    description:
+        "App for a longitudinal study tracking changes in microbiome health.",
+    type: "data visualization",
+    imgUrl: "../images/front-page/gutsee-post.png",
+    url: "projects/gutsee.html",
+}
 ];
