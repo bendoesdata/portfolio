@@ -8,6 +8,14 @@ const data = [
         url: "projects/map-for-grasslands.html",
     },
     {
+        title: "Chromallel",
+        description:
+            "Data sound installation for a community mural project.",
+        type: "data sonification",
+        imgUrl: "../images/projects/paralleling/IMG_8708.jpg",
+        url: "projects/chromallel-sound.html",
+    },
+    {
         title: "Microbiome Data Portal",
         description:
             "Data portal for exploring and visualizing microbiome research.",
