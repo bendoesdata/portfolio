@@ -1,5 +1,13 @@
 const data = [
     {
+        title: "DANCER IN THE LOOP",
+        description:
+            "Interactive audiovisual installation for Burlingon's NYE festival.",
+        type: "data sonification, data experience",
+        imgUrl: "../images/projects/dancer-in-the-loop/IMG_8855.jpg",
+        url: "projects/dancer-loop.html",
+    },
+    {
         title: "The Carrington Event",
         description:
             "Data sonification of the greatest solar storm in recorded history.",
@@ -14,6 +22,14 @@ const data = [
         type: "data sonification",
         imgUrl: "../images/projects/paralleling/IMG_8708.jpg",
         url: "projects/chromallel-sound.html",
+    },
+    {
+        title: "Map for Grasslands",
+        description:
+            "Data visualization story and interactive map of America's shrinking grasslands.",
+        type: "data sonification",
+        imgUrl: "../images/projects/grasslands/alt-cover.png",
+        url: "projects/map-for-grasslands.html",
     },
     {
         title: "Microbiome Data Portal",
