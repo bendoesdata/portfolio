@@ -37,6 +37,8 @@ function setup() {
   // (legacy) local height value — not used after making canvas fullscreen
   var height = 600;
 
+  console.log(nasa)
+
   // Create a polyphonic synth (not used for every voice but kept available)
   synth = new p5.PolySynth();
 
