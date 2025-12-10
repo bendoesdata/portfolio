@@ -4,9 +4,11 @@ const url = 'https://api.nasa.gov/neo/rest/v1/feed?api_key=yLeK5umsbkYxahsLWuYq7
 // Audio / synth configuration
 const notes = ["C3", "E3", "F3", "G3", "A3", "C4", "D4", "F4", "G4", "B4", "C5", "E6", "F6", "G6", "A6"];
 let attackTime = 0.02;
-let decayTime = 0.6;
+let decayTime = 0.4;
 let susPercent = 0.5;
-let releaseTime = 2;
+let releaseTime = 3;
+
+const tempoMultiplier = 2.5; // global speed multiplier for scheduling
 
 // Core state structures (refactor away from parallel arrays)
 let asteroids = []; // array of { mag, distance, synth, intervalId }
@@ -30,7 +32,11 @@ const lookahead = 25; // ms between scheduler checks
 const scheduleAheadTime = 0.5; // seconds to schedule ahead
 
 // Rotation speed for visual animation (degrees per second)
-const rotationSpeed = 2; // adjust to taste (original used frameCount/30)
+const rotationSpeed = 5; // adjust to taste (original used frameCount/30)
+
+// Angular speed mapping (degrees/sec) range for asteroids based on velocity
+const minAngularSpeed = 0.5; // deg/sec for slowest
+const maxAngularSpeed = 6.0; // deg/sec for fastest
 
 function preload() {
   // Load the NASA feed JSON before setup runs so data is available immediately.
@@ -54,7 +60,8 @@ function setup() {
   drawViz();
 }
 
-function mousePressed() {
+// Start audio (must be called from a user gesture like the Start button)
+function startAudio() {
   // Start audio (browser requires a user gesture) and initialize scheduler.
   if (scheduled) return; // avoid duplicate scheduling on multiple clicks
   console.log('start');
@@ -69,14 +76,20 @@ function mousePressed() {
   asteroids.forEach((a) => {
     // map distance -> period in seconds (closer => more frequent)
     const seconds = map(a.distance, minDistance, maxDistance, 2, 32);
-    a.period = Math.max(0.2, seconds); // minimum 0.2s
-    // schedule first event slightly in the future to allow scheduling window
-    a.nextTime = now + Math.random() * 0.5; // jitter start within 0.5s
+    a.basePeriod = Math.max(0.2, seconds); // seconds, unscaled
+    a.period = a.basePeriod * tempoMultiplier; // actual used period
+    // schedule first event randomly within the asteroid's period so they don't all fire together
+    a.nextTime = now + Math.random() * a.period;
   });
 
   // start the scheduler loop which will use audioContext.currentTime
   startScheduler();
   scheduled = true;
+}
+
+// no-op mousePressed so clicks anywhere don't start audio
+function mousePressed() {
+  // intentionally empty — use the Start button to call startAudio()
 }
 
 function draw() {
@@ -109,8 +122,10 @@ function draw() {
     const orbitRadius = map(a.distance, minDistance, maxDistance, 10 * (dim * 0.01), 40 * (dim * 0.01));
     const sizeScaled = map(a.mag, minMag, maxMag, 80 * (dim * 0.001), 5 * (dim * 0.001));
 
+    // compute this asteroid's rotation using its angularSpeed (deg/sec)
+    const angleDeg = (millis() / 1000) * a.angularSpeed + i * (360 / asteroids.length);
     push();
-    rotate(r + i * (360 / asteroids.length));
+    rotate(angleDeg);
     noStroke();
     fill(180);
     ellipse(0, orbitRadius, sizeScaled, sizeScaled);
@@ -134,7 +149,7 @@ function draw() {
     stroke(255, alpha);
     strokeWeight(2);
     // draw at stored x,y so the pulse lines up with the asteroid's ring
-    ellipse(0, 0, p.size);
+    ellipse(p.x, p.y, p.size);
     pop();
   }
 }
@@ -149,28 +164,45 @@ function drawViz() {
   const today = new Date().toISOString().split('T')[0];
   const dayKey = nasa.near_earth_objects[today] ? today : keys[0];
   const sats = nasa.near_earth_objects[dayKey];
+  console.log(sats)
 
   asteroids = [];
   for (let i = 0; i < sats.length; i++) {
     const mag = +sats[i].absolute_magnitude_h;
     const distance = +sats[i].close_approach_data[0].miss_distance.lunar;
+    const velocity = +sats[i].close_approach_data[0].relative_velocity.kilometers_per_second;
 
     // create a MonoSynth voice for this asteroid and attach global reverb
     const sy = new p5.MonoSynth();
-    verb.process(sy, 3, 2); // shorter reverb for better clarity
-    sy.setADSR(attackTime, decayTime, susPercent, releaseTime);
 
-    asteroids.push({ mag, distance, synth: sy, intervalId: null });
+    // set attack/decay/sustain/release for the envelope
+    sy.setADSR(attackTime, decayTime, susPercent, releaseTime);
+    verb.process(sy, 30, 20); // shorter reverb for better clarity
+
+    asteroids.push({ mag, distance, velocity, synth: sy, intervalId: null });
   }
 
   // compute min/max ranges for mapping
   const mags = asteroids.map(a => a.mag);
   const dists = asteroids.map(a => a.distance);
+  const vels = asteroids.map(a => a.velocity);
   if (mags.length === 0) return;
   maxMag = max(mags);
   minMag = min(mags);
   minDistance = min(dists);
   maxDistance = max(dists);
+
+  // map velocity range to per-asteroid angular speeds (deg/sec)
+  const minVel = min(vels);
+  const maxVel = max(vels);
+  asteroids.forEach(a => {
+    // protect against division by zero when all velocities equal
+    if (minVel === maxVel) {
+      a.angularSpeed = (minAngularSpeed + maxAngularSpeed) / 2;
+    } else {
+      a.angularSpeed = map(a.velocity, minVel, maxVel, minAngularSpeed, maxAngularSpeed);
+    }
+  });
 
   console.log('mag range', minMag, maxMag);
 } 
@@ -228,7 +260,7 @@ function schedulerLoop() {
   // For each asteroid, schedule any events that should occur within the window
   asteroids.forEach((a, i) => {
     // compute noteIndex for this asteroid (magnitude -> pitch mapping)
-    const val = map(a.mag, minMag, maxMag, notes.length - 1, 0);
+    const val = map(a.mag, maxMag, minMag, notes.length - 1, 0);
     const rawIndex = round(val);
     const noteIndex = Math.max(0, Math.min(rawIndex, notes.length - 1));
 
@@ -247,8 +279,8 @@ function schedulerLoop() {
       const orbitRadius = map(a.distance, minDistance, maxDistance, 10 * (dim * 0.01), 40 * (dim * 0.01));
       // convert polar to cartesian to match rotate()+ellipse(0, orbitRadius):
       // rotated point (0, R) -> world x = -R * sin(theta), y = R * cos(theta)
-      const x = -orbitRadius * sin(angleRad);
-      const y = orbitRadius * cos(angleRad);
+      const x = 0;
+      const y = 0;
       // use the orbit's diameter so the pulse matches the ring size
       const size = orbitRadius * 2;
       pulses.push({ created: scheduledMillis, lifetime: 1000, size, x, y });

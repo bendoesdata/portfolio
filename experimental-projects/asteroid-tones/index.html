@@ -4,7 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sketch</title>
+    <title>Asteroid Tones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Sans+Mono:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -18,12 +21,46 @@
         console.log('go')
         document.getElementById("intro").classList.add("hide")
       }
+
+      // Toggle the visibility of the #modal element and update the toggle button label
+      function toggleModal() {
+        const modal = document.getElementById('modal');
+        const btn = document.getElementById('modalToggle');
+        if (!modal) return;
+        const isHidden = modal.style.display === 'none' || modal.classList.contains('hide');
+        if (isHidden) {
+          modal.style.display = 'block';
+          if (btn) btn.textContent = 'Hide Info';
+        } else {
+          modal.style.display = 'none';
+          if (btn) btn.textContent = 'Show Info';
+        }
+      }
+
+      // Ensure correct initial state on DOM load
+      document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('modal');
+        isHidden = true;
+        if (modal && (modal.style.display === '' || modal.style.display === undefined)) {
+          modal.style.display = 'none'; // Start hidden
+        }
+      });
     </script>
     <script src="sketch.js"></script>
     <div id="intro">
       <h1>Asteroid Tones</h1>
       <p>This is a data sonification of asteroids passing Earth today. It pulls live data from NASA's <a href="https://data.nasa.gov/Space-Science/Asteroids-NeoWs-API/73uw-d9i8" target="_blank">Near Earth Object API</a>.</p>
-      <button onclick="hideIntro()">Start</button>
+      <button onclick="hideIntro(); startAudio();">Start</button>
+    </div>
+    <button id="modalToggle" onclick="toggleModal()">Show Info</button>
+    <div id="modal">
+      <p>Asteroid Tones is a live data sonification of asteroids passing Earth today. It pulls data from NASA's <a href="https://api.nasa.gov/">Near Earth Object API</a> to create a unique audio-visual experience.</p>
+      <p>Here's how to understand the sonification:</p>
+      <ol>
+        <li>Low notes represent large asteroids, while higher notes represent smaller ones.</li>
+        <li>Asteroids closer to Earth produce sounds more frequently than those farther away.</li>
+      </ol>
+      <p>Each asteroid travels around the center (Earth) at a speed proportional to its velocity.</p>
     </div>
   </body>
 </html>
