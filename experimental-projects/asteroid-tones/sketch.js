@@ -210,6 +210,12 @@ function drawViz() {
   });
 
   console.log('mag range', minMag, maxMag);
+  // Notify the page that asteroid data is ready so the Start button can be shown
+  try {
+    document.dispatchEvent(new CustomEvent('asteroidDataReady'));
+  } catch (e) {
+    // document may not be available in some contexts; ignore errors
+  }
 } 
 
 function playNote(index, noteIndex, timing) {

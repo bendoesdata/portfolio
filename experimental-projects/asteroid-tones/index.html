@@ -37,24 +37,46 @@
         }
       }
 
+      // track whether data is ready (set by the sketch when drawViz completes)
+      window.asteroidDataReadyFlag = false;
+
+      function updateStartUI() {
+        const fetchMsg = document.getElementById('fetchMessage');
+        const startBtn = document.getElementById('startBtn');
+        if (window.asteroidDataReadyFlag) {
+          if (fetchMsg) fetchMsg.style.display = 'none';
+          if (startBtn) startBtn.style.display = 'inline-block';
+        } else {
+          if (fetchMsg) fetchMsg.style.display = 'block';
+          if (startBtn) startBtn.style.display = 'none';
+        }
+      }
+
       // Ensure correct initial state on DOM load
       document.addEventListener('DOMContentLoaded', () => {
         const modal = document.getElementById('modal');
-        isHidden = true;
         if (modal && (modal.style.display === '' || modal.style.display === undefined)) {
           modal.style.display = 'none'; // Start hidden
         }
+        updateStartUI();
+      });
+
+      // When sketch signals data readiness, set flag and update UI (listener registered before sketch.js loads)
+      document.addEventListener('asteroidDataReady', () => {
+        window.asteroidDataReadyFlag = true;
+        updateStartUI();
       });
     </script>
     <script src="sketch.js"></script>
     <div id="intro">
       <h1>Asteroid Tones</h1>
       <p>This is a data sonification of asteroids passing Earth today. It pulls live data from NASA's <a href="https://data.nasa.gov/Space-Science/Asteroids-NeoWs-API/73uw-d9i8" target="_blank">Near Earth Object API</a>.</p>
-      <button onclick="hideIntro(); startAudio();">Start</button>
+      <div id="fetchMessage">Fetching Asteroid data...</div>
+      <button id="startBtn" style="display:none" onclick="hideIntro(); startAudio();">Start</button>
     </div>
     <button id="modalToggle" onclick="toggleModal()">Show Info</button>
     <div id="modal">
-      <p>Asteroid Tones is a live data sonification of asteroids passing Earth today. It pulls data from NASA's <a href="https://api.nasa.gov/">Near Earth Object API</a> to create a unique audio-visual experience.</p>
+      <p>Asteroid Tones is a live data sonification of asteroids passing Earth today. It pulls data from NASA's <a href="https://api.nasa.gov/">Near Earth Object API</a> to create a time-dependent soundscape of space around Earth.</p>
       <p>Here's how to understand the sonification:</p>
       <ol>
         <li>Low notes represent large asteroids, while higher notes represent smaller ones.</li>
