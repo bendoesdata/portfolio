@@ -8,7 +8,7 @@ let decayTime = 0.4;
 let susPercent = 0.5;
 let releaseTime = 3;
 
-const tempoMultiplier = 2.5; // global speed multiplier for scheduling
+const tempoMultiplier = 4; // global speed multiplier for scheduling
 
 // Core state structures (refactor away from parallel arrays)
 let asteroids = []; // array of { mag, distance, synth, intervalId }
@@ -37,6 +37,10 @@ const rotationSpeed = 5; // adjust to taste (original used frameCount/30)
 // Angular speed mapping (degrees/sec) range for asteroids based on velocity
 const minAngularSpeed = 0.5; // deg/sec for slowest
 const maxAngularSpeed = 6.0; // deg/sec for fastest
+
+// Volume scaling for high notes: base velocity and minimum scale at top of register
+const baseVelocity = 0.12;
+const topNoteMinScale = 0.45; // highest note will be played at 45% of base velocity
 
 function preload() {
   // Load the NASA feed JSON before setup runs so data is available immediately.
@@ -177,7 +181,8 @@ function drawViz() {
 
     // set attack/decay/sustain/release for the envelope
     sy.setADSR(attackTime, decayTime, susPercent, releaseTime);
-    verb.process(sy, 30, 20); // shorter reverb for better clarity
+    verb.process(sy, 50, 2); // shorter reverb for better clarity
+    verb.drywet(0.8); // mix amount
 
     asteroids.push({ mag, distance, velocity, synth: sy, intervalId: null });
   }
@@ -211,13 +216,15 @@ function playNote(index, noteIndex, timing) {
   // Trigger audio for asteroid at `index` using a precomputed noteIndex.
   if (!asteroids[index]) return;
   const a = asteroids[index];
-  const vel = 0.1;
   const time = 0;
   const dur = 0.3;
 
   // safeguard noteIndex
   const ni = Math.max(0, Math.min(noteIndex, notes.length - 1));
-  a.synth.play(notes[ni], vel, time, dur);
+  // reduce velocity for higher notes
+  const scale = map(ni, 0, notes.length - 1, 1.0, topNoteMinScale);
+  const velScaled = baseVelocity * scale;
+  a.synth.play(notes[ni], velScaled, time, dur);
 
   // push a visual pulse (drawn from draw() to avoid drawing inside timer)
   const size = map(timing, 200, 32000, 50, 800);
@@ -269,7 +276,10 @@ function schedulerLoop() {
       const secondsFromNow = Math.max(0, a.nextTime - currentTime);
       // use the synth's startTime parameter (seconds from now)
 
-      a.synth.play(notes[noteIndex], 0.1, secondsFromNow, 0.3);
+      // reduce velocity for higher notes so upper register is quieter
+      const scale = map(noteIndex, 0, notes.length - 1, 1.0, topNoteMinScale);
+      const vel = baseVelocity * scale;
+      a.synth.play(notes[noteIndex], vel, secondsFromNow, 0.3);
 
       // schedule a visual pulse at the appropriate future moment and position
       const scheduledMillis = millis() + secondsFromNow * 1000;
