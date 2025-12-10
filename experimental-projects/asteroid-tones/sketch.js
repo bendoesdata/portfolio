@@ -98,8 +98,8 @@ function draw() {
   // Render background and center Earth
   translate(width / 2, height / 2);
   background("#222222");
-  fill(220);
-  ellipse(0, 0, 20); // center earth
+  fill(100, 150, 255);
+  ellipse(0, 0, 10); // center earth
 
   // early exit if no asteroid data
   if (!asteroids || asteroids.length === 0) return;
