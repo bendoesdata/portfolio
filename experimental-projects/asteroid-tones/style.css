@@ -50,14 +50,19 @@ button:hover {
 
 #modal {
   position: absolute;
-  top: 20%;
-  left: 50px;
+  top: 25%;
+  left: 20px;
   max-width: 300px;
   background-color: rgba(34, 34, 34, 0.9);
   padding: 15px;
   border: 1px solid #c6c6c6;
   border-radius: 8px;
   display: none;
+  font-size: 12px
+}
+
+#modal p {
+  font-size: 12px
 }
 
 #modalToggle {
@@ -105,12 +110,15 @@ visibility: hidden;
   #modal {
       left: 10px;
       top: 5%;
-      font-size: 14px
   }
 
   #modalToggle {
       left: 55%;
       top: 85%;
+      font-size: 12px;
+  }
+
+  #modal p {
       font-size: 12px;
   }
 

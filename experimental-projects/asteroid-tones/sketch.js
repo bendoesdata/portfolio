@@ -99,11 +99,17 @@ function mousePressed() {
 function draw() {
   // store the dimensions 
   dim = Math.min(width, height);
-  // Render background and center Earth
+  // Render background and center the Sun
   translate(width / 2, height / 2);
   background("#222222");
-  fill(100, 150, 255);
-  ellipse(0, 0, 10); // center earth
+  fill(255, 218, 86);
+  ellipse(0, 0, 20); // center sun
+
+  push()
+  // draw ellipse for earth near the sun
+  fill(100, 149, 237);
+  ellipse(30, 0, 8);
+  pop()
 
   // early exit if no asteroid data
   if (!asteroids || asteroids.length === 0) return;
@@ -111,10 +117,18 @@ function draw() {
   // rotation amount for animation (use time-based rotation for scheduler consistency)
   let r = (millis() / 1000) * rotationSpeed;
 
+  // padding outside of sun so there is some space between sun and innermost orbit
+  const sunPadding = 10 * (dim * 0.01);
+
   // draw orbit rings first
   for (let i = 0; i < asteroids.length; i++) {
     const a = asteroids[i];
-    const orbitRadius = map(a.distance, minDistance, maxDistance, 10 * (dim * 0.01), 40 * (dim * 0.01));
+    let orbitRadius;
+    if (minDistance === maxDistance) {
+      orbitRadius = (sunPadding + 40 * (dim * 0.01)) / 2;
+    } else {
+      orbitRadius = map(a.distance, minDistance, maxDistance, sunPadding, 40 * (dim * 0.01));
+    }
     stroke(100);
     noFill();
     ellipse(0, 0, orbitRadius * 2, orbitRadius * 2);
@@ -123,8 +137,18 @@ function draw() {
   // draw asteroids on their rings
   for (let i = 0; i < asteroids.length; i++) {
     const a = asteroids[i];
-    const orbitRadius = map(a.distance, minDistance, maxDistance, 10 * (dim * 0.01), 40 * (dim * 0.01));
-    const sizeScaled = map(a.mag, minMag, maxMag, 80 * (dim * 0.001), 5 * (dim * 0.001));
+    let orbitRadius;
+    if (minDistance === maxDistance) {
+      orbitRadius = (sunPadding + 40 * (dim * 0.01)) / 2;
+    } else {
+      orbitRadius = map(a.distance, minDistance, maxDistance, sunPadding, 40 * (dim * 0.01));
+    }
+    let sizeScaled;
+    if (minMag === maxMag) {
+      sizeScaled = (80 * (dim * 0.001) + 5 * (dim * 0.001)) / 2;
+    } else {
+      sizeScaled = map(a.mag, minMag, maxMag, 80 * (dim * 0.001), 5 * (dim * 0.001));
+    }
 
     // compute this asteroid's rotation using its angularSpeed (deg/sec)
     const angleDeg = (millis() / 1000) * a.angularSpeed + i * (360 / asteroids.length);
@@ -176,14 +200,8 @@ function drawViz() {
     const distance = +sats[i].close_approach_data[0].miss_distance.lunar;
     const velocity = +sats[i].close_approach_data[0].relative_velocity.kilometers_per_second;
 
-    // create a MonoSynth voice for this asteroid and attach global reverb
+    // create a MonoSynth voice for this asteroid; ADSR/reverb configured after ranges computed
     const sy = new p5.MonoSynth();
-
-    // set attack/decay/sustain/release for the envelope
-    sy.setADSR(attackTime, decayTime, susPercent, releaseTime);
-    verb.process(sy, 50, 2); // shorter reverb for better clarity
-    verb.drywet(0.8); // mix amount
-
     asteroids.push({ mag, distance, velocity, synth: sy, intervalId: null });
   }
 
@@ -196,6 +214,32 @@ function drawViz() {
   minMag = min(mags);
   minDistance = min(dists);
   maxDistance = max(dists);
+
+  // Now that min/max are known, configure per-synth ADSR, amp, and reverb
+  asteroids.forEach(a => {
+    // determine expected note index safely (guard against min==max)
+    let expectedIndex;
+    if (minMag === maxMag) {
+      expectedIndex = Math.floor((notes.length - 1) / 2);
+    } else {
+      const expectedVal = map(a.mag, maxMag, minMag, notes.length - 1, 0);
+      expectedIndex = Math.max(0, Math.min(round(expectedVal), notes.length - 1));
+    }
+
+    // Scale release shorter for higher notes (so high pitches decay faster)
+    const releaseScale = map(expectedIndex, 0, notes.length - 1, 1.0, 0.35);
+    const synthRelease = releaseTime * releaseScale;
+    a.synth.setADSR(attackTime, decayTime, susPercent, synthRelease);
+
+    // also scale velocity lower for higher notes
+    const velScale = map(expectedIndex, 0, notes.length - 1, 1.0, 0.5);
+    a.synth.amp(baseVelocity * velScale);
+
+    // Apply reverb time scaled by pitch (shorter for higher notes)
+    const reverbTime = map(expectedIndex, 0, notes.length - 1, 4, 0.6); // seconds
+    const reverbDecay = map(expectedIndex, 0, notes.length - 1, 2.0, 0.6);
+    verb.process(a.synth, reverbTime, reverbDecay);
+  });
 
   // map velocity range to per-asteroid angular speeds (deg/sec)
   const minVel = min(vels);
