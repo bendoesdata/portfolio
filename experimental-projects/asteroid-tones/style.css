@@ -62,7 +62,11 @@ button:hover {
 }
 
 #modal p {
-  font-size: 12px
+  font-size: 14px
+}
+
+#modal li {
+  font-size: 14px;
 }
 
 #modalToggle {

@@ -4,11 +4,11 @@ const url = 'https://api.nasa.gov/neo/rest/v1/feed?api_key=yLeK5umsbkYxahsLWuYq7
 // Audio / synth configuration
 const notes = ["C3", "E3", "F3", "G3", "A3", "C4", "D4", "F4", "G4", "B4", "C5", "E6", "F6", "G6", "A6"];
 let attackTime = 0.02;
-let decayTime = 0.4;
-let susPercent = 0.5;
-let releaseTime = 3;
+let decayTime = 0.8;
+let susPercent = 1;
+let releaseTime = 15.0;
 
-const tempoMultiplier = 4; // global speed multiplier for scheduling
+const tempoMultiplier = 6; // global speed multiplier for scheduling
 
 // Core state structures (refactor away from parallel arrays)
 let asteroids = []; // array of { mag, distance, synth, intervalId }
@@ -155,7 +155,7 @@ function draw() {
     push();
     rotate(angleDeg);
     noStroke();
-    fill(180);
+    fill(`rgba(180,180,180,0.9)`);
     ellipse(0, orbitRadius, sizeScaled, sizeScaled);
     pop();
   }
@@ -202,6 +202,7 @@ function drawViz() {
 
     // create a MonoSynth voice for this asteroid; ADSR/reverb configured after ranges computed
     const sy = new p5.MonoSynth();
+    
     asteroids.push({ mag, distance, velocity, synth: sy, intervalId: null });
   }
 
@@ -227,17 +228,19 @@ function drawViz() {
     }
 
     // Scale release shorter for higher notes (so high pitches decay faster)
-    const releaseScale = map(expectedIndex, 0, notes.length - 1, 1.0, 0.35);
+    const releaseScale = map(expectedIndex, notes.length - 1, 0, 1.0, 0.05);
     const synthRelease = releaseTime * releaseScale;
     a.synth.setADSR(attackTime, decayTime, susPercent, synthRelease);
 
     // also scale velocity lower for higher notes
-    const velScale = map(expectedIndex, 0, notes.length - 1, 1.0, 0.5);
+    const velScale = map(expectedIndex, 0, notes.length - 1, 1.0, 0.2);
     a.synth.amp(baseVelocity * velScale);
 
     // Apply reverb time scaled by pitch (shorter for higher notes)
-    const reverbTime = map(expectedIndex, 0, notes.length - 1, 4, 0.6); // seconds
-    const reverbDecay = map(expectedIndex, 0, notes.length - 1, 2.0, 0.6);
+    const reverbTime = map(expectedIndex, 0, notes.length - 1, 10, 0.6); // seconds
+    const reverbDecay = map(expectedIndex, 0, notes.length - 1, 1, 0.6);
+    verb.drywet(0.9)
+    verb.amp(5)
     verb.process(a.synth, reverbTime, reverbDecay);
   });
 
