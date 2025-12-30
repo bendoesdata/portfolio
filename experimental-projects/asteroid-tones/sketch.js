@@ -8,7 +8,7 @@ let decayTime = 0.8;
 let susPercent = 1;
 let releaseTime = 15.0;
 
-const tempoMultiplier = 6; // global speed multiplier for scheduling
+const tempoMultiplier = 8; // global speed multiplier for scheduling
 
 // Core state structures (refactor away from parallel arrays)
 let asteroids = []; // array of { mag, distance, synth, intervalId }
@@ -21,6 +21,27 @@ let minMag, maxMag, minDistance, maxDistance;
 // single reusable audio effects
 let globalPolySynth;
 let verb; // single Reverb instance reused across voices
+let filter;
+
+// sample buffers
+let sampleShort, sampleMed, sampleLong;
+
+// assume samples are recorded at this base note; change if your samples are at a different pitch
+const sampleBaseNote = 'F4';
+
+// helper: convert note like 'C4' or 'G#3' to MIDI number (C4 = 60)
+function noteToMidi(note) {
+  const name = note.toUpperCase();
+  const match = name.match(/^([A-G])(#?)(-?\d+)$/);
+  if (!match) return 60; // default C4
+  const [, letter, sharp, octaveStr] = match;
+  const octave = parseInt(octaveStr, 10);
+  const base = { 'C':0, 'D':2, 'E':4, 'F':5, 'G':7, 'A':9, 'B':11 }[letter];
+  const accidental = sharp === '#' ? 1 : 0;
+  return (octave + 1) * 12 + base + accidental;
+}
+
+const sampleBaseMidi = noteToMidi(sampleBaseNote);
 
 // UI / runtime state
 let scheduled = false; // prevent duplicate scheduling on repeated clicks
@@ -39,13 +60,18 @@ const minAngularSpeed = 0.5; // deg/sec for slowest
 const maxAngularSpeed = 6.0; // deg/sec for fastest
 
 // Volume scaling for high notes: base velocity and minimum scale at top of register
-const baseVelocity = 0.12;
+const baseVelocity = 0.4;
 const topNoteMinScale = 0.45; // highest note will be played at 45% of base velocity
 
 function preload() {
   // Load the NASA feed JSON before setup runs so data is available immediately.
   // Note: embeded API key in a public repo is not recommended for production.
   nasa = loadJSON(url);
+
+  // load sample files (place your samples in samples/)
+  sampleShort = loadSound('samples/tone-short.wav');
+  sampleMed = loadSound('samples/tone-med.wav');
+  sampleLong = loadSound('samples/tone-med.wav'); // using med sample since it is cleaner
 }
 
 function setup() {
@@ -54,11 +80,9 @@ function setup() {
   angleMode(DEGREES);
   noStroke();
 
-  // poly synth available if desired
-  globalPolySynth = new p5.PolySynth();
-
-  // single reverb instance shared by per-asteroid synths
+  // single reverb instance shared by per-asteroid samples
   verb = new p5.Reverb();
+  filter = new p5.LowPass();
 
   // Build visualization and audio voices from loaded data
   drawViz();
@@ -145,9 +169,9 @@ function draw() {
     }
     let sizeScaled;
     if (minMag === maxMag) {
-      sizeScaled = (80 * (dim * 0.001) + 5 * (dim * 0.001)) / 2;
+      sizeScaled = Math.max(15, (100 * (dim * 0.001) + 5 * (dim * 0.001)) / 2);
     } else {
-      sizeScaled = map(a.mag, minMag, maxMag, 80 * (dim * 0.001), 5 * (dim * 0.001));
+      sizeScaled = Math.max(15, map(a.mag, minMag, maxMag, 100 * (dim * 0.001), 5 * (dim * 0.001)));
     }
 
     // compute this asteroid's rotation using its angularSpeed (deg/sec)
@@ -155,7 +179,7 @@ function draw() {
     push();
     rotate(angleDeg);
     noStroke();
-    fill(`rgba(180,180,180,0.9)`);
+    fill(`rgba(180,180,180,0.8)`);
     ellipse(0, orbitRadius, sizeScaled, sizeScaled);
     pop();
   }
@@ -200,10 +224,8 @@ function drawViz() {
     const distance = +sats[i].close_approach_data[0].miss_distance.lunar;
     const velocity = +sats[i].close_approach_data[0].relative_velocity.kilometers_per_second;
 
-    // create a MonoSynth voice for this asteroid; ADSR/reverb configured after ranges computed
-    const sy = new p5.MonoSynth();
-    
-    asteroids.push({ mag, distance, velocity, synth: sy, intervalId: null });
+  // samples will be assigned after ranges are computed; store placeholder
+  asteroids.push({ mag, distance, velocity, sample: null, volume: 1.0, intervalId: null });
   }
 
   // compute min/max ranges for mapping
@@ -227,21 +249,37 @@ function drawViz() {
       expectedIndex = Math.max(0, Math.min(round(expectedVal), notes.length - 1));
     }
 
-    // Scale release shorter for higher notes (so high pitches decay faster)
-    const releaseScale = map(expectedIndex, notes.length - 1, 0, 1.0, 0.05);
-    const synthRelease = releaseTime * releaseScale;
-    a.synth.setADSR(attackTime, decayTime, susPercent, synthRelease);
+    // Choose a sample by asteroid "size" (magnitude): lower magnitude -> larger asteroid
+    // We'll split the mag range into three buckets. Protect against degenerate range.
+    const range = (maxMag - minMag) || 1;
+    const t1 = minMag + range / 3;
+    const t2 = minMag + (2 * range) / 3;
+    if (a.mag <= t1) {
+      a.sample = sampleLong;
+    } else if (a.mag <= t2) {
+      a.sample = sampleMed;
+    } else {
+      a.sample = sampleShort;
+    }
 
-    // also scale velocity lower for higher notes
+    // scale per-asteroid volume similarly to previous velocity scaling so higher notes/smaller asteroids are quieter
     const velScale = map(expectedIndex, 0, notes.length - 1, 1.0, 0.2);
-    a.synth.amp(baseVelocity * velScale);
+    a.volume = baseVelocity * velScale;
 
-    // Apply reverb time scaled by pitch (shorter for higher notes)
-    const reverbTime = map(expectedIndex, 0, notes.length - 1, 10, 0.6); // seconds
-    const reverbDecay = map(expectedIndex, 0, notes.length - 1, 1, 0.6);
-    verb.drywet(0.9)
-    verb.amp(5)
-    verb.process(a.synth, reverbTime, reverbDecay);
+    // configure reverb for this sample (shorter for higher notes)
+    const reverbTime = 10;
+    const reverbDecay = 1;
+    verb.drywet(0.8);
+    verb.amp(15);
+
+    // create low pass filter on reverb to tame high frequencies
+    filter.freq(800);
+    
+    filter.connect(getAudioContext().destination);
+    if (a.sample) {
+      filter.connect(verb);
+      verb.process(a.sample, reverbTime, reverbDecay);
+    }
   });
 
   // map velocity range to per-asteroid angular speeds (deg/sec)
@@ -277,7 +315,15 @@ function playNote(index, noteIndex, timing) {
   // reduce velocity for higher notes
   const scale = map(ni, 0, notes.length - 1, 1.0, topNoteMinScale);
   const velScaled = baseVelocity * scale;
-  a.synth.play(notes[ni], velScaled, time, dur);
+  // play assigned sample if available; for note-based calls fall back to velScaled
+  if (a.sample) {
+    // compute playback rate to shift sample from base note -> desired note
+    const targetMidi = noteToMidi(notes[ni]);
+    const semitoneDiff = targetMidi - sampleBaseMidi;
+    const rate = Math.pow(2, semitoneDiff / 12);
+    // a.sample.play(startTime, rate, amp)
+    a.sample.play(time, rate, velScaled);
+  }
 
   // push a visual pulse (drawn from draw() to avoid drawing inside timer)
   const size = map(timing, 200, 32000, 50, 800);
@@ -332,10 +378,19 @@ function schedulerLoop() {
       // reduce velocity for higher notes so upper register is quieter
       const scale = map(noteIndex, 0, notes.length - 1, 1.0, topNoteMinScale);
       const vel = baseVelocity * scale;
-      a.synth.play(notes[noteIndex], vel, secondsFromNow, 0.3);
+      // play the assigned sample with scheduled delay and per-asteroid volume
+      const playAmp = a.volume || vel;
+      if (a.sample) {
+        // compute rate from noteIndex -> desired note
+        const targetMidi = noteToMidi(notes[noteIndex]);
+        const semitoneDiff = targetMidi - sampleBaseMidi;
+        const rate = Math.pow(2, semitoneDiff / 12);
+        // p5.SoundFile.play(time, rate, amp)
+        a.sample.play(secondsFromNow, rate, playAmp);
+      }
 
       // schedule a visual pulse at the appropriate future moment and position
-      const scheduledMillis = millis() + secondsFromNow * 1000;
+  const scheduledMillis = millis() + secondsFromNow * 1000;
       // compute angular position at scheduled time (degrees)
       const angleDeg = (scheduledMillis / 1000) * rotationSpeed + i * (360 / asteroids.length);
       const angleRad = radians(angleDeg);
