@@ -27,7 +27,7 @@ let filter;
 let sampleShort, sampleMed, sampleLong;
 
 // assume samples are recorded at this base note; change if your samples are at a different pitch
-const sampleBaseNote = 'C2';
+const sampleBaseNote = 'F3';
 
 // helper: convert note like 'C4' or 'G#3' to MIDI number (C4 = 60)
 function noteToMidi(note) {
