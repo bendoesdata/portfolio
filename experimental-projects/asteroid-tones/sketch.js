@@ -8,7 +8,7 @@ let decayTime = 0.8;
 let susPercent = 1;
 let releaseTime = 15.0;
 
-const tempoMultiplier = 8; // global speed multiplier for scheduling
+const tempoMultiplier = 4; // global speed multiplier for scheduling
 
 // Core state structures (refactor away from parallel arrays)
 let asteroids = []; // array of { mag, distance, synth, intervalId }
@@ -27,7 +27,7 @@ let filter;
 let sampleShort, sampleMed, sampleLong;
 
 // assume samples are recorded at this base note; change if your samples are at a different pitch
-const sampleBaseNote = 'F4';
+const sampleBaseNote = 'C2';
 
 // helper: convert note like 'C4' or 'G#3' to MIDI number (C4 = 60)
 function noteToMidi(note) {
