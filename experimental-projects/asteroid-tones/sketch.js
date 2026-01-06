@@ -8,7 +8,7 @@ let decayTime = 0.8;
 let susPercent = 1;
 let releaseTime = 15.0;
 
-const tempoMultiplier = 4; // global speed multiplier for scheduling
+const tempoMultiplier = 5; // global speed multiplier for scheduling
 
 // Core state structures (refactor away from parallel arrays)
 let asteroids = []; // array of { mag, distance, synth, intervalId }
