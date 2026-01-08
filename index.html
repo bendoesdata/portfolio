@@ -110,47 +110,6 @@ p {
 			color: #ffffff;
 		}
 
-		#work-grid h3 {
-			font-weight: 700;
-			font-size: 26px;
-			text-decoration: underline;
-		}
-
-		#work-grid a {
-			font-size: 18px;
-			width: 100%;
-			font-weight: 400;
-			text-decoration: none;
-		}
-
-
-		#work-grid {
-			display: grid;
-			grid-gap: 2rem;
-			grid-row-gap: 4rem;
-			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-			margin-bottom: 200px;
-			margin-top: 40px;
-			
-		}
-
-		#work-grid img {
-			object-fit: cover;
-			width: 100%;
-			height: 300px;
-			margin-bottom: 20px;
-			/* box-shadow: 0.6rem 0.6rem #ffffff; */
-			
-		}
-
-		#work-grid p {
-			font-size: 18px;
-		}
-
-		#work-grid .overlay {
-			position: relative;
-		}
-
 		.reverse-on-mobile h2 {
 			text-align: center;
 		}
@@ -250,42 +209,21 @@ p {
 
 <body>
 	<nav>
-		Benjamin Cooley
+		<div>Ben Dexter Cooley</div>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/experimental-projects/">Experimental Projects</a></li>
+			<li><a href="/data-visualizations/">Data Visualizations</a></li>
+			<li><a href="/about.html">About</a></li>
+		</ul>
 	</nav>
 	<main>
-		<div>
-			<div id="header-graphic"></div>
-					<div class="intro-text">
-						<h1>I make things with data.</h1>
-					</div>
-			<div class="row description">
-				<h2>Quick Bio</h2>
-				<p>My work centers on using data as a creative material, at times becoming visual, sound, and experience.</p>
-				<p>
-					I currently work as a Research Data Visualization Engineer at University of Vermont with the <a href="https://vermontcomplexsystems.org/" target="_blank">Vermont Complex Systems Center</a> and the <a href="https://www.uvm.edu/ccn" target="_blank">Center for Community News</a>, where I build data visualization tools, products, and stories. With a background in journalism, I view visualization as fundamentally an exercise in data storytelling.
-				</p>
-					<br>
-				<p>
-					 Previously, I have worked with scientists to visualize data in the <a href="https://pattern.broadinstitute.org/#/">Pattern lab</a> at the <a href="https://www.broadinstitute.org/">Broad Institute</a>, taught data visualization courses at <a href="https://camd.northeastern.edu/">Northeastern University</a>, and created interactive visualizations for <a href="https://www.birds.cornell.edu/home/">Cornell's Lab of Ornithology</a>, <a href="https://www.floodbase.com/">Floodbase</a>, and various online publications.
-				</p>
-				<p>
-					I also create weird <a href="/experimental-projects/">prototypes</a>, make <a
-							href="https://www.instagram.com/st.silva.music/">electronic music</a>, and write a semi-regular newsletter called <a href="https://data-curious.ghost.io/">Data Curious</a>.
-				</p>
-			</div>
-		</div>
 		<div class=" container">
 			<div>
-				<h2 style="margin-top: 10px">Selected work</h2>
+				<h3 style="margin-top: 10px">Selected work</h3>
 				<div id="work-grid"></div>
 			</div>
 		</div>
-		<!-- <div id="articles">
-			<div class="container" style="padding-top: 30px; padding-bottom: 30px">
-				<h2 style="margin-bottom: 0px">Recently read</h2>
-				<p style="font-size: 16px">Five most recent articles read via Instapaper</p>
-			</div>
-		</div> -->
 		<div class="container">
 			<div class="row" style="margin-bottom: 100px; margin-top: 50px">
 				<div class="column _33">
