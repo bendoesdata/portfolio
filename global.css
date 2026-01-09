@@ -134,7 +134,13 @@ nav {
     font-family: "Figtree", sans-serif;
     font-size: 21px;
     font-weight: 300;
-    color: #121212
+    color: #121212;
+    padding: 15px;
+}
+
+/* underline nav li element after clicked */
+nav ul li a:active {
+    text-decoration: underline;
 }
 
 nav div {
@@ -228,7 +234,7 @@ nav ul li a {
 			display: grid;
 			grid-gap: 1rem;
 			grid-row-gap: 2rem;
-			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 			margin-bottom: 200px;
 			margin-top: 40px;
 			
@@ -249,4 +255,52 @@ nav ul li a {
 
 		#work-grid .overlay {
 			position: relative;
+		}
+
+        .image-wide {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width: 800px) {
+
+            body {
+                margin: 0 5px;
+            }
+
+			.intro-text {
+				font-size: 1.2rem
+			}
+
+			.reverse-on-mobile {
+				flex-direction: column-reverse;
+			}
+
+			.reverse-on-mobile h2 {
+				text-align: right;
+			}
+
+			.header-row {
+				margin-top: 80px;
+				margin-bottom: 80px;
+				height: auto;
+			}
+
+			.intro-text {
+				margin-left: 0px;
+				padding: 15px
+			}
+
+			.container {
+				margin-left: 0px;
+				padding: 15px
+			}
+
+			#work-grid {
+				margin-left: 0px;
+			}
+
+			.img-container {
+				height: 10vh
+			}
 		}
