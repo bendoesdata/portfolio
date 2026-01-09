@@ -145,6 +145,73 @@ footer {
 
 
 
+/* Image Modal Styles */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease-in;
+}
+
+.image-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    max-height: 90vh;
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    max-height: 85vh;
+    object-fit: contain;
+}
+
+.modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-close:hover {
+    color: #cccccc;
+}
+
+.clickable-image {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.clickable-image:hover {
+    opacity: 0.8;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 @media screen and (max-width: 800px) {
     
 
@@ -159,5 +226,11 @@ footer {
 
     .image-row {
         flex-direction: column;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
     }
 }
