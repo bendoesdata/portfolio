@@ -10,14 +10,14 @@
 	<title>Lunarcy</title>
 	<meta name="description"
 		content="Project description for Lunarcy, an interactive aerialist show by Ben Dexter Cooley and Nate Hicks for Burlington's NYE Highlight 2025 festival.">
-
+        <script src="../image-modal.js"></script>
         <link rel="stylesheet" href="../global.css">
         <link rel="stylesheet" href="../projects.css">
 </head>
 
 <body>
     <header>
-        <h1>Lunarcy</h1>
+        <h1>LUNARCY</h1>
         <div class="project-date">2025</div>
     </header>
 	<main>
@@ -28,43 +28,63 @@
         </div>
         <div class="project-description">
             <h3>RESPONSIBILITIES</h3>
-            <p>concept, music, electronic hardware design, graphic design</p>
+            <p>concept, music, electronic hardware design, design</p>
             <br>
             <p style="font-style: italic">No AI was used in the making of this project.</p>
         
-            <p>Lunarcy was a multidisciplinary interactive aerialist show designed for Burlington's NYE Highlight 2025 festival, featuring a custom-built sensor system for dancers.</p>
-            <p>
-                For each piece, an aerialist wears this sensor on their leg. The Arduino ESP32 then sends real-time movement data over Wifi to a laptop running Touchdesigner, which creates the animated visuals. Each scene has a different mapping, so the dancers movement controlled a different visual parameter.
-            </p>
+            <p>Lunarcy was a multidisciplinary interactive aerialist show designed for Burlington's NYE Highlight 2025 festival, featuring a custom-built sensor system for dancers. The project was built in collaboration with my frequent creative collaborator, artist and designer <a href="https://nhicksart.com/">Nate Hicks</a>.</p>
+            <p>The concept for the project was born from a previous installation, <a href="/projects/dancer-loop.html">DANCER IN THE LOOP</a>, which used cameras to sense the movement of gallery visitors to interact with the visualizations. For this show, we wanted more fine grained control over the dancer's movements. Cameras are only accurate when you are close to the lense, and we wanted to capture the quick movements of the aerialists in a more precise way.</p>
         </div>
         <div class="image-row">
             <div>
-                <img src="../images/projects/lunarcy/DSC00063.jpg" alt="A screenshot of an interactive map which allows users to add layers of grasslands data alongside species lost data to see the correlation of each.">
+                <img class="clickable-image" src="../images/projects/lunarcy/DSC00063.jpg" alt="A photograph of an aerialist performing in front of a large projection screen with colorful visuals.  The aerialist is silhouetted against the projection, creating a striking contrast.">
             </div>
             <div>
-                <img src="../images/projects/lunarcy/DSC09624.jpg" alt="A screenshot of an interactive map which allows users to add layers of grasslands data alongside species lost data to see the correlation of each.">
+                <img class="clickable-image" src="../images/projects/lunarcy/DSC09624.jpg" alt="A photograph of an aerialist performing in front of a large projection screen with colorful visuals.  The aerialist is silhouetted against the projection, creating a striking contrast.">
             </div>
             <div>
-                <img src="../images/projects/lunarcy/DSC00008.jpg" alt="A screenshot of an interactive map which allows users to add layers of grasslands data alongside species lost data to see the correlation of each.">
+                <img class="clickable-image" src="../images/projects/lunarcy/DSC00008.jpg" alt="A photograph of an aerialist performing in front of a large projection screen with colorful visuals.  The aerialist is silhouetted against the projection, creating a striking contrast.">
             </div>
         </div>
         <div class="project-description">
-            <p>Original music was composed by myself and Nate Hicks. </p>
+            <p>
+                For each piece, an aerialist wears a sensor on their leg. This sensor then sends real-time movement data over Wifi to a laptop running Touchdesigner, which manipulated the animated visuals. Each scene has a different mapping, so the dancers movement controlled a different visual parameter.
+            </p>
+            <p>
+                We started to prototype the board using an Arduino ESP32 microcontroller, which has built-in Wifi capabilities. We then attached a gyroscope and accelerometer sensor to the board to read the movement of the dancer's leg in 3D space.
+            </p>
+            <br>
+            <img src="../images/projects/lunarcy/arduino.jpg" alt="A photograph of an Arudino chip with cables connected to it. This chip is used to read data from sensors attached to the dancer's leg and send it over Wifi to a computer running Touchdesigner.">
+            <div class="caption">The Arduino ESP32 microcontroller with attached sensors.</div>
+            <p>Arduino code was then written to read the data from the sensor and parsed it for Touchdesigner.</p>
+            <p>After some testing, we ended up using gyroscope movement instead of acceleromeeter, as it was more responsive to the fast spins the aerialists often incorporated. It took some trial and error to find the right placement for each dancer, but most chose to wear the sensor on a leg (as seen in the photo below).</p>
+            <br>
+            <img src="../images/projects/lunarcy/sensor-on-dancer-annotated.JPG" alt="A photograph showing the location of arduino sensor on a dancer's leg under their jumpsuit.">
+            <p>The theme of the show was "lunarpunk", so we leaned heavily into futuristic yet organic soundscapes. Visually, we were inspired by cooler color tones and natural patterns such as Physarum networks and topographic terrain maps.</p>
+            <br>
+            <img src="../images/projects/lunarcy/ben-nate-1.JPG" alt="A photograph of Ben an Nate looking at a projetion screen.">
+            <p>
+            The show was choreographed by an incredible team of dancers, led by Jacob Ian Ireland (head of <a href="https://flyingsquirrelproductions.co/">Flying Squirrel Productions</a>). I helped contribute design feedback for the scenes, but all Touchdesigner networks were engineered and brought to life by Nate Hicks who was the lead designer for the event. 
+        </p>
+            
         </div>
-        <div class="image-wide">
+        <div class="image-row">
             <div>
-                <img src="../images/projects/dancer-in-the-loop/IMG_8859.jpg" alt="Image of people dancing in front of a large projection. The projection is a colorful abstract pattern that changes with the movement of the dancers. The dancers are silhouetted against the projection, creating a striking contrast.">
+                <img class="clickable-image" src="../images/projects/lunarcy/DSC09617.jpg" alt="A photograph of an aerialist performing in front of a large projection screen with colorful visuals.  The aerialist is silhouetted against the projection, creating a striking contrast.">
             </div>
             <div>
-                <img src="../images/projects/dancer-in-the-loop/IMG_8855.jpg" style="margin-top: 20px"  alt="Image of people dancing in front of a large projection. The projection is a colorful abstract pattern that changes with the movement of the dancers. The dancers are silhouetted against the projection, creating a striking contrast.">
-            </div>
-            <div>
-                <img src="../images/projects/dancer-in-the-loop/IMG_8848.jpg" style="margin-top: 20px"  alt="Image of people dancing in front of a large projection. The projection is a colorful abstract pattern that changes with the movement of the dancers. The dancers are silhouetted against the projection, creating a striking contrast.">
-            </div>
-            <div>
-                <img src="../images/projects/dancer-in-the-loop/IMG_8856.jpg" style="margin-top: 20px"  alt="Image of people dancing in front of a large projection. The projection is a colorful abstract pattern that changes with the movement of the dancers. The dancers are silhouetted against the projection, creating a striking contrast.">
+                <img class="clickable-image" src="../images/projects/lunarcy/DSC00047.jpg" alt="A photograph of an aerialist performing in front of a large projection screen with colorful visuals.  The aerialist is silhouetted against the projection, creating a striking contrast.">
             </div>
         </div>
+        <div class="project-description">
+            <p>Original music was composed by myself and Nate Hicks. More photos from the event can be viewed <a href="https://flic.kr/ps/47p1zu">here</a>. You can view a full recording of the performance <a href="https://www.youtube.com/watch?v=jhP4YurOGZk" target="_blank">on Youtube</a>.
+                <br>
+                <br>
+                <img src="../images/projects/lunarcy/DSC00098.jpg" alt="Iomage of dancers in front of a screen that says LUNARCY.">
+        </div>
+
+        
+        
         <div class="back-home-link">
             <a href="https://benjamincooley.com/">
                 <-- go to home
