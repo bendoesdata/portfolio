@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#333333">
+    <title>About - Benjamin Cooley</title>
+    <link rel="stylesheet" href="global.css">
+    <style>
+        body {
+            font-family: "Figtree", sans-serif;
+            color: #121212;
+            background-color: #ffffff;
+        }
+        main {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 50px 10px;
+            gap: 40px;
+        }
+
+        main div {
+            flex: 1;
+        }
+
+        main div:nth-child(1) {
+            max-width: 600px;
+        }
+
+        main div:nth-child(2) {
+            flex-grow: 1;
+
+        }
+
+        @media (max-width: 800px) {
+            main {
+                flex-direction: column-reverse;
+                margin: 20px 10px;
+            }
+
+            main div:nth-child(1),
+            main div:nth-child(2) {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>Ben Dexter Cooley</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/experimental-projects/">Experimental Projects</a></li>
+            <li><a href="/data-visualizations/">Data Visualizations</a></li>
+            <li><a href="/about.html">About</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div>
+        <h2>About</h2>
+        <br>
+        <p>My work centers on using data as a creative material, at times becoming visual, sound, and experience.</p>
+        <br>
+        <p>
+            I currently work as a Research Data Visualization Engineer at University of Vermont with the <a href="https://vermontcomplexsystems.org/" target="_blank">Vermont Complex Systems Center</a> and the <a href="https://www.uvm.edu/ccn" target="_blank">Center for Community News</a>, where I build data visualization tools, products, and stories. With a background in journalism, I view visualization as fundamentally an exercise in data storytelling.
+        </p>
+            <br>
+        <p>
+                Previously, I have worked with scientists to visualize data in the <a href="https://pattern.broadinstitute.org/#/">Pattern lab</a> at the <a href="https://www.broadinstitute.org/">Broad Institute</a>, taught data visualization courses at <a href="https://camd.northeastern.edu/">Northeastern University</a>, and created interactive visualizations for <a href="https://www.birds.cornell.edu/home/">Cornell's Lab of Ornithology</a>, <a href="https://www.floodbase.com/">Floodbase</a>, and various online publications.
+        </p>
+        <p>
+            I also create weird <a href="/experimental-projects/">prototypes</a>, make <a
+                    href="https://www.instagram.com/st.silva.music/">electronic music</a>, and write a semi-regular newsletter called <a href="https://data-curious.ghost.io/">Data Curious</a>.
+        </p>
+        </div>
+        <div>
+            <img src="/images/ben-headshot.jpg" alt="Photo of Benjamin Cooley">
+        </div>
+    </main>
+    <br>
+    <br>
+			
+</body>
+</html>

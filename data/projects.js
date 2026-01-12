@@ -1,8 +1,16 @@
 const data = [
     {
+        title: "LUNARCY",
+        description:
+            "Immersive aerialist show with custom-built sensors for Burlington's NYE festival.",
+        type: "data experience",
+        imgUrl: "../images/projects/lunarcy/DSC09581.jpg",
+        url: "projects/lunarcy.html",
+    },
+    {
         title: "DANCER IN THE LOOP",
         description:
-            "Interactive audiovisual installation for Burlingon's NYE festival.",
+            "Interactive audiovisual installation for Burlingon's NYE festival 2024.",
         type: "data sonification, data experience",
         imgUrl: "../images/projects/dancer-in-the-loop/IMG_8855.jpg",
         url: "projects/dancer-loop.html",
