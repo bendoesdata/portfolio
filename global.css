@@ -79,12 +79,12 @@ h6 {
 
 p {
     font-family: "Figtree", sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.7;
 }
 
 a {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.7;
     color: #121212
 }
@@ -214,7 +214,7 @@ nav ul li a {
 
 #work-grid h3 {
 			font-weight: 700;
-			font-size: 21px;
+			font-size: 18px;
 			text-decoration: underline;
 		}
 
@@ -234,23 +234,22 @@ nav ul li a {
 			display: grid;
 			grid-gap: 1rem;
 			grid-row-gap: 2rem;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 			margin-bottom: 200px;
-			margin-top: 40px;
-			
+			margin-top: 40px;	
 		}
 
 		#work-grid img {
 			object-fit: cover;
 			width: 100%;
-			height: 300px;
+			height: 350px;
 			margin-bottom: 20px;
 			/* box-shadow: 0.6rem 0.6rem #ffffff; */
 			
 		}
 
 		#work-grid p {
-			font-size: 18px;
+			font-size: 16px;
 		}
 
 		#work-grid .overlay {
@@ -271,6 +270,14 @@ nav ul li a {
 			.intro-text {
 				font-size: 1.2rem
 			}
+
+            #work-grid {
+			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		}
+
+        #work-grid img {
+            height: 300px;
+        }
 
 			.reverse-on-mobile {
 				flex-direction: column-reverse;
