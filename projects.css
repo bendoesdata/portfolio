@@ -18,6 +18,18 @@ h1 {
     text-align: center;
 }
 
+.center-btn {
+    margin: 0px auto;
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 80px;
+}
+
+.center-btn a {
+    float: none;
+    text-align: center;
+}
+
 h3 {
     margin-bottom: 10px;
     margin-top: 10px;
@@ -101,7 +113,7 @@ a:hover {
 }
 
 .back-home-link {
-    
+    display: block;
     padding: 20px;
 }
 

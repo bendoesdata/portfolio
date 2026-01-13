@@ -47,14 +47,6 @@ const data = [
         imgUrl: "../images/projects/microbiome/circle-cover.png",
         url: "projects/microbiome-data-portal.html",
     },
-    {
-        title: "3d Webster UMAP",
-        description:
-            "A 3d visualization tool that maps biological funtions to genes.",
-        type: "data visualization",
-        imgUrl: "../images/projects/webster.png",
-        url: "projects/webster.html",
-    },
   {
       title: "Global Flood Dashboard",
       description:
@@ -86,13 +78,5 @@ const data = [
     type: "data visualization",
     imgUrl: "../images/front-page/workouts.png",
     url: "projects/my-year-2019.html",
-},
-  {
-    title: "GutSee Mobile App",
-    description:
-        "App for a longitudinal study tracking changes in microbiome health.",
-    type: "data visualization",
-    imgUrl: "../images/front-page/gutsee-post.png",
-    url: "projects/gutsee.html",
 }
 ];
