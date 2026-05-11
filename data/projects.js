@@ -1,5 +1,13 @@
 const data = [
     {
+        title: "Sonic Flows",
+        description:
+            "Award-winning data sonification and visualization of the Hubbard Brook Experimental Forest",
+        type: "data experience",
+        imgUrl: "../images/projects/sonic-flows/sonic-flows-square2.png",
+        url: "projects/sonic-flows.html",
+    },
+    {
         title: "LUNARCY",
         description:
             "Immersive aerialist show with custom-built sensors for Burlington's NYE festival.",
