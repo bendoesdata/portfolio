@@ -189,15 +189,31 @@ p {
 	const grid = document.getElementById('work-grid');
 
 	data.forEach(d => {
-		let newNode = document.createElement('div');
-		// newNode.classList.add('work-container');
-		newNode.innerHTML = '<a href="' + d.url +'"><img class="work-container" src="' + d.imgUrl + '" alt="' + d.description + '" loading="lazy" /></a>'
-		let overlayDiv = document.createElement('div');
-		overlayDiv.classList.add('overlay')
-		overlayDiv.innerHTML = '<a href="' + d.url + '"><h3>' + d.title + '</h3><p>' + d.description + '</p></a>'
-		newNode.appendChild(overlayDiv)
-		grid.appendChild(newNode)
-	})
+		const tagsHtml = (d.tags || []).map(tag =>
+			`<span class="project-tag">${tag}</span>`
+		).join('');
+
+		const row = document.createElement('div');
+		row.classList.add('project-row');
+		row.innerHTML = `
+			<div class="project-col-title">
+				<a href="${d.url}"><h3>${d.title}</h3></a>
+				${d.date ? `<span class="project-date">${d.date}</span>` : ''}
+			</div>
+			<div class="project-col-desc">
+				<p>${d.description}</p>
+			</div>
+			<div class="project-col-tags">
+				${tagsHtml}
+			</div>
+			<div class="project-col-image">
+				<a href="${d.url}">
+					<img src="${d.imgUrl}" alt="${d.description}" loading="lazy" />
+				</a>
+			</div>
+		`;
+		grid.appendChild(row);
+	});
 
 	Promise.all([
 		d3.csv("./data/past-articles.csv"),
