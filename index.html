@@ -201,10 +201,16 @@ p {
 				${d.date ? `<span class="project-date">${d.date}</span>` : ''}
 			</div>
 			<div class="project-col-desc">
-				<p>${d.description}</p>
+				<p>${d.summary}</p>
 			</div>
 			<div class="project-col-tags">
 				${tagsHtml}
+				<br>
+				
+				<div style="margin-top: 30px; font-size: 14px; color: rgba(60, 60, 60, 0.8);">
+					<span style="color: rgba(60, 60, 60, 0.6);">In partnership with:</span>
+					<br><span style="margin-top: 4px; display: block">${d.client}</span>
+				</div>
 			</div>
 			<div class="project-col-image">
 				<a href="${d.url}">
