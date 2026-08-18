@@ -1,4 +1,30 @@
 const data = [
+    // {
+    //     title: "Sounds of Shifting Attention",
+    //     date: "2026",
+    //     description:
+    //         "Data sonification of one year of Wikipedia data.",
+    //     summary:
+    //         "Sounds of Shifting Attention was a live data sonification performance for ICAD 2026. The piece translated one year of Wikipedia data into an evolving soundscape capturing the changing trends across the website and the sentiment associated with them.",
+    //     type: "album",
+    //     tags: ["data sonification", "music", "performance"],
+    //     imgUrl: "../images/projects/shifting-attention/tree-ring.png",
+    //     url: "projects/sounds-shifting-attention.html",
+    //     client: "International Community for Auditory Display (ICAD)"
+    // },
+    {
+        title: "Forager",
+        date: "2026",
+        description:
+            "Album release on limited cassette via AKP Recordings",
+        summary:
+            "Forager is an album released by St. Silva, a musical moniker of Ben Dexter Cooley. Using a combination of field recordings, tape loops, and modular synthesis, Forager is a warm collection of looping mediations that blur the line between electronic and the natural, merging formless exploration with found sounds in an unlikely collaboration of time and space.",
+        type: "album",
+        tags: ["music", "field recording"],
+        imgUrl: "../images/projects/forager/forager-cropped.png",
+        url: "projects/forager.html",
+        client: "AKP Recordings"
+    },
     {
         title: "Sonic Flows",
         date: "2026",
